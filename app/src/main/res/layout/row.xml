@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/layout_horizontal">
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+                            <Button
+                                android:id="@+id/penampang_outlet_25"
+                                android:layout_width="@dimen/circle_width"
+                                android:layout_height="@dimen/circle_heigth"
+                                android:layout_marginRight="@dimen/right_margin_custom_A"
+                                android:background="@drawable/button_main"
+                                android:text="25"
+                                android:textColor="@drawable/text_color" />
+
+                            <Button
+                                android:id="@+id/penampang_outlet_35"
+                                android:layout_width="@dimen/circle_width"
+                                android:layout_height="@dimen/circle_heigth"
+                                android:layout_marginRight="@dimen/right_margin_custom_A"
+                                android:background="@drawable/button_main"
+                                android:text="35"
+                                android:textColor="@drawable/text_color" />
+
+                            <Button
+                                android:id="@+id/penampang_outlet_70"
+                                android:layout_width="@dimen/circle_width"
+                                android:layout_height="@dimen/circle_heigth"
+                                android:layout_marginRight="@dimen/right_margin_custom_A"
+                                android:background="@drawable/button_main"
+                                android:text="70"
+                                android:textColor="@drawable/text_color" />
+
+                            <Button
+                                android:id="@+id/penampang_outlet_95"
+                                android:layout_width="@dimen/circle_width"
+                                android:layout_height="@dimen/circle_heigth"
+                                android:layout_marginRight="@dimen/right_margin_custom_A"
+                                android:background="@drawable/button_main"
+                                android:text="95"
+                                android:textColor="@drawable/text_color" />
+
+                            <Button
+                                android:id="@+id/penampang_outlet_150"
+                                android:layout_width="@dimen/circle_width"
+                                android:layout_height="@dimen/circle_heigth"
+                                android:layout_marginRight="@dimen/right_margin_custom_A"
+                                android:background="@drawable/button_main"
+                                android:text="150"
+                                android:textColor="@drawable/text_color" />
+
+                            <Button
+                                android:id="@+id/penampang_outlet_240"
+                                android:layout_width="@dimen/circle_width"
+                                android:layout_height="@dimen/circle_heigth"
+                                android:layout_marginRight="7dp"
+                                android:background="@drawable/button_main"
+                                android:text="240"
+                                android:textColor="@drawable/text_color" />
+        </LinearLayout>
+    </HorizontalScrollView>
+</LinearLayout>

@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Pengaduan</string>
+    <string name="penyulang">
+        <item>Intan</item>
+        <item>Kristal</item>
+        <item>Permata</item>
+        <item>Berlian</item>
+        <item>Sasando</item>
+        <item>Ukulele</item>
+        <item>Mandolin</item>
+        <item>Ekspress 2</item>
+    </string>
+</resources>
