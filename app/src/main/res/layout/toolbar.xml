@@ -3,13 +3,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/toobar"
-        android:elevation="0dp"
+        android:elevation="2dp"
         android:titleTextColor="@android:color/white"
         xmlns:android="http://schemas.android.com/apk/res/android">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/text_color"
-        android:textColor="@android:color/white"
         android:textStyle="bold"/>
 </android.support.v7.widget.Toolbar>
