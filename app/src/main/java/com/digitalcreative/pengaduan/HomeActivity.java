@@ -8,11 +8,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.digitalcreative.pengaduan.controller.GPSTracker;
+
 public class HomeActivity extends AppCompatActivity {
     ImageView img;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_home);
 
         img = (ImageView) findViewById(R.id.logo);
@@ -24,5 +27,7 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
     }
 }
