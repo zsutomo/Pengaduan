@@ -1,0 +1,2449 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background"
+    tools:context="com.digitalcreative.pengaduan.MainActivity">
+    <include
+        android:id="@+id/tool_bar"
+        layout="@layout/toolbar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
+                <!--Part 1-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/petugas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="3dp"
+                        android:text="Petugas"
+                        android:textColor="@color/font_color"
+                        android:textSize="@dimen/titlesize" />
+
+                    <EditText
+                        android:id="@+id/f_petugas"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_bot"
+                        android:background="@drawable/text_field"
+                        android:hint="Isi Disini"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="10dp"
+                        android:singleLine="true"
+                        android:textColor="@color/font_text_field_color"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="3dp"
+                        android:text="Kapel"
+                        android:textColor="@color/font_color"
+                        android:textSize="@dimen/titlesize" />
+
+                    <EditText
+                        android:id="@+id/f_kapel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_bot"
+                        android:background="@drawable/text_field"
+                        android:hint="Isi Disini"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="10dp"
+                        android:singleLine="true"
+                        android:textColor="@color/font_text_field_color"
+                        android:textSize="@dimen/textsize" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="3dp"
+                        android:text="Kode Gardu"
+                        android:textColor="@color/font_color"
+                        android:textSize="@dimen/titlesize" />
+
+                    <EditText
+                        android:id="@+id/f_kode_gardu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_bot"
+                        android:background="@drawable/text_field"
+                        android:hint="Isi Disini"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="10dp"
+                        android:singleLine="true"
+                        android:textColor="@color/font_text_field_color"
+                        android:textSize="@dimen/textsize" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="3dp"
+                        android:text="Penyulang"
+                        android:textColor="@color/font_color"
+                        android:textSize="@dimen/titlesize" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <Spinner
+                            android:id="@+id/spin_penyulang"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/margin_bot"
+                            android:background="@drawable/button_main"
+                            android:spinnerMode="dropdown"
+                            android:transitionGroup="true" />
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_margin="12dp"
+                            android:foregroundGravity="center"
+                            android:src="@drawable/triangle" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="3dp"
+                        android:text="Daya (kva)"
+                        android:textColor="@color/font_color"
+                        android:textSize="@dimen/titlesize" />
+
+                    <EditText
+                        android:id="@+id/f_daya"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_bot"
+                        android:background="@drawable/text_field"
+                        android:digits="0123456789."
+                        android:hint="Isi Disini"
+                        android:inputType="numberDecimal"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="10dp"
+                        android:singleLine="true"
+                        android:textColor="@color/font_text_field_color"
+                        android:textSize="@dimen/textsize" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="3dp"
+                        android:text="Merk"
+                        android:textColor="@color/font_color"
+                        android:textSize="@dimen/titlesize" />
+
+                    <EditText
+                        android:id="@+id/f_merk"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_bot"
+                        android:background="@drawable/text_field"
+                        android:hint="Isi Disini"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="10dp"
+                        android:singleLine="true"
+                        android:textColor="@color/font_text_field_color"
+                        android:textSize="@dimen/textsize" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="3dp"
+                        android:text="No. Serie"
+                        android:textColor="@color/font_color"
+                        android:textSize="@dimen/titlesize" />
+
+                    <EditText
+                        android:id="@+id/f_noserie"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_bot"
+                        android:background="@drawable/text_field"
+                        android:digits="0123456789."
+                        android:hint="Isi Disini"
+                        android:inputType="numberDecimal"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="10dp"
+                        android:singleLine="true"
+                        android:textColor="@color/font_text_field_color"
+                        android:textSize="@dimen/textsize" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="3dp"
+                        android:text="Jumlah Fasa"
+                        android:textColor="@color/font_color"
+                        android:textSize="@dimen/titlesize" />
+
+                    <EditText
+                        android:id="@+id/f_jlh_fasa"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_bot"
+                        android:background="@drawable/text_field"
+                        android:digits="0123456789."
+                        android:hint="Isi Disini"
+                        android:inputType="numberDecimal"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="10dp"
+                        android:singleLine="true"
+                        android:textColor="@color/font_text_field_color"
+                        android:textSize="@dimen/textsize" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="3dp"
+                        android:text="Tap Operasi"
+                        android:textColor="@color/font_color"
+                        android:textSize="@dimen/titlesize" />
+
+                    <EditText
+                        android:id="@+id/f_tap_operasi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_bot"
+                        android:background="@drawable/text_field"
+                        android:digits="0123456789."
+                        android:hint="Isi Disini"
+                        android:inputType="numberDecimal"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="10dp"
+                        android:singleLine="true"
+                        android:textColor="@color/font_text_field_color"
+                        android:textSize="@dimen/textsize" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="3dp"
+                        android:text="Konstruksi Trafo"
+                        android:textColor="@color/font_color"
+                        android:textSize="@dimen/titlesize" />
+
+                    <EditText
+                        android:id="@+id/f_kons_trafo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_bot"
+                        android:background="@drawable/text_field"
+                        android:hint="Isi Disini"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="10dp"
+                        android:singleLine="true"
+                        android:textColor="@color/font_text_field_color"
+                        android:textSize="@dimen/textsize" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/margin_bot"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="3dp"
+                                android:text="Rekondisi"
+                                android:textColor="@color/font_color"
+                                android:textSize="@dimen/titlesize" />
+
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <Button
+                                    android:id="@+id/rekondisi_ya"
+                                    android:layout_width="@dimen/button_width_ya_tidak"
+                                    android:layout_height="@dimen/button_height_ya_tidak"
+                                    android:layout_marginRight="@dimen/right_margin_custom_A"
+                                    android:background="@drawable/button_main"
+                                    android:text="Ya"
+                                    android:textColor="@drawable/text_color" />
+
+                                <Button
+                                    android:id="@+id/rekondisi_tidak"
+                                    android:layout_width="@dimen/button_width_ya_tidak"
+                                    android:layout_height="@dimen/button_height_ya_tidak"
+                                    android:background="@drawable/button_main"
+                                    android:text="Tidak"
+                                    android:textColor="@drawable/text_color" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="3dp"
+                                android:text="Tahun Pembuatan"
+                                android:textColor="@color/font_color"
+                                android:textSize="@dimen/titlesize" />
+
+                            <EditText
+                                android:id="@+id/f_tahun_pembuatan"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/margin_bot"
+                                android:background="@drawable/text_field"
+                                android:digits="0123456789."
+                                android:hint="Isi Disini"
+                                android:inputType="numberDecimal"
+                                android:paddingBottom="10dp"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="10dp"
+                                android:paddingTop="10dp"
+                                android:singleLine="true"
+                                android:textColor="@color/font_text_field_color"
+                                android:textSize="@dimen/textsize" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/margin_bot"
+                            android:layout_marginRight="20dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="3dp"
+                                android:text="Kunci Gardu"
+                                android:textColor="@color/font_color"
+                                android:textSize="@dimen/titlesize" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <Button
+                                    android:id="@+id/kunci_gardu_ya"
+                                    android:layout_width="@dimen/button_width_ya_tidak"
+                                    android:layout_height="@dimen/button_height_ya_tidak"
+                                    android:layout_marginRight="@dimen/right_margin_custom_A"
+                                    android:background="@drawable/button_main"
+                                    android:text="Ya"
+                                    android:textColor="@drawable/text_color" />
+
+                                <Button
+                                    android:id="@+id/kunci_gardu_tidak"
+                                    android:layout_width="@dimen/button_width_ya_tidak"
+                                    android:layout_height="@dimen/button_height_ya_tidak"
+                                    android:background="@drawable/button_main"
+                                    android:text="Tidak"
+                                    android:textColor="@drawable/text_color" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/margin_bot"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="3dp"
+                                android:text="Kokon"
+                                android:textColor="@color/font_color"
+                                android:textSize="@dimen/titlesize" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <Button
+                                    android:id="@+id/kokon_ya"
+                                    android:layout_width="@dimen/button_width_ya_tidak"
+                                    android:layout_height="@dimen/button_height_ya_tidak"
+                                    android:layout_marginRight="@dimen/right_margin_custom_A"
+                                    android:background="@drawable/button_main"
+                                    android:text="Ya"
+                                    android:textColor="@drawable/text_color"/>
+
+                                <Button
+                                    android:id="@+id/kokon_tidak"
+                                    android:layout_width="@dimen/button_width_ya_tidak"
+                                    android:layout_height="@dimen/button_height_ya_tidak"
+                                    android:background="@drawable/button_main"
+                                    android:text="Tidak"
+                                    android:textColor="@drawable/text_color"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_bot"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="3dp"
+                            android:text="Schoon Trafo (DI TR)"
+                            android:textColor="@color/font_color"
+                            android:textSize="@dimen/titlesize" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <Button
+                                android:id="@+id/Schoon_Trafo_1"
+                                android:layout_width="@dimen/circle_width"
+                                android:layout_height="@dimen/circle_heigth"
+                                android:layout_marginRight="@dimen/right_margin_custom_A"
+                                android:background="@drawable/button_main"
+                                android:text="3"
+                                android:textColor="@drawable/text_color" />
+
+                            <Button
+                                android:id="@+id/Schoon_Trafo_2"
+                                android:layout_width="@dimen/circle_width"
+                                android:layout_height="@dimen/circle_heigth"
+                                android:layout_marginRight="@dimen/right_margin_custom_A"
+                                android:background="@drawable/button_main"
+                                android:text="2"
+                                android:textColor="@drawable/text_color" />
+
+                            <Button
+                                android:id="@+id/Schoon_Trafo_3"
+                                android:layout_width="@dimen/circle_width"
+                                android:layout_height="@dimen/circle_heigth"
+                                android:layout_marginRight="@dimen/right_margin_custom_A"
+                                android:background="@drawable/button_main"
+                                android:text="1"
+                                android:textColor="@drawable/text_color" />
+
+                            <Button
+                                android:id="@+id/Schoon_Trafo_4"
+                                android:layout_width="@dimen/circle_width"
+                                android:layout_height="@dimen/circle_heigth"
+                                android:background="@drawable/button_main"
+                                android:text="0"
+                                android:textColor="@drawable/text_color" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="3dp"
+                            android:text="Kebutuhan Schoon di PHB"
+                            android:textColor="@color/font_color"
+                            android:textSize="@dimen/titlesize" />
+
+                        <EditText
+                            android:id="@+id/f_kebutuhan_schoon_PHB"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="20dp"
+                            android:background="@drawable/text_field"
+                            android:digits="0123456789."
+                            android:hint="Isi Disini"
+                            android:inputType="numberDecimal"
+                            android:paddingBottom="10dp"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="10dp"
+                            android:paddingTop="10dp"
+                            android:singleLine="true"
+                            android:textColor="@color/font_text_field_color"
+                            android:textSize="@dimen/textsize" />
+                    </LinearLayout>
+                </LinearLayout>
+                <!--End of Part 1-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginBottom="@dimen/margin_bot"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@color/toobar" />
+                <!--Part 2 Data Pengamanan Trafo-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_bot"
+                        android:padding="3dp"
+                        android:text="Data Pengamanan Trafo"
+                        android:textColor="@color/font_color"
+                        android:textSize="@dimen/boldsize"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="22dp"
+
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="3dp"
+                            android:text="Primer Phasa R"
+                            android:textColor="@color/font_color"
+                            android:textSize="@dimen/titlesize" />
+
+                        <EditText
+                            android:id="@+id/f_primer_phasa_r"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/margin_bot"
+                            android:background="@drawable/text_field"
+                            android:digits="0123456789."
+                            android:hint="Isi Disini"
+                            android:inputType="numberDecimal"
+                            android:paddingBottom="10dp"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="10dp"
+                            android:paddingTop="10dp"
+                            android:singleLine="true"
+                            android:textColor="@color/font_text_field_color"
+                            android:textSize="@dimen/textsize" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="3dp"
+                            android:text="Primer Phasa S"
+                            android:textColor="@color/font_color"
+                            android:textSize="@dimen/titlesize" />
+
+                        <EditText
+                            android:id="@+id/f_primer_phasa_s"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/margin_bot"
+                            android:background="@drawable/text_field"
+                            android:digits="0123456789."
+                            android:hint="Isi Disini"
+                            android:inputType="numberDecimal"
+                            android:paddingBottom="10dp"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="10dp"
+                            android:paddingTop="10dp"
+                            android:singleLine="true"
+                            android:textColor="@color/font_text_field_color"
+                            android:textSize="@dimen/textsize" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="3dp"
+                            android:text="Primer Phasa T"
+                            android:textColor="@color/font_color"
+                            android:textSize="@dimen/titlesize" />
+
+                        <EditText
+                            android:id="@+id/f_primer_phasa_t"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/margin_bot"
+                            android:background="@drawable/text_field"
+                            android:digits="0123456789."
+                            android:hint="Isi Disini"
+                            android:inputType="numberDecimal"
+                            android:paddingBottom="10dp"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="10dp"
+                            android:paddingTop="10dp"
+                            android:singleLine="true"
+                            android:textColor="@color/font_text_field_color"
+                            android:textSize="@dimen/textsize" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/margin_bot"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="3dp"
+                                    android:text="Saklar Utama PHB"
+                                    android:textColor="@color/font_color"
+                                    android:textSize="@dimen/titlesize" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <Button
+                                        android:id="@+id/saklar_utama_phb_ya"
+                                        android:layout_width="@dimen/button_width_ya_tidak"
+                                        android:layout_height="@dimen/button_height_ya_tidak"
+                                        android:layout_marginRight="10dp"
+                                        android:background="@drawable/button_main"
+                                        android:text="Ya"
+                                        android:textColor="@drawable/text_color"/>
+
+                                    <Button
+                                        android:id="@+id/saklar_utama_phb_tidak"
+                                        android:layout_width="@dimen/button_width_ya_tidak"
+                                        android:layout_height="@dimen/button_height_ya_tidak"
+                                        android:layout_marginRight="10dp"
+                                        android:background="@drawable/button_main"
+                                        android:text="Tidak"
+                                        android:textColor="@drawable/text_color"/>
+                                </LinearLayout>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/text_gone"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_marginLeft="20dp"
+                                android:visibility="gone">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="3dp"
+                                    android:text="Merk"
+                                    android:textColor="@color/font_color"
+                                    android:textSize="@dimen/titlesize" />
+
+                                <EditText
+                                    android:id="@+id/f_saklar_merk"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="@dimen/margin_bot"
+                                    android:background="@drawable/text_field"
+                                    android:hint="Isi Disini"
+                                    android:paddingBottom="10dp"
+                                    android:paddingLeft="20dp"
+                                    android:paddingRight="10dp"
+                                    android:paddingTop="10dp"
+                                    android:singleLine="true"
+                                    android:textColor="@color/font_text_field_color"
+                                    android:textSize="@dimen/textsize" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="3dp"
+                                    android:text="Arus"
+                                    android:textColor="@color/font_color"
+                                    android:textSize="@dimen/titlesize" />
+
+                                <EditText
+                                    android:id="@+id/f_saklar_arus"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="@dimen/margin_bot"
+                                    android:background="@drawable/text_field"
+                                    android:digits="0123456789."
+                                    android:hint="Isi Disini"
+                                    android:inputType="numberDecimal"
+                                    android:paddingBottom="10dp"
+                                    android:paddingLeft="20dp"
+                                    android:paddingRight="10dp"
+                                    android:paddingTop="10dp"
+                                    android:singleLine="true"
+                                    android:textColor="@color/font_text_field_color"
+                                    android:textSize="@dimen/textsize" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/margin_bot"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/fuse_jurusan_judul"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="3dp"
+                                android:text="Fuse Jurusan"
+                                android:textColor="@color/font_color"
+                                android:textSize="@dimen/titlesize" />
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <Button
+                                    android:id="@+id/fuse_jurusan_A"
+                                    android:layout_width="@dimen/button_width_ya_tidak"
+                                    android:layout_height="@dimen/button_height_ya_tidak"
+                                    android:layout_marginRight="@dimen/right_margin_custom_A"
+                                    android:background="@drawable/button_main"
+                                    android:text="Jur A"
+                                    android:textColor="@drawable/text_color" />
+
+                                <Button
+                                    android:id="@+id/fuse_jurusan_B"
+                                    android:layout_width="@dimen/button_width_ya_tidak"
+                                    android:layout_height="@dimen/button_height_ya_tidak"
+                                    android:layout_marginRight="@dimen/right_margin_custom_A"
+                                    android:background="@drawable/button_main"
+                                    android:text="Jur B"
+                                    android:textColor="@drawable/text_color" />
+
+                                <Button
+                                    android:id="@+id/fuse_jurusan_C"
+                                    android:layout_width="@dimen/button_width_ya_tidak"
+                                    android:layout_height="@dimen/button_height_ya_tidak"
+                                    android:layout_marginRight="@dimen/right_margin_custom_A"
+                                    android:background="@drawable/button_main"
+                                    android:text="Jur C"
+                                    android:textColor="@drawable/text_color" />
+                            </LinearLayout>
+                        </LinearLayout>
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <!-- Jur_A FUse -->
+                            <LinearLayout
+                                android:id="@+id/text_gone_fuse_jurusan_A"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_marginLeft="20dp"
+                                android:visibility="gone">
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:padding="3dp"
+                                        android:text="R"
+                                        android:layout_marginRight="@dimen/margin_right"
+                                        android:textColor="@color/font_color"
+                                        android:textSize="@dimen/titlesize" />
+
+                                    <EditText
+                                        android:id="@+id/f_fuse_R_Jur_A"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="@dimen/margin_bot"
+                                        android:background="@drawable/text_field"
+                                        android:hint="Isi Disini"
+                                        android:inputType="numberDecimal"
+                                        android:paddingBottom="10dp"
+                                        android:paddingLeft="20dp"
+                                        android:paddingRight="10dp"
+                                        android:paddingTop="10dp"
+                                        android:singleLine="true"
+                                        android:textColor="@color/font_text_field_color"
+                                        android:textSize="@dimen/textsize" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:padding="3dp"
+                                        android:text="S"
+                                        android:layout_marginRight="@dimen/margin_right"
+                                        android:textColor="@color/font_color"
+                                        android:textSize="@dimen/titlesize" />
+
+                                    <EditText
+                                        android:id="@+id/f_fuse_S_Jur_A"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="@dimen/margin_bot"
+                                        android:background="@drawable/text_field"
+                                        android:digits="0123456789."
+                                        android:hint="Isi Disini"
+                                        android:inputType="numberDecimal"
+                                        android:paddingBottom="10dp"
+                                        android:paddingLeft="20dp"
+                                        android:paddingRight="10dp"
+                                        android:paddingTop="10dp"
+                                        android:singleLine="true"
+                                        android:textColor="@color/font_text_field_color"
+                                        android:textSize="@dimen/textsize" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:padding="3dp"
+                                        android:text="T"
+                                        android:layout_marginRight="@dimen/margin_right"
+                                        android:textColor="@color/font_color"
+                                        android:textSize="@dimen/titlesize"
+                                        />
+
+                                    <EditText
+                                        android:id="@+id/f_fuse_T_Jur_A"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="@dimen/margin_bot"
+                                        android:background="@drawable/text_field"
+                                        android:digits="0123456789."
+                                        android:hint="Isi Disini"
+                                        android:inputType="numberDecimal"
+                                        android:paddingBottom="10dp"
+                                        android:paddingLeft="20dp"
+                                        android:paddingRight="10dp"
+                                        android:paddingTop="10dp"
+                                        android:singleLine="true"
+                                        android:textColor="@color/font_text_field_color"
+                                        android:textSize="@dimen/textsize" />
+                                </LinearLayout>
+                            </LinearLayout>
+                            <!-- Jur_B FUse -->
+                            <LinearLayout
+                                android:id="@+id/text_gone_fuse_jurusan_B"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_marginLeft="20dp"
+                                android:visibility="gone">
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:padding="3dp"
+                                        android:text="R"
+                                        android:layout_marginRight="@dimen/margin_right"
+                                        android:textColor="@color/font_color"
+                                        android:textSize="@dimen/titlesize" />
+
+                                    <EditText
+                                        android:id="@+id/f_fuse_R_Jur_B"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="@dimen/margin_bot"
+                                        android:background="@drawable/text_field"
+                                        android:hint="Isi Disini"
+                                        android:inputType="numberDecimal"
+                                        android:paddingBottom="10dp"
+                                        android:paddingLeft="20dp"
+                                        android:paddingRight="10dp"
+                                        android:paddingTop="10dp"
+                                        android:singleLine="true"
+                                        android:textColor="@color/font_text_field_color"
+                                        android:textSize="@dimen/textsize" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:padding="3dp"
+                                        android:text="S"
+                                        android:layout_marginRight="@dimen/margin_right"
+                                        android:textColor="@color/font_color"
+                                        android:textSize="@dimen/titlesize" />
+
+                                    <EditText
+                                        android:id="@+id/f_fuse_S_Jur_B"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="@dimen/margin_bot"
+                                        android:background="@drawable/text_field"
+                                        android:digits="0123456789."
+                                        android:hint="Isi Disini"
+                                        android:inputType="numberDecimal"
+                                        android:paddingBottom="10dp"
+                                        android:paddingLeft="20dp"
+                                        android:paddingRight="10dp"
+                                        android:paddingTop="10dp"
+                                        android:singleLine="true"
+                                        android:textColor="@color/font_text_field_color"
+                                        android:textSize="@dimen/textsize" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:padding="3dp"
+                                        android:text="T"
+                                        android:layout_marginRight="@dimen/margin_right"
+                                        android:textColor="@color/font_color"
+                                        android:textSize="@dimen/titlesize"
+                                        />
+
+                                    <EditText
+                                        android:id="@+id/f_fuse_T_Jur_B"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="@dimen/margin_bot"
+                                        android:background="@drawable/text_field"
+                                        android:digits="0123456789."
+                                        android:hint="Isi Disini"
+                                        android:inputType="numberDecimal"
+                                        android:paddingBottom="10dp"
+                                        android:paddingLeft="20dp"
+                                        android:paddingRight="10dp"
+                                        android:paddingTop="10dp"
+                                        android:singleLine="true"
+                                        android:textColor="@color/font_text_field_color"
+                                        android:textSize="@dimen/textsize" />
+                                </LinearLayout>
+                            </LinearLayout>
+                            <!-- Jur_C FUse -->
+                            <LinearLayout
+                                android:id="@+id/text_gone_fuse_jurusan_C"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_marginLeft="20dp"
+                                android:visibility="gone">
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:padding="3dp"
+                                        android:text="R"
+                                        android:layout_marginRight="@dimen/margin_right"
+                                        android:textColor="@color/font_color"
+                                        android:textSize="@dimen/titlesize" />
+
+                                    <EditText
+                                        android:id="@+id/f_fuse_R_Jur_C"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="@dimen/margin_bot"
+                                        android:background="@drawable/text_field"
+                                        android:hint="Isi Disini"
+                                        android:inputType="numberDecimal"
+                                        android:paddingBottom="10dp"
+                                        android:paddingLeft="20dp"
+                                        android:paddingRight="10dp"
+                                        android:paddingTop="10dp"
+                                        android:singleLine="true"
+                                        android:textColor="@color/font_text_field_color"
+                                        android:textSize="@dimen/textsize" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:padding="3dp"
+                                        android:text="S"
+                                        android:layout_marginRight="@dimen/margin_right"
+                                        android:textColor="@color/font_color"
+                                        android:textSize="@dimen/titlesize" />
+
+                                    <EditText
+                                        android:id="@+id/f_fuse_S_Jur_C"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="@dimen/margin_bot"
+                                        android:background="@drawable/text_field"
+                                        android:digits="0123456789."
+                                        android:hint="Isi Disini"
+                                        android:inputType="numberDecimal"
+                                        android:paddingBottom="10dp"
+                                        android:paddingLeft="20dp"
+                                        android:paddingRight="10dp"
+                                        android:paddingTop="10dp"
+                                        android:singleLine="true"
+                                        android:textColor="@color/font_text_field_color"
+                                        android:textSize="@dimen/textsize" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:padding="3dp"
+                                        android:text="T"
+                                        android:layout_marginRight="@dimen/margin_right"
+                                        android:textColor="@color/font_color"
+                                        android:textSize="@dimen/titlesize"
+                                        />
+
+                                    <EditText
+                                        android:id="@+id/f_fuse_T_Jur_C"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="@dimen/margin_bot"
+                                        android:background="@drawable/text_field"
+                                        android:digits="0123456789."
+                                        android:hint="Isi Disini"
+                                        android:inputType="numberDecimal"
+                                        android:paddingBottom="10dp"
+                                        android:paddingLeft="20dp"
+                                        android:paddingRight="10dp"
+                                        android:paddingTop="10dp"
+                                        android:singleLine="true"
+                                        android:textColor="@color/font_text_field_color"
+                                        android:textSize="@dimen/textsize" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/margin_bot"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textView3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="3dp"
+                                android:text="NH Holder"
+                                android:textColor="@color/font_color"
+                                android:textSize="@dimen/titlesize" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:weightSum="1">
+                                <include
+                                    layout="@layout/jur_4"/>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <!-- Jur_A NH -->
+                            <LinearLayout
+                                android:id="@+id/text_gone_NH_jurusan_A"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_marginLeft="20dp"
+                                android:visibility="gone">
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:padding="3dp"
+                                        android:text="R"
+                                        android:layout_marginRight="@dimen/margin_right"
+                                        android:textColor="@color/font_color"
+                                        android:textSize="@dimen/titlesize" />
+
+                                    <EditText
+                                        android:id="@+id/f_NH_R_Jur_A"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="@dimen/margin_bot"
+                                        android:background="@drawable/text_field"
+                                        android:hint="Isi Disini"
+                                        android:inputType="numberDecimal"
+                                        android:paddingBottom="10dp"
+                                        android:paddingLeft="20dp"
+                                        android:paddingRight="10dp"
+                                        android:paddingTop="10dp"
+                                        android:singleLine="true"
+                                        android:textColor="@color/font_text_field_color"
+                                        android:textSize="@dimen/textsize" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:padding="3dp"
+                                        android:text="S"
+                                        android:layout_marginRight="@dimen/margin_right"
+                                        android:textColor="@color/font_color"
+                                        android:textSize="@dimen/titlesize" />
+
+                                    <EditText
+                                        android:id="@+id/f_NH_S_Jur_A"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="@dimen/margin_bot"
+                                        android:background="@drawable/text_field"
+                                        android:digits="0123456789."
+                                        android:hint="Isi Disini"
+                                        android:inputType="numberDecimal"
+                                        android:paddingBottom="10dp"
+                                        android:paddingLeft="20dp"
+                                        android:paddingRight="10dp"
+                                        android:paddingTop="10dp"
+                                        android:singleLine="true"
+                                        android:textColor="@color/font_text_field_color"
+                                        android:textSize="@dimen/textsize" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:padding="3dp"
+                                        android:text="T"
+                                        android:layout_marginRight="@dimen/margin_right"
+                                        android:textColor="@color/font_color"
+                                        android:textSize="@dimen/titlesize"
+                                        />
+
+                                    <EditText
+                                        android:id="@+id/f_NH_T_Jur_A"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="@dimen/margin_bot"
+                                        android:background="@drawable/text_field"
+                                        android:digits="0123456789."
+                                        android:hint="Isi Disini"
+                                        android:inputType="numberDecimal"
+                                        android:paddingBottom="10dp"
+                                        android:paddingLeft="20dp"
+                                        android:paddingRight="10dp"
+                                        android:paddingTop="10dp"
+                                        android:singleLine="true"
+                                        android:textColor="@color/font_text_field_color"
+                                        android:textSize="@dimen/textsize" />
+                                </LinearLayout>
+                            </LinearLayout>
+                            <!-- Jur_B NH -->
+                            <LinearLayout
+                                android:id="@+id/text_gone_NH_jurusan_B"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_marginLeft="20dp"
+                                android:visibility="gone">
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:padding="3dp"
+                                        android:text="R"
+                                        android:layout_marginRight="@dimen/margin_right"
+                                        android:textColor="@color/font_color"
+                                        android:textSize="@dimen/titlesize" />
+
+                                    <EditText
+                                        android:id="@+id/f_NH_R_Jur_B"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="@dimen/margin_bot"
+                                        android:background="@drawable/text_field"
+                                        android:hint="Isi Disini"
+                                        android:inputType="numberDecimal"
+                                        android:paddingBottom="10dp"
+                                        android:paddingLeft="20dp"
+                                        android:paddingRight="10dp"
+                                        android:paddingTop="10dp"
+                                        android:singleLine="true"
+                                        android:textColor="@color/font_text_field_color"
+                                        android:textSize="@dimen/textsize" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:padding="3dp"
+                                        android:text="S"
+                                        android:layout_marginRight="@dimen/margin_right"
+                                        android:textColor="@color/font_color"
+                                        android:textSize="@dimen/titlesize" />
+
+                                    <EditText
+                                        android:id="@+id/f_NH_S_Jur_B"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="@dimen/margin_bot"
+                                        android:background="@drawable/text_field"
+                                        android:digits="0123456789."
+                                        android:hint="Isi Disini"
+                                        android:inputType="numberDecimal"
+                                        android:paddingBottom="10dp"
+                                        android:paddingLeft="20dp"
+                                        android:paddingRight="10dp"
+                                        android:paddingTop="10dp"
+                                        android:singleLine="true"
+                                        android:textColor="@color/font_text_field_color"
+                                        android:textSize="@dimen/textsize" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:padding="3dp"
+                                        android:text="T"
+                                        android:layout_marginRight="@dimen/margin_right"
+                                        android:textColor="@color/font_color"
+                                        android:textSize="@dimen/titlesize"
+                                        />
+
+                                    <EditText
+                                        android:id="@+id/f_NH_T_Jur_B"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="@dimen/margin_bot"
+                                        android:background="@drawable/text_field"
+                                        android:digits="0123456789."
+                                        android:hint="Isi Disini"
+                                        android:inputType="numberDecimal"
+                                        android:paddingBottom="10dp"
+                                        android:paddingLeft="20dp"
+                                        android:paddingRight="10dp"
+                                        android:paddingTop="10dp"
+                                        android:singleLine="true"
+                                        android:textColor="@color/font_text_field_color"
+                                        android:textSize="@dimen/textsize" />
+                                </LinearLayout>
+                            </LinearLayout>
+                            <!-- Jur_C NH -->
+                            <LinearLayout
+                                android:id="@+id/text_gone_NH_jurusan_C"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_marginLeft="20dp"
+                                android:visibility="gone">
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:padding="3dp"
+                                        android:text="R"
+                                        android:layout_marginRight="@dimen/margin_right"
+                                        android:textColor="@color/font_color"
+                                        android:textSize="@dimen/titlesize" />
+
+                                    <EditText
+                                        android:id="@+id/f_NH_R_Jur_C"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="@dimen/margin_bot"
+                                        android:background="@drawable/text_field"
+                                        android:hint="Isi Disini"
+                                        android:inputType="numberDecimal"
+                                        android:paddingBottom="10dp"
+                                        android:paddingLeft="20dp"
+                                        android:paddingRight="10dp"
+                                        android:paddingTop="10dp"
+                                        android:singleLine="true"
+                                        android:textColor="@color/font_text_field_color"
+                                        android:textSize="@dimen/textsize" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:padding="3dp"
+                                        android:text="S"
+                                        android:layout_marginRight="@dimen/margin_right"
+                                        android:textColor="@color/font_color"
+                                        android:textSize="@dimen/titlesize" />
+
+                                    <EditText
+                                        android:id="@+id/f_NH_S_Jur_C"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="@dimen/margin_bot"
+                                        android:background="@drawable/text_field"
+                                        android:digits="0123456789."
+                                        android:hint="Isi Disini"
+                                        android:inputType="numberDecimal"
+                                        android:paddingBottom="10dp"
+                                        android:paddingLeft="20dp"
+                                        android:paddingRight="10dp"
+                                        android:paddingTop="10dp"
+                                        android:singleLine="true"
+                                        android:textColor="@color/font_text_field_color"
+                                        android:textSize="@dimen/textsize" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:padding="3dp"
+                                        android:text="T"
+                                        android:layout_marginRight="@dimen/margin_right"
+                                        android:textColor="@color/font_color"
+                                        android:textSize="@dimen/titlesize"
+                                        />
+
+                                    <EditText
+                                        android:id="@+id/f_NH_T_Jur_C"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="@dimen/margin_bot"
+                                        android:background="@drawable/text_field"
+                                        android:digits="0123456789."
+                                        android:hint="Isi Disini"
+                                        android:inputType="numberDecimal"
+                                        android:paddingBottom="10dp"
+                                        android:paddingLeft="20dp"
+                                        android:paddingRight="10dp"
+                                        android:paddingTop="10dp"
+                                        android:singleLine="true"
+                                        android:textColor="@color/font_text_field_color"
+                                        android:textSize="@dimen/textsize" />
+                                </LinearLayout>
+                            </LinearLayout>
+                            <!-- Jur_D NH -->
+                            <LinearLayout
+                                android:id="@+id/text_gone_NH_jurusan_D"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_marginLeft="20dp"
+                                android:visibility="gone">
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:padding="3dp"
+                                        android:text="R"
+                                        android:layout_marginRight="@dimen/margin_right"
+                                        android:textColor="@color/font_color"
+                                        android:textSize="@dimen/titlesize" />
+
+                                    <EditText
+                                        android:id="@+id/f_NH_R_Jur_D"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="@dimen/margin_bot"
+                                        android:background="@drawable/text_field"
+                                        android:hint="Isi Disini"
+                                        android:inputType="numberDecimal"
+                                        android:paddingBottom="10dp"
+                                        android:paddingLeft="20dp"
+                                        android:paddingRight="10dp"
+                                        android:paddingTop="10dp"
+                                        android:singleLine="true"
+                                        android:textColor="@color/font_text_field_color"
+                                        android:textSize="@dimen/textsize" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:padding="3dp"
+                                        android:text="S"
+                                        android:layout_marginRight="@dimen/margin_right"
+                                        android:textColor="@color/font_color"
+                                        android:textSize="@dimen/titlesize" />
+
+                                    <EditText
+                                        android:id="@+id/f_NH_S_Jur_D"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="@dimen/margin_bot"
+                                        android:background="@drawable/text_field"
+                                        android:digits="0123456789."
+                                        android:hint="Isi Disini"
+                                        android:inputType="numberDecimal"
+                                        android:paddingBottom="10dp"
+                                        android:paddingLeft="20dp"
+                                        android:paddingRight="10dp"
+                                        android:paddingTop="10dp"
+                                        android:singleLine="true"
+                                        android:textColor="@color/font_text_field_color"
+                                        android:textSize="@dimen/textsize" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:padding="3dp"
+                                        android:text="T"
+                                        android:layout_marginRight="@dimen/margin_right"
+                                        android:textColor="@color/font_color"
+                                        android:textSize="@dimen/titlesize"
+                                        />
+
+                                    <EditText
+                                        android:id="@+id/f_NH_T_Jur_D"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="@dimen/margin_bot"
+                                        android:background="@drawable/text_field"
+                                        android:digits="0123456789."
+                                        android:hint="Isi Disini"
+                                        android:inputType="numberDecimal"
+                                        android:paddingBottom="10dp"
+                                        android:paddingLeft="20dp"
+                                        android:paddingRight="10dp"
+                                        android:paddingTop="10dp"
+                                        android:singleLine="true"
+                                        android:textColor="@color/font_text_field_color"
+                                        android:textSize="@dimen/textsize" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </FrameLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="3dp"
+                            android:text="Jumlah Arrester Terpasang"
+                            android:textColor="@color/font_color"
+                            android:textSize="@dimen/titlesize" />
+
+                        <EditText
+                            android:id="@+id/f_arrester"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="20dp"
+                            android:background="@drawable/text_field"
+                            android:digits="0123456789."
+                            android:hint="Isi Disini"
+                            android:inputType="numberDecimal"
+                            android:paddingBottom="10dp"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="10dp"
+                            android:paddingTop="10dp"
+                            android:singleLine="true"
+                            android:textColor="@color/font_text_field_color"
+                            android:textSize="@dimen/textsize" />
+                    </LinearLayout>
+                </LinearLayout>
+                <!--End Part 2 Data Pengamanan Trafo-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginBottom="@dimen/margin_bot"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@color/toobar" />
+                <!--Part 3 Data Pertahanan -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_bot"
+                        android:padding="3dp"
+                        android:text="Data Pertahanan"
+                        android:textColor="@color/font_color"
+                        android:textSize="@dimen/boldsize"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="22dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="3dp"
+                            android:text="Tahanan Arrester"
+                            android:textColor="@color/font_color"
+                            android:textSize="@dimen/titlesize" />
+
+                        <EditText
+                            android:id="@+id/f_saklar_tahanan_arrester"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/margin_bot"
+                            android:background="@drawable/text_field"
+                            android:digits="0123456789."
+                            android:hint="Isi Disini"
+                            android:inputType="numberDecimal"
+                            android:paddingBottom="10dp"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="10dp"
+                            android:paddingTop="10dp"
+                            android:singleLine="true"
+                            android:textColor="@color/font_text_field_color"
+                            android:textSize="@dimen/textsize" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="3dp"
+                            android:text="Tahanan Netral"
+                            android:textColor="@color/font_color"
+                            android:textSize="@dimen/titlesize" />
+
+                        <EditText
+                            android:id="@+id/f_saklar_tahanan_netral"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/margin_bot"
+                            android:background="@drawable/text_field"
+                            android:digits="0123456789."
+                            android:hint="Isi Disini"
+                            android:inputType="numberDecimal"
+                            android:paddingBottom="10dp"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="10dp"
+                            android:paddingTop="10dp"
+                            android:singleLine="true"
+                            android:textColor="@color/font_text_field_color"
+                            android:textSize="@dimen/textsize" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="3dp"
+                            android:text="Body Trafo"
+                            android:textColor="@color/font_color"
+                            android:textSize="@dimen/titlesize" />
+
+                        <EditText
+                            android:id="@+id/f_body_trafo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/margin_bot"
+                            android:background="@drawable/text_field"
+                            android:digits="0123456789."
+                            android:hint="Isi Disini"
+                            android:inputType="numberDecimal"
+                            android:paddingBottom="10dp"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="10dp"
+                            android:paddingTop="10dp"
+                            android:singleLine="true"
+                            android:textColor="@color/font_text_field_color"
+                            android:textSize="@dimen/textsize" />
+                    </LinearLayout>
+                </LinearLayout>
+                <!--End Part 3 Data Pertahanan -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginBottom="@dimen/margin_bot"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@color/toobar" />
+                <!--Part 4 Data Kabel -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_bot"
+                        android:padding="3dp"
+                        android:text="Data Kabel"
+                        android:textColor="@color/font_color"
+                        android:textSize="@dimen/boldsize"
+                        android:textStyle="bold" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <!--Jenis Kabel INLET -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/margin_bot"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="3dp"
+                                android:text="Jenis Kabel INLET"
+                                android:textColor="@color/font_color"
+                                android:textSize="@dimen/titlesize" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <Button
+                                    android:id="@+id/jenis_kabel_inlet_NYY"
+                                    android:layout_width="@dimen/button_width_ya_tidak"
+                                    android:layout_height="@dimen/button_height_ya_tidak"
+                                    android:layout_marginRight="@dimen/right_margin_custom_A"
+                                    android:background="@drawable/button_main"
+                                    android:text="NYY"
+                                    android:textColor="@drawable/text_color" />
+
+                                <Button
+                                    android:id="@+id/jenis_kabel_inlet_LUTC"
+                                    android:layout_width="@dimen/button_width_ya_tidak"
+                                    android:layout_height="@dimen/button_height_ya_tidak"
+                                    android:layout_marginRight="@dimen/right_margin_custom_A"
+                                    android:background="@drawable/button_main"
+                                    android:text="LVTC"
+                                    android:textColor="@drawable/text_color" />
+
+                                <Button
+                                    android:id="@+id/jenis_kabel_inlet_NYFUBY"
+                                    android:layout_width="@dimen/button_width_ya_tidak"
+                                    android:layout_height="@dimen/button_height_ya_tidak"
+                                    android:layout_marginRight="@dimen/right_margin_custom_A"
+                                    android:background="@drawable/button_main"
+                                    android:text="NYFGBY"
+                                    android:textColor="@drawable/text_color" />
+                            </LinearLayout>
+                        </LinearLayout>
+                        <!--Penampang INLET -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/margin_bot"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="3dp"
+                                android:text="Penampang INLET"
+                                android:textColor="@color/font_color"
+                                android:textSize="@dimen/titlesize" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <Button
+                                    android:id="@+id/penampang_inlet_70"
+                                    android:layout_width="@dimen/circle_width"
+                                    android:layout_height="@dimen/circle_heigth"
+                                    android:layout_marginRight="@dimen/right_margin_custom_A"
+                                    android:background="@drawable/button_main"
+                                    android:text="70"
+                                    android:textColor="@drawable/text_color" />
+
+                                <Button
+                                    android:id="@+id/penampang_inlet_95"
+                                    android:layout_width="@dimen/circle_width"
+                                    android:layout_height="@dimen/circle_heigth"
+                                    android:layout_marginRight="@dimen/right_margin_custom_A"
+                                    android:background="@drawable/button_main"
+                                    android:text="95"
+                                    android:textColor="@drawable/text_color" />
+
+                                <Button
+                                    android:id="@+id/penampang_inlet_150"
+                                    android:layout_width="@dimen/circle_width"
+                                    android:layout_height="@dimen/circle_heigth"
+                                    android:layout_marginRight="@dimen/right_margin_custom_A"
+                                    android:background="@drawable/button_main"
+                                    android:text="150"
+                                    android:textColor="@drawable/text_color" />
+
+                                <Button
+                                    android:id="@+id/penampang_inlet_240"
+                                    android:layout_width="@dimen/circle_width"
+                                    android:layout_height="@dimen/circle_heigth"
+                                    android:layout_marginRight="15dp"
+                                    android:background="@drawable/button_main"
+                                    android:text="240"
+                                    android:textColor="@drawable/text_color" />
+                            </LinearLayout>
+                        </LinearLayout>
+                        <!--Jenis Kabel Outlet-->
+                        <include
+                            layout="@layout/kabel_outlet_jur"/>
+
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent">
+                            <!-- Jur A -->
+                            <LinearLayout
+                                android:id="@+id/jur_A_data_kabel"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="22dp"
+                                android:orientation="vertical"
+                                android:layout_marginTop="9dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="@dimen/margin_bot"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:padding="3dp"
+                                        android:text="Jenis Kabel"
+                                        android:textColor="@color/font_color"
+                                        android:textSize="@dimen/titlesize" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <Button
+                                            android:id="@+id/jenis_kabel_outlet_NYY"
+                                            android:layout_width="@dimen/button_width_ya_tidak"
+                                            android:layout_height="@dimen/button_height_ya_tidak"
+                                            android:layout_marginRight="@dimen/right_margin_custom_A"
+                                            android:background="@drawable/button_main"
+                                            android:text="NYY"
+                                            android:textColor="@drawable/text_color" />
+
+                                        <Button
+                                            android:id="@+id/jenis_kabel_outlet_LUTC"
+                                            android:layout_width="@dimen/button_width_ya_tidak"
+                                            android:layout_height="@dimen/button_height_ya_tidak"
+                                            android:layout_marginRight="@dimen/right_margin_custom_A"
+                                            android:background="@drawable/button_main"
+                                            android:text="LVTC"
+                                            android:textColor="@drawable/text_color" />
+
+                                        <Button
+                                            android:id="@+id/jenis_kabel_outlet_NYFUBY"
+                                            android:layout_width="@dimen/button_width_ya_tidak"
+                                            android:layout_height="@dimen/button_height_ya_tidak"
+                                            android:layout_marginRight="@dimen/right_margin_custom_A"
+                                            android:background="@drawable/button_main"
+                                            android:text="NYFGBY"
+                                            android:textColor="@drawable/text_color" />
+                                    </LinearLayout>
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="@dimen/margin_bot"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:padding="3dp"
+                                        android:text="Penampang"
+                                        android:textColor="@color/font_color"
+                                        android:textSize="@dimen/titlesize" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/layout_mainactivity2">
+                                        <include
+                                            layout="@layout/row"/>
+                                        <!--<android.support.v7.widget.RecyclerView-->
+                                        <!--android:id="@+id/recycle_view"-->
+                                        <!--android:layout_width="match_parent"-->
+                                        <!--android:layout_height="wrap_content">-->
+                                        <!--</android.support.v7.widget.RecyclerView>-->
+                                        <!--<Button-->
+                                        <!--android:id="@+id/penampang_outlet_25"-->
+                                        <!--android:layout_width="@dimen/circle_width"-->
+                                        <!--android:layout_height="@dimen/circle_heigth"-->
+                                        <!--android:layout_marginRight="@dimen/right_margin_custom_A"-->
+                                        <!--android:background="@drawable/button_main"-->
+                                        <!--android:text="25"-->
+                                        <!--android:textColor="@drawable/text_color" />-->
+
+                                        <!--<Button-->
+                                        <!--android:id="@+id/penampang_outlet_35"-->
+                                        <!--android:layout_width="@dimen/circle_width"-->
+                                        <!--android:layout_height="@dimen/circle_heigth"-->
+                                        <!--android:layout_marginRight="@dimen/right_margin_custom_A"-->
+                                        <!--android:background="@drawable/button_main"-->
+                                        <!--android:text="35"-->
+                                        <!--android:textColor="@drawable/text_color" />-->
+
+                                        <!--<Button-->
+                                        <!--android:id="@+id/penampang_outlet_70"-->
+                                        <!--android:layout_width="@dimen/circle_width"-->
+                                        <!--android:layout_height="@dimen/circle_heigth"-->
+                                        <!--android:layout_marginRight="@dimen/right_margin_custom_A"-->
+                                        <!--android:background="@drawable/button_main"-->
+                                        <!--android:text="70"-->
+                                        <!--android:textColor="@drawable/text_color" />-->
+
+                                        <!--<Button-->
+                                        <!--android:id="@+id/penampang_outlet_95"-->
+                                        <!--android:layout_width="@dimen/circle_width"-->
+                                        <!--android:layout_height="@dimen/circle_heigth"-->
+                                        <!--android:layout_marginRight="@dimen/right_margin_custom_A"-->
+                                        <!--android:background="@drawable/button_main"-->
+                                        <!--android:text="95"-->
+                                        <!--android:textColor="@drawable/text_color" />-->
+
+                                        <!--<Button-->
+                                        <!--android:id="@+id/penampang_outlet_150"-->
+                                        <!--android:layout_width="@dimen/circle_width"-->
+                                        <!--android:layout_height="@dimen/circle_heigth"-->
+                                        <!--android:layout_marginRight="@dimen/right_margin_custom_A"-->
+                                        <!--android:background="@drawable/button_main"-->
+                                        <!--android:text="150"-->
+                                        <!--android:textColor="@drawable/text_color" />-->
+
+                                        <!--<Button-->
+                                        <!--android:id="@+id/penampang_outlet_240"-->
+                                        <!--android:layout_width="@dimen/circle_width"-->
+                                        <!--android:layout_height="@dimen/circle_heigth"-->
+                                        <!--android:layout_marginRight="7dp"-->
+                                        <!--android:background="@drawable/button_main"-->
+                                        <!--android:text="240"-->
+                                        <!--android:textColor="@drawable/text_color" />-->
+
+                                    </LinearLayout>
+                                </LinearLayout>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="3dp"
+                                    android:text="Sambung Kabel Ke JTR"
+                                    android:textColor="@color/font_color"
+                                    android:textSize="@dimen/titlesize" />
+                                <RelativeLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <Spinner
+                                        android:id="@+id/spin_sambungan_kabel_ke_jtr"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="@dimen/margin_bot"
+                                        android:background="@drawable/button_main"
+                                        android:spinnerMode="dropdown"
+                                        android:transitionGroup="true" />
+
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_margin="12dp"
+                                        android:foregroundGravity="center"
+                                        android:src="@drawable/triangle" />
+                                </RelativeLayout>
+                            </LinearLayout>
+                            <!-- Jur_B-->
+                            <LinearLayout
+                                android:id="@+id/jur_B_data_kabel"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="22dp"
+                                android:orientation="vertical"
+                                android:layout_marginTop="9dp"
+                                android:visibility="gone">
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="@dimen/margin_bot"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:padding="3dp"
+                                        android:text="Jenis Kabel"
+                                        android:textColor="@color/font_color"
+                                        android:textSize="@dimen/titlesize" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <Button
+                                            android:id="@+id/jur_B_jenis_kabel_outlet_NYY"
+                                            android:layout_width="@dimen/button_width_ya_tidak"
+                                            android:layout_height="@dimen/button_height_ya_tidak"
+                                            android:layout_marginRight="@dimen/right_margin_custom_A"
+                                            android:background="@drawable/button_main"
+                                            android:text="NYY"
+                                            android:textColor="@drawable/text_color" />
+
+                                        <Button
+                                            android:id="@+id/jur_B_jenis_kabel_outlet_LUTC"
+                                            android:layout_width="@dimen/button_width_ya_tidak"
+                                            android:layout_height="@dimen/button_height_ya_tidak"
+                                            android:layout_marginRight="@dimen/right_margin_custom_A"
+                                            android:background="@drawable/button_main"
+                                            android:text="LVTC"
+                                            android:textColor="@drawable/text_color" />
+
+                                        <Button
+                                            android:id="@+id/jur_B_jenis_kabel_outlet_NYFUBY"
+                                            android:layout_width="@dimen/button_width_ya_tidak"
+                                            android:layout_height="@dimen/button_height_ya_tidak"
+                                            android:layout_marginRight="@dimen/right_margin_custom_A"
+                                            android:background="@drawable/button_main"
+                                            android:text="NYFGBY"
+                                            android:textColor="@drawable/text_color" />
+                                    </LinearLayout>
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="@dimen/margin_bot"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:padding="3dp"
+                                        android:text="Penampang"
+                                        android:textColor="@color/font_color"
+                                        android:textSize="@dimen/titlesize" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/layout_mainactivity">
+                                        <include
+                                            layout="@layout/row_jur_b"/>
+                                        <!--<android.support.v7.widget.RecyclerView-->
+                                        <!--android:id="@+id/recycle_view"-->
+                                        <!--android:layout_width="match_parent"-->
+                                        <!--android:layout_height="wrap_content">-->
+                                        <!--</android.support.v7.widget.RecyclerView>-->
+                                        <!--<Button-->
+                                        <!--android:id="@+id/penampang_outlet_25"-->
+                                        <!--android:layout_width="@dimen/circle_width"-->
+                                        <!--android:layout_height="@dimen/circle_heigth"-->
+                                        <!--android:layout_marginRight="@dimen/right_margin_custom_A"-->
+                                        <!--android:background="@drawable/button_main"-->
+                                        <!--android:text="25"-->
+                                        <!--android:textColor="@drawable/text_color" />-->
+
+                                        <!--<Button-->
+                                        <!--android:id="@+id/penampang_outlet_35"-->
+                                        <!--android:layout_width="@dimen/circle_width"-->
+                                        <!--android:layout_height="@dimen/circle_heigth"-->
+                                        <!--android:layout_marginRight="@dimen/right_margin_custom_A"-->
+                                        <!--android:background="@drawable/button_main"-->
+                                        <!--android:text="35"-->
+                                        <!--android:textColor="@drawable/text_color" />-->
+
+                                        <!--<Button-->
+                                        <!--android:id="@+id/penampang_outlet_70"-->
+                                        <!--android:layout_width="@dimen/circle_width"-->
+                                        <!--android:layout_height="@dimen/circle_heigth"-->
+                                        <!--android:layout_marginRight="@dimen/right_margin_custom_A"-->
+                                        <!--android:background="@drawable/button_main"-->
+                                        <!--android:text="70"-->
+                                        <!--android:textColor="@drawable/text_color" />-->
+
+                                        <!--<Button-->
+                                        <!--android:id="@+id/penampang_outlet_95"-->
+                                        <!--android:layout_width="@dimen/circle_width"-->
+                                        <!--android:layout_height="@dimen/circle_heigth"-->
+                                        <!--android:layout_marginRight="@dimen/right_margin_custom_A"-->
+                                        <!--android:background="@drawable/button_main"-->
+                                        <!--android:text="95"-->
+                                        <!--android:textColor="@drawable/text_color" />-->
+
+                                        <!--<Button-->
+                                        <!--android:id="@+id/penampang_outlet_150"-->
+                                        <!--android:layout_width="@dimen/circle_width"-->
+                                        <!--android:layout_height="@dimen/circle_heigth"-->
+                                        <!--android:layout_marginRight="@dimen/right_margin_custom_A"-->
+                                        <!--android:background="@drawable/button_main"-->
+                                        <!--android:text="150"-->
+                                        <!--android:textColor="@drawable/text_color" />-->
+
+                                        <!--<Button-->
+                                        <!--android:id="@+id/penampang_outlet_240"-->
+                                        <!--android:layout_width="@dimen/circle_width"-->
+                                        <!--android:layout_height="@dimen/circle_heigth"-->
+                                        <!--android:layout_marginRight="7dp"-->
+                                        <!--android:background="@drawable/button_main"-->
+                                        <!--android:text="240"-->
+                                        <!--android:textColor="@drawable/text_color" />-->
+
+                                    </LinearLayout>
+                                </LinearLayout>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="3dp"
+                                    android:text="Sambung Kabel Ke JTR"
+                                    android:textColor="@color/font_color"
+                                    android:textSize="@dimen/titlesize" />
+                                <RelativeLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <Spinner
+                                        android:id="@+id/jur_B_spin_sambungan_kabel_ke_jtr"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="@dimen/margin_bot"
+                                        android:background="@drawable/button_main"
+                                        android:spinnerMode="dropdown"
+                                        android:transitionGroup="true" />
+
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_margin="12dp"
+                                        android:foregroundGravity="center"
+                                        android:src="@drawable/triangle" />
+                                </RelativeLayout>
+                            </LinearLayout>
+                            <!--Jur_C-->
+                            <LinearLayout
+                                android:id="@+id/jur_C_data_kabel"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="22dp"
+                                android:orientation="vertical"
+                                android:layout_marginTop="9dp"
+                                android:visibility="gone">
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="@dimen/margin_bot"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:padding="3dp"
+                                        android:text="Jenis Kabel"
+                                        android:textColor="@color/font_color"
+                                        android:textSize="@dimen/titlesize" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <Button
+                                            android:id="@+id/jur_C_jenis_kabel_outlet_NYY"
+                                            android:layout_width="@dimen/button_width_ya_tidak"
+                                            android:layout_height="@dimen/button_height_ya_tidak"
+                                            android:layout_marginRight="@dimen/right_margin_custom_A"
+                                            android:background="@drawable/button_main"
+                                            android:text="NYY"
+                                            android:textColor="@drawable/text_color" />
+
+                                        <Button
+                                            android:id="@+id/jur_C_jenis_kabel_outlet_LUTC"
+                                            android:layout_width="@dimen/button_width_ya_tidak"
+                                            android:layout_height="@dimen/button_height_ya_tidak"
+                                            android:layout_marginRight="@dimen/right_margin_custom_A"
+                                            android:background="@drawable/button_main"
+                                            android:text="LVTC"
+                                            android:textColor="@drawable/text_color" />
+
+                                        <Button
+                                            android:id="@+id/jur_C_jenis_kabel_outlet_NYFUBY"
+                                            android:layout_width="@dimen/button_width_ya_tidak"
+                                            android:layout_height="@dimen/button_height_ya_tidak"
+                                            android:layout_marginRight="@dimen/right_margin_custom_A"
+                                            android:background="@drawable/button_main"
+                                            android:text="NYFGBY"
+                                            android:textColor="@drawable/text_color" />
+                                    </LinearLayout>
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="@dimen/margin_bot"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:padding="3dp"
+                                        android:text="Penampang"
+                                        android:textColor="@color/font_color"
+                                        android:textSize="@dimen/titlesize" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/layout_mainactivity">
+                                        <include
+                                            layout="@layout/row_jur_c"/>
+                                        <!--<android.support.v7.widget.RecyclerView-->
+                                        <!--android:id="@+id/recycle_view"-->
+                                        <!--android:layout_width="match_parent"-->
+                                        <!--android:layout_height="wrap_content">-->
+                                        <!--</android.support.v7.widget.RecyclerView>-->
+                                        <!--<Button-->
+                                        <!--android:id="@+id/penampang_outlet_25"-->
+                                        <!--android:layout_width="@dimen/circle_width"-->
+                                        <!--android:layout_height="@dimen/circle_heigth"-->
+                                        <!--android:layout_marginRight="@dimen/right_margin_custom_A"-->
+                                        <!--android:background="@drawable/button_main"-->
+                                        <!--android:text="25"-->
+                                        <!--android:textColor="@drawable/text_color" />-->
+
+                                        <!--<Button-->
+                                        <!--android:id="@+id/penampang_outlet_35"-->
+                                        <!--android:layout_width="@dimen/circle_width"-->
+                                        <!--android:layout_height="@dimen/circle_heigth"-->
+                                        <!--android:layout_marginRight="@dimen/right_margin_custom_A"-->
+                                        <!--android:background="@drawable/button_main"-->
+                                        <!--android:text="35"-->
+                                        <!--android:textColor="@drawable/text_color" />-->
+
+                                        <!--<Button-->
+                                        <!--android:id="@+id/penampang_outlet_70"-->
+                                        <!--android:layout_width="@dimen/circle_width"-->
+                                        <!--android:layout_height="@dimen/circle_heigth"-->
+                                        <!--android:layout_marginRight="@dimen/right_margin_custom_A"-->
+                                        <!--android:background="@drawable/button_main"-->
+                                        <!--android:text="70"-->
+                                        <!--android:textColor="@drawable/text_color" />-->
+
+                                        <!--<Button-->
+                                        <!--android:id="@+id/penampang_outlet_95"-->
+                                        <!--android:layout_width="@dimen/circle_width"-->
+                                        <!--android:layout_height="@dimen/circle_heigth"-->
+                                        <!--android:layout_marginRight="@dimen/right_margin_custom_A"-->
+                                        <!--android:background="@drawable/button_main"-->
+                                        <!--android:text="95"-->
+                                        <!--android:textColor="@drawable/text_color" />-->
+
+                                        <!--<Button-->
+                                        <!--android:id="@+id/penampang_outlet_150"-->
+                                        <!--android:layout_width="@dimen/circle_width"-->
+                                        <!--android:layout_height="@dimen/circle_heigth"-->
+                                        <!--android:layout_marginRight="@dimen/right_margin_custom_A"-->
+                                        <!--android:background="@drawable/button_main"-->
+                                        <!--android:text="150"-->
+                                        <!--android:textColor="@drawable/text_color" />-->
+
+                                        <!--<Button-->
+                                        <!--android:id="@+id/penampang_outlet_240"-->
+                                        <!--android:layout_width="@dimen/circle_width"-->
+                                        <!--android:layout_height="@dimen/circle_heigth"-->
+                                        <!--android:layout_marginRight="7dp"-->
+                                        <!--android:background="@drawable/button_main"-->
+                                        <!--android:text="240"-->
+                                        <!--android:textColor="@drawable/text_color" />-->
+
+                                    </LinearLayout>
+                                </LinearLayout>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="3dp"
+                                    android:text="Sambung Kabel Ke JTR"
+                                    android:textColor="@color/font_color"
+                                    android:textSize="@dimen/titlesize" />
+                                <RelativeLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <Spinner
+                                        android:id="@+id/jur_C_spin_sambungan_kabel_ke_jtr"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="@dimen/margin_bot"
+                                        android:background="@drawable/button_main"
+                                        android:spinnerMode="dropdown"
+                                        android:transitionGroup="true" />
+
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_margin="12dp"
+                                        android:foregroundGravity="center"
+                                        android:src="@drawable/triangle" />
+                                </RelativeLayout>
+                            </LinearLayout>
+                            <!--Jur_D-->
+                            <LinearLayout
+                                android:id="@+id/jur_D_data_kabel"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="22dp"
+                                android:orientation="vertical"
+                                android:layout_marginTop="9dp"
+                                android:visibility="gone">
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="@dimen/margin_bot"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:padding="3dp"
+                                        android:text="Jenis Kabel"
+                                        android:textColor="@color/font_color"
+                                        android:textSize="@dimen/titlesize" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <Button
+                                            android:id="@+id/jur_D_jenis_kabel_outlet_NYY"
+                                            android:layout_width="@dimen/button_width_ya_tidak"
+                                            android:layout_height="@dimen/button_height_ya_tidak"
+                                            android:layout_marginRight="@dimen/right_margin_custom_A"
+                                            android:background="@drawable/button_main"
+                                            android:text="NYY"
+                                            android:textColor="@drawable/text_color" />
+
+                                        <Button
+                                            android:id="@+id/jur_D_jenis_kabel_outlet_LUTC"
+                                            android:layout_width="@dimen/button_width_ya_tidak"
+                                            android:layout_height="@dimen/button_height_ya_tidak"
+                                            android:layout_marginRight="@dimen/right_margin_custom_A"
+                                            android:background="@drawable/button_main"
+                                            android:text="LVTC"
+                                            android:textColor="@drawable/text_color" />
+
+                                        <Button
+                                            android:id="@+id/jur_D_jenis_kabel_outlet_NYFUBY"
+                                            android:layout_width="@dimen/button_width_ya_tidak"
+                                            android:layout_height="@dimen/button_height_ya_tidak"
+                                            android:layout_marginRight="@dimen/right_margin_custom_A"
+                                            android:background="@drawable/button_main"
+                                            android:text="NYFGBY"
+                                            android:textColor="@drawable/text_color" />
+                                    </LinearLayout>
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="@dimen/margin_bot"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:padding="3dp"
+                                        android:text="Penampang"
+                                        android:textColor="@color/font_color"
+                                        android:textSize="@dimen/titlesize" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/layout_mainactivity">
+                                        <include
+                                            layout="@layout/row_jur_d"/>
+                                        <!--<android.support.v7.widget.RecyclerView-->
+                                        <!--android:id="@+id/recycle_view"-->
+                                        <!--android:layout_width="match_parent"-->
+                                        <!--android:layout_height="wrap_content">-->
+                                        <!--</android.support.v7.widget.RecyclerView>-->
+                                        <!--<Button-->
+                                        <!--android:id="@+id/penampang_outlet_25"-->
+                                        <!--android:layout_width="@dimen/circle_width"-->
+                                        <!--android:layout_height="@dimen/circle_heigth"-->
+                                        <!--android:layout_marginRight="@dimen/right_margin_custom_A"-->
+                                        <!--android:background="@drawable/button_main"-->
+                                        <!--android:text="25"-->
+                                        <!--android:textColor="@drawable/text_color" />-->
+
+                                        <!--<Button-->
+                                        <!--android:id="@+id/penampang_outlet_35"-->
+                                        <!--android:layout_width="@dimen/circle_width"-->
+                                        <!--android:layout_height="@dimen/circle_heigth"-->
+                                        <!--android:layout_marginRight="@dimen/right_margin_custom_A"-->
+                                        <!--android:background="@drawable/button_main"-->
+                                        <!--android:text="35"-->
+                                        <!--android:textColor="@drawable/text_color" />-->
+
+                                        <!--<Button-->
+                                        <!--android:id="@+id/penampang_outlet_70"-->
+                                        <!--android:layout_width="@dimen/circle_width"-->
+                                        <!--android:layout_height="@dimen/circle_heigth"-->
+                                        <!--android:layout_marginRight="@dimen/right_margin_custom_A"-->
+                                        <!--android:background="@drawable/button_main"-->
+                                        <!--android:text="70"-->
+                                        <!--android:textColor="@drawable/text_color" />-->
+
+                                        <!--<Button-->
+                                        <!--android:id="@+id/penampang_outlet_95"-->
+                                        <!--android:layout_width="@dimen/circle_width"-->
+                                        <!--android:layout_height="@dimen/circle_heigth"-->
+                                        <!--android:layout_marginRight="@dimen/right_margin_custom_A"-->
+                                        <!--android:background="@drawable/button_main"-->
+                                        <!--android:text="95"-->
+                                        <!--android:textColor="@drawable/text_color" />-->
+
+                                        <!--<Button-->
+                                        <!--android:id="@+id/penampang_outlet_150"-->
+                                        <!--android:layout_width="@dimen/circle_width"-->
+                                        <!--android:layout_height="@dimen/circle_heigth"-->
+                                        <!--android:layout_marginRight="@dimen/right_margin_custom_A"-->
+                                        <!--android:background="@drawable/button_main"-->
+                                        <!--android:text="150"-->
+                                        <!--android:textColor="@drawable/text_color" />-->
+
+                                        <!--<Button-->
+                                        <!--android:id="@+id/penampang_outlet_240"-->
+                                        <!--android:layout_width="@dimen/circle_width"-->
+                                        <!--android:layout_height="@dimen/circle_heigth"-->
+                                        <!--android:layout_marginRight="7dp"-->
+                                        <!--android:background="@drawable/button_main"-->
+                                        <!--android:text="240"-->
+                                        <!--android:textColor="@drawable/text_color" />-->
+
+                                    </LinearLayout>
+                                </LinearLayout>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="3dp"
+                                    android:text="Sambung Kabel Ke JTR"
+                                    android:textColor="@color/font_color"
+                                    android:textSize="@dimen/titlesize" />
+                                <RelativeLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <Spinner
+                                        android:id="@+id/jur_D_spin_sambungan_kabel_ke_jtr"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="@dimen/margin_bot"
+                                        android:background="@drawable/button_main"
+                                        android:spinnerMode="dropdown"
+                                        android:transitionGroup="true" />
+
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_margin="12dp"
+                                        android:foregroundGravity="center"
+                                        android:src="@drawable/triangle" />
+                                </RelativeLayout>
+                            </LinearLayout>
+
+                        </FrameLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+                <!--Base-->
+            </LinearLayout>
+            <Button
+                android:id="@+id/btn_submit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Submit Here"
+                android:background="#657187"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/background"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

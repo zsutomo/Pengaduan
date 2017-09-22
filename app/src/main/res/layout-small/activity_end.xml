@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/gambar"
+    tools:context="com.digitalcreative.pengaduan.EndActivity">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="70dp">
+        <TextView
+            android:textSize="35sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Terima Kasih"
+            android:layout_marginBottom="40dp"
+            android:layout_gravity="center"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <Button
+                android:padding="10dp"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_buatlaporanbaru"
+                android:text="Buat Laporan Baru"
+                android:textStyle="bold"
+                android:textAllCaps="true"
+                android:textColor="@android:color/white"
+                android:background="@drawable/shape"
+                android:layout_marginBottom="10dp"/>
+            <Button
+                android:padding="10dp"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_keluar"
+                android:text="Keluar"
+                android:textStyle="bold"
+                android:textAllCaps="true"
+                android:textColor="@android:color/white"
+                android:background="@drawable/shape"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

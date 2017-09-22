@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="background">#ffffff</color>
-    <color name="toobar">#22A7F0</color>
+    <color name="toobar">#e3df73</color>
     <color name="font_text_field_color">#000</color>
     <color name="font_color">#757579</color>
 </resources>

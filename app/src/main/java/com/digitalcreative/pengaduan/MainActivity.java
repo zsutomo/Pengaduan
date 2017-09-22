@@ -35,6 +35,7 @@ import java.util.Locale;
 import static com.digitalcreative.pengaduan.R.color.background;
 
 public class MainActivity extends AppCompatActivity {
+
     private Toolbar toolbar;
 
     String[] KontenSpinner = {
@@ -57,6 +58,57 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Pengaduan");
         toolbar.setTitleTextColor(Color.WHITE);
 
+        datapengaduan1();
+        datapengamantrafo();
+        datakabel();
+//        check_error();
+
+        final Button btn_submit = (Button) findViewById(R.id.btn_submit);
+        btn_submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                builder.setMessage("Apakah Anda Ingin Submit Form ini?");
+                builder.setPositiveButton(
+                        "Yes",
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+//                                ModelForm modelform=model_form_manager();
+//                                FirebaseManager firebaseManager=new FirebaseManager();
+//                                firebaseManager.insert_form(modelform.getPenyulang(),modelform);
+                                Toast.makeText(MainActivity.this, "Berhasil di Submit", Toast.LENGTH_SHORT).show();
+                                Intent intent =  new Intent(getApplicationContext(),EndActivity.class);
+                                startActivity(intent);
+//                                if(check_error()==false){
+//                                    ModelForm modelform=model_form_manager();
+//                                    FirebaseManager firebaseManager=new FirebaseManager();
+//                                    firebaseManager.insert_form(modelform.getPenyulang(),modelform);
+//                                    Toast.makeText(MainActivity.this, "Berhasil di Submit", Toast.LENGTH_SHORT).show();
+//                                    Intent intent =  new Intent(getApplicationContext(),EndActivity.class);
+//                                    startActivity(intent);
+//                                }else{
+//                                    Toast.makeText(MainActivity.this, "Gagal di Submit", Toast.LENGTH_SHORT).show();
+//                                }
+
+                            }
+                        });
+                builder.setNegativeButton(
+                        "No",
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                dialogInterface.cancel();
+
+                            }
+                        });
+                AlertDialog alert = builder.create();
+                alert.show();
+            }
+        });
+    }
+
+    public void datapengaduan1() {
         //Set Spinner Penyulang
         Spinner spinner = (Spinner) findViewById(R.id.spin_penyulang);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.spinner, KontenSpinner);
@@ -163,6 +215,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+    public void datapengamantrafo() {
         //Button Saklar Utama PHB
         final Button button_ya_phb = (Button) findViewById(R.id.saklar_utama_phb_ya);
         final Button button_tidak_phb = (Button) findViewById(R.id.saklar_utama_phb_tidak);
@@ -375,6 +429,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+    public void datakabel() {
         //Jenis Kabel INLET
         final Button btn_inlet_NYY = (Button) findViewById(R.id.jenis_kabel_inlet_NYY);
         final Button btn_inlet_LUTC = (Button) findViewById(R.id.jenis_kabel_inlet_LUTC);
@@ -1103,55 +1159,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_jur_D_penampang_150_out.setSelected(false);
             }
         });
-
-        Button btn_submit = (Button) findViewById(R.id.btn_submit);
-        btn_submit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                builder.setMessage("Apakah Anda Ingin Submit Form ini?");
-                builder.setPositiveButton(
-                        "Yes",
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                ModelForm modelform=model_form_manager();
-                                FirebaseManager firebaseManager=new FirebaseManager();
-                                firebaseManager.insert_form(modelform.getPenyulang(),modelform);
-                                Toast.makeText(MainActivity.this, "Berhasil di Submit", Toast.LENGTH_SHORT).show();
-                                Intent intent =  new Intent(getApplicationContext(),EndActivity.class);
-                                startActivity(intent);
-//                                if(check_error()==false){
-//                                    ModelForm modelform=model_form_manager();
-//                                    FirebaseManager firebaseManager=new FirebaseManager();
-//                                    firebaseManager.insert_form(modelform.getPenyulang(),modelform);
-//                                    Toast.makeText(MainActivity.this, "Berhasil di Submit", Toast.LENGTH_SHORT).show();
-//                                    Intent intent =  new Intent(getApplicationContext(),EndActivity.class);
-//                                    startActivity(intent);
-//                                }else{
-//                                    Toast.makeText(MainActivity.this, "Gagal di Submit", Toast.LENGTH_SHORT).show();
-//                                }
-
-                            }
-                        });
-                builder.setNegativeButton(
-                        "No",
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                dialogInterface.cancel();
-
-                            }
-                        });
-                AlertDialog alert = builder.create();
-                alert.show();
-            }
-        });
-
-
     }
-
-
 
     private ModelForm model_form_manager(){
         ModelForm modelForm =new ModelForm();
