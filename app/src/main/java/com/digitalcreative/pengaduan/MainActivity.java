@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
         //set up Toolbar
@@ -77,19 +78,19 @@ public class MainActivity extends AppCompatActivity {
 //                                ModelForm modelform=model_form_manager();
 //                                FirebaseManager firebaseManager=new FirebaseManager();
 //                                firebaseManager.insert_form(modelform.getPenyulang(),modelform);
-                                Toast.makeText(MainActivity.this, "Berhasil di Submit", Toast.LENGTH_SHORT).show();
-                                Intent intent =  new Intent(getApplicationContext(),EndActivity.class);
-                                startActivity(intent);
-//                                if(check_error()==false){
-//                                    ModelForm modelform=model_form_manager();
-//                                    FirebaseManager firebaseManager=new FirebaseManager();
-//                                    firebaseManager.insert_form(modelform.getPenyulang(),modelform);
-//                                    Toast.makeText(MainActivity.this, "Berhasil di Submit", Toast.LENGTH_SHORT).show();
-//                                    Intent intent =  new Intent(getApplicationContext(),EndActivity.class);
-//                                    startActivity(intent);
-//                                }else{
-//                                    Toast.makeText(MainActivity.this, "Gagal di Submit", Toast.LENGTH_SHORT).show();
-//                                }
+//                                Toast.makeText(MainActivity.this, "Berhasil di Submit", Toast.LENGTH_SHORT).show();
+//                                Intent intent =  new Intent(getApplicationContext(),EndActivity.class);
+//                                startActivity(intent);
+                                if (check_error() == false) {
+                                    ModelForm modelform = model_form_manager();
+                                    FirebaseManager firebaseManager = new FirebaseManager();
+                                    firebaseManager.insert_form(modelform.getPenyulang(), modelform);
+                                    Toast.makeText(MainActivity.this, "Berhasil di Submit", Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(getApplicationContext(), EndActivity.class);
+                                    startActivity(intent);
+                                } else {
+                                    Toast.makeText(MainActivity.this, "Silahkan isi data selengkapnya", Toast.LENGTH_SHORT).show();
+                                }
 
                             }
                         });
@@ -111,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
     public void datapengaduan1() {
         //Set Spinner Penyulang
         Spinner spinner = (Spinner) findViewById(R.id.spin_penyulang);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.spinner, KontenSpinner);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.spinner, KontenSpinner);
         spinner.setAdapter(adapter);
 
         //Button Rekondisi
@@ -171,9 +172,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //Schoon Trafo (DI TR)
-        final Button button_3= (Button) findViewById(R.id.Schoon_Trafo_1);
+        final Button button_3 = (Button) findViewById(R.id.Schoon_Trafo_1);
         final Button button_2 = (Button) findViewById(R.id.Schoon_Trafo_2);
-        final Button button_1= (Button) findViewById(R.id.Schoon_Trafo_3);
+        final Button button_1 = (Button) findViewById(R.id.Schoon_Trafo_3);
         final Button button_0 = (Button) findViewById(R.id.Schoon_Trafo_4);
         button_3.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -216,6 +217,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
     public void datapengamantrafo() {
         //Button Saklar Utama PHB
         final Button button_ya_phb = (Button) findViewById(R.id.saklar_utama_phb_ya);
@@ -245,7 +247,7 @@ public class MainActivity extends AppCompatActivity {
         //Fuse Jurusan
         final Button button_jur_A = (Button) findViewById(R.id.fuse_jurusan_A);
         final Button button_jur_B = (Button) findViewById(R.id.fuse_jurusan_B);
-        final Button button_jur_C= (Button) findViewById(R.id.fuse_jurusan_C);
+        final Button button_jur_C = (Button) findViewById(R.id.fuse_jurusan_C);
         final LinearLayout Jur_A_fuse = (LinearLayout) findViewById(R.id.text_gone_fuse_jurusan_A);
         final LinearLayout Jur_B_fuse = (LinearLayout) findViewById(R.id.text_gone_fuse_jurusan_B);
         final LinearLayout Jur_C_fuse = (LinearLayout) findViewById(R.id.text_gone_fuse_jurusan_C);
@@ -258,7 +260,6 @@ public class MainActivity extends AppCompatActivity {
         final EditText txt_S_fuse_Jur_C = (EditText) findViewById(R.id.f_fuse_S_Jur_C);
         final EditText txt_R_fuse_Jur_C = (EditText) findViewById(R.id.f_fuse_R_Jur_C);
         final EditText txt_T_fuse_Jur_C = (EditText) findViewById(R.id.f_fuse_T_Jur_C);
-
 
 
         button_jur_A.setOnClickListener(new View.OnClickListener() {
@@ -430,6 +431,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
     public void datakabel() {
         //Jenis Kabel INLET
         final Button btn_inlet_NYY = (Button) findViewById(R.id.jenis_kabel_inlet_NYY);
@@ -439,12 +441,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                btn_inlet_LUTC .setSelected(false);
+                btn_inlet_LUTC.setSelected(false);
                 btn_inlet_NYFUBY.setSelected(false);
 
             }
         });
-        btn_inlet_LUTC .setOnClickListener(new View.OnClickListener() {
+        btn_inlet_LUTC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
@@ -457,7 +459,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                btn_inlet_LUTC .setSelected(false);
+                btn_inlet_LUTC.setSelected(false);
                 btn_inlet_NYY.setSelected(false);
             }
         });
@@ -471,13 +473,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                btn_penampang_95 .setSelected(false);
+                btn_penampang_95.setSelected(false);
                 btn_penampang_150.setSelected(false);
                 btn_penampang_240.setSelected(false);
 
             }
         });
-        btn_penampang_95 .setOnClickListener(new View.OnClickListener() {
+        btn_penampang_95.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
@@ -491,7 +493,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                btn_penampang_95 .setSelected(false);
+                btn_penampang_95.setSelected(false);
                 btn_penampang_70.setSelected(false);
                 btn_penampang_240.setSelected(false);
             }
@@ -500,7 +502,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                btn_penampang_95 .setSelected(false);
+                btn_penampang_95.setSelected(false);
                 btn_penampang_70.setSelected(false);
                 btn_penampang_150.setSelected(false);
             }
@@ -585,7 +587,7 @@ public class MainActivity extends AppCompatActivity {
         final Spinner spinner5 = (Spinner) findViewById(R.id.jur_D_spin_sambungan_kabel_ke_jtr);
         final ArrayAdapter<String> adapter5 = new ArrayAdapter<String>(this, R.layout.spinner, KabelJTR);
 
-        kabel_jur_A .setOnClickListener(new View.OnClickListener() {
+        kabel_jur_A.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Jur_A_data_bael.setVisibility(View.VISIBLE);
@@ -596,31 +598,31 @@ public class MainActivity extends AppCompatActivity {
                 kabel_jur_B.setSelected(false);
                 kabel_jur_C.setSelected(false);
                 kabel_jur_D.setSelected(false);
-                btn_outlet_LUTC .setSelected(false);
+                btn_outlet_LUTC.setSelected(false);
                 btn_outlet_NYFUBY.setSelected(false);
-                btn_jur_B_outlet_NYY .setSelected(false);
-                btn_jur_B_outlet_LUTC .setSelected(false);
+                btn_jur_B_outlet_NYY.setSelected(false);
+                btn_jur_B_outlet_LUTC.setSelected(false);
                 btn_jur_B_outlet_NYFUBY.setSelected(false);
-                btn_jur_C_outlet_NYY .setSelected(false);
-                btn_jur_C_outlet_LUTC .setSelected(false);
+                btn_jur_C_outlet_NYY.setSelected(false);
+                btn_jur_C_outlet_LUTC.setSelected(false);
                 btn_jur_C_outlet_NYFUBY.setSelected(false);
-                btn_jur_D_outlet_NYY .setSelected(false);
-                btn_jur_D_outlet_LUTC .setSelected(false);
+                btn_jur_D_outlet_NYY.setSelected(false);
+                btn_jur_D_outlet_LUTC.setSelected(false);
                 btn_jur_D_outlet_NYFUBY.setSelected(false);
-                btn_jur_B_penampang_25 .setSelected(false);
-                btn_jur_B_penampang_35 .setSelected(false);
+                btn_jur_B_penampang_25.setSelected(false);
+                btn_jur_B_penampang_35.setSelected(false);
                 btn_jur_B_penampang_70_out.setSelected(false);
                 btn_jur_B_penampang_95_out.setSelected(false);
                 btn_jur_B_penampang_150_out.setSelected(false);
                 btn_jur_B_penampang_240_out.setSelected(false);
-                btn_jur_C_penampang_25i .setSelected(false);
-                btn_jur_C_penampang_35i .setSelected(false);
+                btn_jur_C_penampang_25i.setSelected(false);
+                btn_jur_C_penampang_35i.setSelected(false);
                 btn_jur_C_penampang_70i_out.setSelected(false);
                 btn_jur_C_penampang_95i_out.setSelected(false);
                 btn_jur_C_penampang_150i_out.setSelected(false);
                 btn_jur_C_penampang_240i_out.setSelected(false);
-                btn_jur_D_penampang_25 .setSelected(false);
-                btn_jur_D_penampang_35 .setSelected(false);
+                btn_jur_D_penampang_25.setSelected(false);
+                btn_jur_D_penampang_35.setSelected(false);
                 btn_jur_D_penampang_70_out.setSelected(false);
                 btn_jur_D_penampang_95_out.setSelected(false);
                 btn_jur_D_penampang_150_out.setSelected(false);
@@ -642,14 +644,14 @@ public class MainActivity extends AppCompatActivity {
                 kabel_jur_A.setSelected(false);
                 kabel_jur_C.setSelected(false);
                 kabel_jur_D.setSelected(false);
-                btn_outlet_NYY .setSelected(false);
-                btn_outlet_LUTC .setSelected(false);
+                btn_outlet_NYY.setSelected(false);
+                btn_outlet_LUTC.setSelected(false);
                 btn_outlet_NYFUBY.setSelected(false);
-                btn_jur_C_outlet_NYY .setSelected(false);
-                btn_jur_C_outlet_LUTC .setSelected(false);
+                btn_jur_C_outlet_NYY.setSelected(false);
+                btn_jur_C_outlet_LUTC.setSelected(false);
                 btn_jur_C_outlet_NYFUBY.setSelected(false);
-                btn_jur_D_outlet_NYY .setSelected(false);
-                btn_jur_D_outlet_LUTC .setSelected(false);
+                btn_jur_D_outlet_NYY.setSelected(false);
+                btn_jur_D_outlet_LUTC.setSelected(false);
                 btn_jur_D_outlet_NYFUBY.setSelected(false);
                 btn_penampang_25.setSelected(false);
                 btn_penampang_35.setSelected(false);
@@ -657,14 +659,14 @@ public class MainActivity extends AppCompatActivity {
                 btn_penampang_95_out.setSelected(false);
                 btn_penampang_150_out.setSelected(false);
                 btn_penampang_240_out.setSelected(false);
-                btn_jur_C_penampang_25i .setSelected(false);
-                btn_jur_C_penampang_35i .setSelected(false);
+                btn_jur_C_penampang_25i.setSelected(false);
+                btn_jur_C_penampang_35i.setSelected(false);
                 btn_jur_C_penampang_70i_out.setSelected(false);
                 btn_jur_C_penampang_95i_out.setSelected(false);
                 btn_jur_C_penampang_150i_out.setSelected(false);
                 btn_jur_C_penampang_240i_out.setSelected(false);
-                btn_jur_D_penampang_25 .setSelected(false);
-                btn_jur_D_penampang_35 .setSelected(false);
+                btn_jur_D_penampang_25.setSelected(false);
+                btn_jur_D_penampang_35.setSelected(false);
                 btn_jur_D_penampang_70_out.setSelected(false);
                 btn_jur_D_penampang_95_out.setSelected(false);
                 btn_jur_D_penampang_150_out.setSelected(false);
@@ -686,14 +688,14 @@ public class MainActivity extends AppCompatActivity {
                 kabel_jur_B.setSelected(false);
                 kabel_jur_A.setSelected(false);
                 kabel_jur_D.setSelected(false);
-                btn_outlet_NYY .setSelected(false);
-                btn_outlet_LUTC .setSelected(false);
+                btn_outlet_NYY.setSelected(false);
+                btn_outlet_LUTC.setSelected(false);
                 btn_outlet_NYFUBY.setSelected(false);
-                btn_jur_B_outlet_NYY .setSelected(false);
-                btn_jur_B_outlet_LUTC .setSelected(false);
+                btn_jur_B_outlet_NYY.setSelected(false);
+                btn_jur_B_outlet_LUTC.setSelected(false);
                 btn_jur_B_outlet_NYFUBY.setSelected(false);
-                btn_jur_D_outlet_NYY .setSelected(false);
-                btn_jur_D_outlet_LUTC .setSelected(false);
+                btn_jur_D_outlet_NYY.setSelected(false);
+                btn_jur_D_outlet_LUTC.setSelected(false);
                 btn_jur_D_outlet_NYFUBY.setSelected(false);
                 btn_penampang_25.setSelected(false);
                 btn_penampang_35.setSelected(false);
@@ -701,14 +703,14 @@ public class MainActivity extends AppCompatActivity {
                 btn_penampang_95_out.setSelected(false);
                 btn_penampang_150_out.setSelected(false);
                 btn_penampang_240_out.setSelected(false);
-                btn_jur_B_penampang_25 .setSelected(false);
-                btn_jur_B_penampang_35 .setSelected(false);
+                btn_jur_B_penampang_25.setSelected(false);
+                btn_jur_B_penampang_35.setSelected(false);
                 btn_jur_B_penampang_70_out.setSelected(false);
                 btn_jur_B_penampang_95_out.setSelected(false);
                 btn_jur_B_penampang_150_out.setSelected(false);
                 btn_jur_B_penampang_240_out.setSelected(false);
-                btn_jur_D_penampang_25 .setSelected(false);
-                btn_jur_D_penampang_35 .setSelected(false);
+                btn_jur_D_penampang_25.setSelected(false);
+                btn_jur_D_penampang_35.setSelected(false);
                 btn_jur_D_penampang_70_out.setSelected(false);
                 btn_jur_D_penampang_95_out.setSelected(false);
                 btn_jur_D_penampang_150_out.setSelected(false);
@@ -730,14 +732,14 @@ public class MainActivity extends AppCompatActivity {
                 kabel_jur_B.setSelected(false);
                 kabel_jur_A.setSelected(false);
                 kabel_jur_C.setSelected(false);
-                btn_outlet_NYY .setSelected(false);
-                btn_outlet_LUTC .setSelected(false);
+                btn_outlet_NYY.setSelected(false);
+                btn_outlet_LUTC.setSelected(false);
                 btn_outlet_NYFUBY.setSelected(false);
-                btn_jur_B_outlet_NYY .setSelected(false);
-                btn_jur_B_outlet_LUTC .setSelected(false);
+                btn_jur_B_outlet_NYY.setSelected(false);
+                btn_jur_B_outlet_LUTC.setSelected(false);
                 btn_jur_B_outlet_NYFUBY.setSelected(false);
-                btn_jur_C_outlet_NYY .setSelected(false);
-                btn_jur_C_outlet_LUTC .setSelected(false);
+                btn_jur_C_outlet_NYY.setSelected(false);
+                btn_jur_C_outlet_LUTC.setSelected(false);
                 btn_jur_C_outlet_NYFUBY.setSelected(false);
                 btn_penampang_25.setSelected(false);
                 btn_penampang_35.setSelected(false);
@@ -745,14 +747,14 @@ public class MainActivity extends AppCompatActivity {
                 btn_penampang_95_out.setSelected(false);
                 btn_penampang_150_out.setSelected(false);
                 btn_penampang_240_out.setSelected(false);
-                btn_jur_B_penampang_25 .setSelected(false);
-                btn_jur_B_penampang_35 .setSelected(false);
+                btn_jur_B_penampang_25.setSelected(false);
+                btn_jur_B_penampang_35.setSelected(false);
                 btn_jur_B_penampang_70_out.setSelected(false);
                 btn_jur_B_penampang_95_out.setSelected(false);
                 btn_jur_B_penampang_150_out.setSelected(false);
                 btn_jur_B_penampang_240_out.setSelected(false);
-                btn_jur_C_penampang_25i .setSelected(false);
-                btn_jur_C_penampang_35i .setSelected(false);
+                btn_jur_C_penampang_25i.setSelected(false);
+                btn_jur_C_penampang_35i.setSelected(false);
                 btn_jur_C_penampang_70i_out.setSelected(false);
                 btn_jur_C_penampang_95i_out.setSelected(false);
                 btn_jur_C_penampang_150i_out.setSelected(false);
@@ -770,7 +772,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                btn_outlet_LUTC .setSelected(false);
+                btn_outlet_LUTC.setSelected(false);
                 btn_outlet_NYFUBY.setSelected(false);
             }
         });
@@ -788,7 +790,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                btn_outlet_LUTC .setSelected(false);
+                btn_outlet_LUTC.setSelected(false);
                 btn_outlet_NYY.setSelected(false);
 
             }
@@ -799,12 +801,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                btn_jur_B_outlet_LUTC .setSelected(false);
+                btn_jur_B_outlet_LUTC.setSelected(false);
                 btn_jur_B_outlet_NYFUBY.setSelected(false);
 
             }
         });
-        btn_jur_B_outlet_LUTC .setOnClickListener(new View.OnClickListener() {
+        btn_jur_B_outlet_LUTC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
@@ -817,7 +819,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                btn_jur_B_outlet_LUTC .setSelected(false);
+                btn_jur_B_outlet_LUTC.setSelected(false);
                 btn_jur_B_outlet_NYY.setSelected(false);
             }
         });
@@ -828,12 +830,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                btn_jur_C_outlet_LUTC .setSelected(false);
+                btn_jur_C_outlet_LUTC.setSelected(false);
                 btn_jur_C_outlet_NYFUBY.setSelected(false);
 
             }
         });
-        btn_jur_C_outlet_LUTC .setOnClickListener(new View.OnClickListener() {
+        btn_jur_C_outlet_LUTC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
@@ -846,7 +848,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                btn_jur_C_outlet_LUTC .setSelected(false);
+                btn_jur_C_outlet_LUTC.setSelected(false);
                 btn_jur_C_outlet_NYY.setSelected(false);
             }
         });
@@ -856,12 +858,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                btn_jur_D_outlet_LUTC .setSelected(false);
+                btn_jur_D_outlet_LUTC.setSelected(false);
                 btn_jur_D_outlet_NYFUBY.setSelected(false);
 
             }
         });
-        btn_jur_D_outlet_LUTC .setOnClickListener(new View.OnClickListener() {
+        btn_jur_D_outlet_LUTC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
@@ -874,7 +876,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                btn_jur_D_outlet_LUTC .setSelected(false);
+                btn_jur_D_outlet_LUTC.setSelected(false);
                 btn_jur_D_outlet_NYY.setSelected(false);
             }
         });
@@ -892,7 +894,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        btn_penampang_35 .setOnClickListener(new View.OnClickListener() {
+        btn_penampang_35.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
@@ -908,7 +910,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                btn_penampang_35 .setSelected(false);
+                btn_penampang_35.setSelected(false);
                 btn_penampang_25.setSelected(false);
                 btn_penampang_95_out.setSelected(false);
                 btn_penampang_150_out.setSelected(false);
@@ -919,7 +921,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                btn_penampang_35 .setSelected(false);
+                btn_penampang_35.setSelected(false);
                 btn_penampang_25.setSelected(false);
                 btn_penampang_70_out.setSelected(false);
                 btn_penampang_150_out.setSelected(false);
@@ -930,7 +932,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                btn_penampang_35 .setSelected(false);
+                btn_penampang_35.setSelected(false);
                 btn_penampang_25.setSelected(false);
                 btn_penampang_70_out.setSelected(false);
                 btn_penampang_95_out.setSelected(false);
@@ -941,7 +943,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                btn_penampang_35 .setSelected(false);
+                btn_penampang_35.setSelected(false);
                 btn_penampang_25.setSelected(false);
                 btn_penampang_70_out.setSelected(false);
                 btn_penampang_95_out.setSelected(false);
@@ -955,7 +957,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                btn_jur_B_penampang_35 .setSelected(false);
+                btn_jur_B_penampang_35.setSelected(false);
                 btn_jur_B_penampang_70_out.setSelected(false);
                 btn_jur_B_penampang_95_out.setSelected(false);
                 btn_jur_B_penampang_150_out.setSelected(false);
@@ -963,7 +965,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        btn_jur_B_penampang_35 .setOnClickListener(new View.OnClickListener() {
+        btn_jur_B_penampang_35.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
@@ -979,7 +981,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                btn_jur_B_penampang_35 .setSelected(false);
+                btn_jur_B_penampang_35.setSelected(false);
                 btn_jur_B_penampang_25.setSelected(false);
                 btn_jur_B_penampang_95_out.setSelected(false);
                 btn_jur_B_penampang_150_out.setSelected(false);
@@ -990,7 +992,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                btn_jur_B_penampang_35 .setSelected(false);
+                btn_jur_B_penampang_35.setSelected(false);
                 btn_jur_B_penampang_25.setSelected(false);
                 btn_jur_B_penampang_70_out.setSelected(false);
                 btn_jur_B_penampang_150_out.setSelected(false);
@@ -1001,7 +1003,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                btn_jur_B_penampang_35 .setSelected(false);
+                btn_jur_B_penampang_35.setSelected(false);
                 btn_jur_B_penampang_25.setSelected(false);
                 btn_jur_B_penampang_70_out.setSelected(false);
                 btn_jur_B_penampang_95_out.setSelected(false);
@@ -1012,7 +1014,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                btn_jur_B_penampang_35 .setSelected(false);
+                btn_jur_B_penampang_35.setSelected(false);
                 btn_jur_B_penampang_25.setSelected(false);
                 btn_jur_B_penampang_70_out.setSelected(false);
                 btn_jur_B_penampang_95_out.setSelected(false);
@@ -1025,7 +1027,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                btn_jur_C_penampang_35i .setSelected(false);
+                btn_jur_C_penampang_35i.setSelected(false);
                 btn_jur_C_penampang_70i_out.setSelected(false);
                 btn_jur_C_penampang_95i_out.setSelected(false);
                 btn_jur_C_penampang_150i_out.setSelected(false);
@@ -1060,7 +1062,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                btn_jur_C_penampang_35i .setSelected(false);
+                btn_jur_C_penampang_35i.setSelected(false);
                 btn_jur_C_penampang_25i.setSelected(false);
                 btn_jur_C_penampang_70i_out.setSelected(false);
                 btn_jur_C_penampang_150i_out.setSelected(false);
@@ -1071,7 +1073,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                btn_jur_C_penampang_35i .setSelected(false);
+                btn_jur_C_penampang_35i.setSelected(false);
                 btn_jur_C_penampang_25i.setSelected(false);
                 btn_jur_C_penampang_70i_out.setSelected(false);
                 btn_jur_C_penampang_95i_out.setSelected(false);
@@ -1082,7 +1084,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                btn_jur_C_penampang_35i .setSelected(false);
+                btn_jur_C_penampang_35i.setSelected(false);
                 btn_jur_C_penampang_25i.setSelected(false);
                 btn_jur_C_penampang_70i_out.setSelected(false);
                 btn_jur_C_penampang_95i_out.setSelected(false);
@@ -1095,7 +1097,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                btn_jur_D_penampang_35 .setSelected(false);
+                btn_jur_D_penampang_35.setSelected(false);
                 btn_jur_D_penampang_70_out.setSelected(false);
                 btn_jur_D_penampang_95_out.setSelected(false);
                 btn_jur_D_penampang_150_out.setSelected(false);
@@ -1103,7 +1105,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        btn_jur_D_penampang_35 .setOnClickListener(new View.OnClickListener() {
+        btn_jur_D_penampang_35.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
@@ -1119,7 +1121,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                btn_jur_D_penampang_35 .setSelected(false);
+                btn_jur_D_penampang_35.setSelected(false);
                 btn_jur_D_penampang_25.setSelected(false);
                 btn_jur_D_penampang_95_out.setSelected(false);
                 btn_jur_D_penampang_150_out.setSelected(false);
@@ -1130,7 +1132,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                btn_jur_D_penampang_35 .setSelected(false);
+                btn_jur_D_penampang_35.setSelected(false);
                 btn_jur_D_penampang_25.setSelected(false);
                 btn_jur_D_penampang_70_out.setSelected(false);
                 btn_jur_D_penampang_150_out.setSelected(false);
@@ -1141,7 +1143,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                btn_jur_D_penampang_35 .setSelected(false);
+                btn_jur_D_penampang_35.setSelected(false);
                 btn_jur_D_penampang_25.setSelected(false);
                 btn_jur_D_penampang_70_out.setSelected(false);
                 btn_jur_D_penampang_95_out.setSelected(false);
@@ -1152,7 +1154,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 view.setSelected(true);
-                btn_jur_D_penampang_35 .setSelected(false);
+                btn_jur_D_penampang_35.setSelected(false);
                 btn_jur_D_penampang_25.setSelected(false);
                 btn_jur_D_penampang_70_out.setSelected(false);
                 btn_jur_D_penampang_95_out.setSelected(false);
@@ -1161,8 +1163,8 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private ModelForm model_form_manager(){
-        ModelForm modelForm =new ModelForm();
+    private ModelForm model_form_manager() {
+        ModelForm modelForm = new ModelForm();
 
         final EditText f_petugas = (EditText) findViewById(R.id.f_petugas);
         final EditText f_kapel = (EditText) findViewById(R.id.f_kapel);
@@ -1187,9 +1189,9 @@ public class MainActivity extends AppCompatActivity {
         final Button button_ya_kokon = (Button) findViewById(R.id.kokon_ya);
         final Button button_tdk_kokon = (Button) findViewById(R.id.kokon_tidak);
         //Schoon Trafo (DI TR)
-        final Button button_3= (Button) findViewById(R.id.Schoon_Trafo_1);
+        final Button button_3 = (Button) findViewById(R.id.Schoon_Trafo_1);
         final Button button_2 = (Button) findViewById(R.id.Schoon_Trafo_2);
-        final Button button_1= (Button) findViewById(R.id.Schoon_Trafo_3);
+        final Button button_1 = (Button) findViewById(R.id.Schoon_Trafo_3);
         final Button button_0 = (Button) findViewById(R.id.Schoon_Trafo_4);
 
         final EditText f_kebutuhan_schoon_PHB = (EditText) findViewById(R.id.f_kebutuhan_schoon_PHB);
@@ -1198,27 +1200,44 @@ public class MainActivity extends AppCompatActivity {
         final EditText f_primer_phasa_t = (EditText) findViewById(R.id.f_primer_phasa_t);
         final EditText f_saklar_merk = (EditText) findViewById(R.id.f_saklar_merk);
         final EditText f_saklar_arus = (EditText) findViewById(R.id.f_saklar_arus);
+        final Button button_ya_phb = (Button) findViewById(R.id.saklar_utama_phb_ya);
+        final Button button_tidak_phb = (Button) findViewById(R.id.saklar_utama_phb_tidak);
+
+        final Button fuse_jurusan_A = (Button) findViewById(R.id.fuse_jurusan_A);
         final EditText f_fuse_R_Jur_A = (EditText) findViewById(R.id.f_fuse_R_Jur_A);
         final EditText f_fuse_S_Jur_A = (EditText) findViewById(R.id.f_fuse_S_Jur_A);
         final EditText f_fuse_T_Jur_A = (EditText) findViewById(R.id.f_fuse_T_Jur_A);
+
+        final Button fuse_jurusan_B = (Button) findViewById(R.id.fuse_jurusan_A);
         final EditText f_fuse_R_Jur_B = (EditText) findViewById(R.id.f_fuse_R_Jur_B);
         final EditText f_fuse_S_Jur_B = (EditText) findViewById(R.id.f_fuse_S_Jur_B);
         final EditText f_fuse_T_Jur_B = (EditText) findViewById(R.id.f_fuse_T_Jur_B);
+
+        final Button fuse_jurusan_C = (Button) findViewById(R.id.fuse_jurusan_A);
         final EditText f_fuse_R_Jur_C = (EditText) findViewById(R.id.f_fuse_R_Jur_C);
         final EditText f_fuse_S_Jur_C = (EditText) findViewById(R.id.f_fuse_S_Jur_C);
         final EditText f_fuse_T_Jur_C = (EditText) findViewById(R.id.f_fuse_T_Jur_C);
+
+        final Button NH_jurusan_A = (Button) findViewById(R.id.NH_jurusan_A);
         final EditText f_NH_R_Jur_A = (EditText) findViewById(R.id.f_NH_R_Jur_A);
         final EditText f_NH_S_Jur_A = (EditText) findViewById(R.id.f_NH_S_Jur_A);
         final EditText f_NH_T_Jur_A = (EditText) findViewById(R.id.f_NH_T_Jur_A);
+
+        final Button NH_jurusan_B = (Button) findViewById(R.id.NH_jurusan_B);
         final EditText f_NH_R_Jur_B = (EditText) findViewById(R.id.f_NH_R_Jur_B);
         final EditText f_NH_S_Jur_B = (EditText) findViewById(R.id.f_NH_S_Jur_B);
         final EditText f_NH_T_Jur_B = (EditText) findViewById(R.id.f_NH_T_Jur_B);
+
+        final Button NH_jurusan_C = (Button) findViewById(R.id.NH_jurusan_C);
         final EditText f_NH_R_Jur_C = (EditText) findViewById(R.id.f_NH_R_Jur_C);
         final EditText f_NH_S_Jur_C = (EditText) findViewById(R.id.f_NH_S_Jur_C);
         final EditText f_NH_T_Jur_C = (EditText) findViewById(R.id.f_NH_T_Jur_C);
+
+        final Button NH_jurusan_D = (Button) findViewById(R.id.NH_jurusan_D);
         final EditText f_NH_R_Jur_D = (EditText) findViewById(R.id.f_NH_R_Jur_D);
         final EditText f_NH_S_Jur_D = (EditText) findViewById(R.id.f_NH_S_Jur_D);
         final EditText f_NH_T_Jur_D = (EditText) findViewById(R.id.f_NH_T_Jur_D);
+
         final EditText f_arrester = (EditText) findViewById(R.id.f_saklar_merk);
         final EditText f_saklar_tahanan_arrester = (EditText) findViewById(R.id.f_saklar_tahanan_arrester);
         final EditText f_saklar_tahanan_netral = (EditText) findViewById(R.id.f_saklar_tahanan_netral);
@@ -1233,6 +1252,10 @@ public class MainActivity extends AppCompatActivity {
         final Button btn_penampang_150 = (Button) findViewById(R.id.penampang_inlet_150);
         final Button btn_penampang_240 = (Button) findViewById(R.id.penampang_inlet_240);
         //Jenis Kabel Outlet
+        final Button data_kabel_jurusan_A = (Button) findViewById(R.id.data_kabel_jurusan_A);
+        final Button data_kabel_jurusan_B = (Button) findViewById(R.id.data_kabel_jurusan_B);
+        final Button data_kabel_jurusan_C = (Button) findViewById(R.id.data_kabel_jurusan_C);
+        final Button data_kabel_jurusan_D = (Button) findViewById(R.id.data_kabel_jurusan_D);
         //Jenis Kabel
         //Jur A
         final Button btn_outlet_NYY = (Button) findViewById(R.id.jenis_kabel_outlet_NYY);
@@ -1290,253 +1313,299 @@ public class MainActivity extends AppCompatActivity {
         final Spinner spinner5 = (Spinner) findViewById(R.id.jur_D_spin_sambungan_kabel_ke_jtr);
 
         //first
-        String petugas =f_petugas.getText().toString();
-        String kapel =f_kapel.getText().toString();
-        String kode_gardu=f_kode_gardu.getText().toString() ;
+        String petugas = f_petugas.getText().toString();
+        String kapel = f_kapel.getText().toString();
+        String kode_gardu = f_kode_gardu.getText().toString();
         //spinner
-        String penyulang=spin_penyulang.getSelectedItem().toString();
+        String penyulang = spin_penyulang.getSelectedItem().toString();
         //=====
-        String daya=f_daya.getText().toString() ;
-        String merk= f_merk.getText().toString();
-        String noserie= f_noserie.getText().toString() ;
-        String jlh_fasa= f_jlh_fasa.getText().toString() ;
-        String tap_operasi= f_tap_operasi.getText().toString() ;
-        String kons_trafo= f_kons_trafo.getText().toString() ;
+        String daya = f_daya.getText().toString();
+        String merk = f_merk.getText().toString();
+        String noserie = f_noserie.getText().toString();
+        String jlh_fasa = f_jlh_fasa.getText().toString();
+        String tap_operasi = f_tap_operasi.getText().toString();
+        String kons_trafo = f_kons_trafo.getText().toString();
 
         //button ya tidak
         String rekondisi = "";
-        if(button_ya_rek.isSelected()){
-            rekondisi ="ya";
-        }else if(button_tdk_rek.isSelected()){
-            rekondisi ="tidak";
+        if (button_ya_rek.isSelected()) {
+            rekondisi = "ya";
+        } else if (button_tdk_rek.isSelected()) {
+            rekondisi = "tidak";
         }
 
 
         //=====
 
-        String tahun_pembuatan=f_tahun_pembuatan.getText().toString() ;
+        String tahun_pembuatan = f_tahun_pembuatan.getText().toString();
         //button ya tidak
-       String kunci_gardu = "";
-        if(button_ya.isSelected()){
-            kunci_gardu ="ya";
-        }else if(button_tdk.isSelected()){
-            kunci_gardu ="tidak";
+        String kunci_gardu = "";
+        if (button_ya.isSelected()) {
+            kunci_gardu = "ya";
+        } else if (button_tdk.isSelected()) {
+            kunci_gardu = "tidak";
         }
 
         //=====
         //button ya tidak
         String kokon = "";
-        if(button_ya_kokon.isSelected()){
-            kokon ="ya";
-        }else if(button_tdk_kokon.isSelected()){
-            kokon ="tidak";
+        if (button_ya_kokon.isSelected()) {
+            kokon = "ya";
+        } else if (button_tdk_kokon.isSelected()) {
+            kokon = "tidak";
         }
 
         //=====
         //button angka 3 2 1 0
         String schoon_trafo = "";
-        if(button_3.isSelected()){
-            schoon_trafo ="3";
-        }else if(button_2.isSelected()){
-            schoon_trafo ="2";
-        }else if(button_1.isSelected()){
-            schoon_trafo ="1";
-        }else if(button_0.isSelected()){
-            schoon_trafo ="0";
+        if (button_3.isSelected()) {
+            schoon_trafo = "3";
+        } else if (button_2.isSelected()) {
+            schoon_trafo = "2";
+        } else if (button_1.isSelected()) {
+            schoon_trafo = "1";
+        } else if (button_0.isSelected()) {
+            schoon_trafo = "0";
         }
 
 
         //=====
-        String kebutuhan_schoon_PHB =f_kebutuhan_schoon_PHB.getText().toString();
+        String kebutuhan_schoon_PHB = f_kebutuhan_schoon_PHB.getText().toString();
         //Data Pengaman Trafo
-        String primer_phasa_r=f_primer_phasa_r.getText().toString() ;
-        String primer_phasa_s=f_primer_phasa_s.getText().toString() ;
-        String primer_phasa_t=f_primer_phasa_t.getText().toString()  ;
-        String saklar_merk= f_saklar_merk.getText().toString() ;
-        String saklar_arus=f_saklar_arus.getText().toString()  ;
-        String fuse_R_Jur_A=f_fuse_R_Jur_A.getText().toString()  ;
-        String fuse_S_Jur_A=f_fuse_S_Jur_A.getText().toString()  ;
-        String fuse_T_Jur_A=f_fuse_T_Jur_A.getText().toString() ;
-        String fuse_R_Jur_B=f_fuse_R_Jur_B.getText().toString()  ;
-        String fuse_S_Jur_B=f_fuse_S_Jur_B.getText().toString()  ;
-        String fuse_T_Jur_B=f_fuse_T_Jur_B.getText().toString()  ;
-        String fuse_R_Jur_C=f_fuse_R_Jur_C.getText().toString()  ;
-        String fuse_S_Jur_C =f_fuse_S_Jur_C.getText().toString() ;
-        String fuse_T_Jur_C=f_fuse_T_Jur_C.getText().toString()  ;
-        String NH_R_Jur_A=f_NH_R_Jur_A.getText().toString()  ;
-        String NH_S_Jur_A=f_NH_S_Jur_A.getText().toString()  ;
-        String NH_T_Jur_A=f_NH_T_Jur_A.getText().toString() ;
-        String NH_R_Jur_B=f_NH_R_Jur_B.getText().toString() ;
-        String NH_S_Jur_B=f_NH_S_Jur_B.getText().toString() ;
-        String NH_T_Jur_B =f_NH_T_Jur_B.getText().toString();
-        String NH_R_Jur_C=f_NH_R_Jur_C.getText().toString() ;
-        String NH_S_Jur_C=f_NH_S_Jur_C.getText().toString() ;
-        String NH_T_Jur_C =f_NH_T_Jur_C.getText().toString();
-        String NH_R_Jur_D=f_NH_R_Jur_D.getText().toString() ;
-        String NH_S_Jur_D=f_NH_S_Jur_D.getText().toString() ;
-        String NH_T_Jur_D=f_NH_T_Jur_D.getText().toString() ;
-        String arrester=f_arrester.getText().toString() ;
+        String primer_phasa_r = f_primer_phasa_r.getText().toString();
+        String primer_phasa_s = f_primer_phasa_s.getText().toString();
+        String primer_phasa_t = f_primer_phasa_t.getText().toString();
+        String saklar_merk = f_saklar_merk.getText().toString();
+        String saklar_arus = f_saklar_arus.getText().toString();
+        String saklar_utama_phb="";
+        if (button_ya_phb.isSelected()) {
+            saklar_utama_phb="Ya";
+        }else if (button_tidak_phb.isSelected()) {
+            saklar_utama_phb="Ya";
+        }
+        String fuse_jurusan = "";
+        if (fuse_jurusan_A.isSelected()) {
+            fuse_jurusan = "jurusan A";
+        } else if (fuse_jurusan_B.isSelected()) {
+            fuse_jurusan = "jurusan B";
+        } else if (fuse_jurusan_C.isSelected()) {
+            fuse_jurusan = "jurusan C";
+        }
+        String fuse_R_Jur_A = f_fuse_R_Jur_A.getText().toString();
+        String fuse_S_Jur_A = f_fuse_S_Jur_A.getText().toString();
+        String fuse_T_Jur_A = f_fuse_T_Jur_A.getText().toString();
+        String fuse_R_Jur_B = f_fuse_R_Jur_B.getText().toString();
+        String fuse_S_Jur_B = f_fuse_S_Jur_B.getText().toString();
+        String fuse_T_Jur_B = f_fuse_T_Jur_B.getText().toString();
+        String fuse_R_Jur_C = f_fuse_R_Jur_C.getText().toString();
+        String fuse_S_Jur_C = f_fuse_S_Jur_C.getText().toString();
+        String fuse_T_Jur_C = f_fuse_T_Jur_C.getText().toString();
+        String nh_jurusan = "";
+        if (NH_jurusan_A.isSelected()) {
+            nh_jurusan = "jurusan A";
+        } else if (NH_jurusan_B.isSelected()) {
+            nh_jurusan = "jurusan B";
+        } else if (NH_jurusan_C.isSelected()) {
+            nh_jurusan = "jurusan C";
+        } else if (NH_jurusan_D.isSelected()) {
+            nh_jurusan = "jurusan D";
+        }
+        String NH_R_Jur_A = f_NH_R_Jur_A.getText().toString();
+        String NH_S_Jur_A = f_NH_S_Jur_A.getText().toString();
+        String NH_T_Jur_A = f_NH_T_Jur_A.getText().toString();
+        String NH_R_Jur_B = f_NH_R_Jur_B.getText().toString();
+        String NH_S_Jur_B = f_NH_S_Jur_B.getText().toString();
+        String NH_T_Jur_B = f_NH_T_Jur_B.getText().toString();
+        String NH_R_Jur_C = f_NH_R_Jur_C.getText().toString();
+        String NH_S_Jur_C = f_NH_S_Jur_C.getText().toString();
+        String NH_T_Jur_C = f_NH_T_Jur_C.getText().toString();
+        String NH_R_Jur_D = f_NH_R_Jur_D.getText().toString();
+        String NH_S_Jur_D = f_NH_S_Jur_D.getText().toString();
+        String NH_T_Jur_D = f_NH_T_Jur_D.getText().toString();
+        String arrester = f_arrester.getText().toString();
         //===============
         //Data Pertahanan
-        String saklar_tahanan_arrester=f_saklar_tahanan_arrester.getText().toString();
-        String saklar_tahanan_netral=f_saklar_tahanan_netral.getText().toString() ;
-        String body_trafo=f_body_trafo.getText().toString() ;
+        String saklar_tahanan_arrester = f_saklar_tahanan_arrester.getText().toString();
+        String saklar_tahanan_netral = f_saklar_tahanan_netral.getText().toString();
+        String body_trafo = f_body_trafo.getText().toString();
         //=============
         //Data Kabel
 
         //button nyy lvtc nyfgby
         String kabel_inlet = "";
 
-        if(btn_inlet_NYY.isSelected()){
-            kabel_inlet ="NYY";
-        }else if(btn_inlet_LUTC.isSelected()){
-            kabel_inlet ="LUTC";
-        }else if(btn_inlet_NYFUBY.isSelected()){
-            kabel_inlet ="NYFUBY";
+        if (btn_inlet_NYY.isSelected()) {
+            kabel_inlet = "NYY";
+        } else if (btn_inlet_LUTC.isSelected()) {
+            kabel_inlet = "LUTC";
+        } else if (btn_inlet_NYFUBY.isSelected()) {
+            kabel_inlet = "NYFUBY";
         }
-
 
 
         //=====
         //button 70 95 150 240
-        String penampang_inlet= "";
-        if(btn_penampang_70.isSelected()){
-            penampang_inlet ="70";
-        }else if(btn_penampang_95.isSelected()){
-            penampang_inlet ="95";
-        }else if(btn_penampang_150.isSelected()){
-            penampang_inlet ="150";
-        }else if(btn_penampang_240.isSelected()){
-            penampang_inlet ="240";
+        String penampang_inlet = "";
+        if (btn_penampang_70.isSelected()) {
+            penampang_inlet = "70";
+        } else if (btn_penampang_95.isSelected()) {
+            penampang_inlet = "95";
+        } else if (btn_penampang_150.isSelected()) {
+            penampang_inlet = "150";
+        } else if (btn_penampang_240.isSelected()) {
+            penampang_inlet = "240";
         }
-
-
-
 
 
         //Jenis Kabel Outlet
-        //button jnyy lvtc nyfgby
-        String jenis_kabel_jurusan_a= "";
-        if(btn_outlet_NYY.isSelected()){
-            jenis_kabel_jurusan_a ="NYY";
-        }else if(btn_outlet_LUTC.isSelected()){
-            jenis_kabel_jurusan_a ="LVTC";
-        }else if(btn_outlet_NYFUBY.isSelected()){
-            jenis_kabel_jurusan_a ="NYFGBY";
+        String data_kabel_jurusan = "";
+        String jenis_kabel_jurusan_a = "";
+        String penampang_jurusan_a = "";
+        String sambung_kabel_jtr_jurusan_a="";
+        String jenis_kabel_jurusan_b = "";
+        String penampang_jurusan_b = "";
+        String sambung_kabel_jtr_jurusan_b="";
+        String jenis_kabel_jurusan_c = "";
+        String penampang_jurusan_c = "";
+        String sambung_kabel_jtr_jurusan_c="";
+        String jenis_kabel_jurusan_d = "";
+        String penampang_jurusan_d = "";
+        String sambung_kabel_jtr_jurusan_d="";
+        if (data_kabel_jurusan_A.isSelected()) {
+            data_kabel_jurusan = "jurusan A";
+            //button jnyy lvtc nyfgby
+
+            if (btn_outlet_NYY.isSelected()) {
+                jenis_kabel_jurusan_a = "NYY";
+            } else if (btn_outlet_LUTC.isSelected()) {
+                jenis_kabel_jurusan_a = "LVTC";
+            } else if (btn_outlet_NYFUBY.isSelected()) {
+                jenis_kabel_jurusan_a = "NYFGBY";
+            }
+
+            //=====
+            //button 25 35 70 95 150
+
+            if (btn_penampang_25.isSelected()) {
+                penampang_jurusan_a = "25";
+            } else if (btn_penampang_35.isSelected()) {
+                penampang_jurusan_a = "35";
+            } else if (btn_penampang_70_out.isSelected()) {
+                penampang_jurusan_a = "70";
+            } else if (btn_penampang_95_out.isSelected()) {
+                penampang_jurusan_a = "95";
+            } else if (btn_penampang_150_out.isSelected()) {
+                penampang_jurusan_a = "150";
+            } else if (btn_penampang_240_out.isSelected()) {
+                penampang_jurusan_a = "240";
+            }
+            //=====
+            //spinner
+            sambung_kabel_jtr_jurusan_a = spinner2.getSelectedItem().toString();
+            //=====
+        } else if (data_kabel_jurusan_B.isSelected()) {
+            data_kabel_jurusan = "jurusan B";
+
+            //button jnyy lvtc nyfgby
+
+            if (btn_jur_B_outlet_NYY.isSelected()) {
+                jenis_kabel_jurusan_b = "NYY";
+            } else if (btn_jur_B_outlet_LUTC.isSelected()) {
+                jenis_kabel_jurusan_b = "LVTC";
+            } else if (btn_jur_B_outlet_NYFUBY.isSelected()) {
+                jenis_kabel_jurusan_b = "NYFGBY";
+            }
+            //=====
+            //button 25 35 70 95 150
+
+            if (btn_jur_B_penampang_25.isSelected()) {
+                penampang_jurusan_b = "25";
+            } else if (btn_jur_B_penampang_35.isSelected()) {
+                penampang_jurusan_b = "35";
+            } else if (btn_jur_B_penampang_70_out.isSelected()) {
+                penampang_jurusan_b = "70";
+            } else if (btn_jur_B_penampang_95_out.isSelected()) {
+                penampang_jurusan_b = "95";
+            } else if (btn_jur_B_penampang_150_out.isSelected()) {
+                penampang_jurusan_b = "150";
+            } else if (btn_jur_B_penampang_240_out.isSelected()) {
+                penampang_jurusan_b = "240";
+            }
+            //=====
+            //spinner
+            sambung_kabel_jtr_jurusan_b = spinner3.getSelectedItem().toString();
+            //=====
+        } else if (data_kabel_jurusan_C.isSelected()) {
+            data_kabel_jurusan = "jurusan C";
+
+            //button jnyy lvtc nyfgby
+
+            if (btn_jur_C_outlet_NYY.isSelected()) {
+                jenis_kabel_jurusan_c = "NYY";
+            } else if (btn_jur_C_outlet_LUTC.isSelected()) {
+                jenis_kabel_jurusan_c = "LVTC";
+            } else if (btn_jur_C_outlet_NYFUBY.isSelected()) {
+                jenis_kabel_jurusan_c = "NYFGBY";
+            }
+            //=====
+            //button 25 35 70 95 150
+
+            if (btn_jur_C_penampang_25i.isSelected()) {
+                penampang_jurusan_c = "25";
+            } else if (btn_jur_C_penampang_35i.isSelected()) {
+                penampang_jurusan_c = "35";
+            } else if (btn_jur_C_penampang_70i_out.isSelected()) {
+                penampang_jurusan_c = "70";
+            } else if (btn_jur_C_penampang_95i_out.isSelected()) {
+                penampang_jurusan_c = "95";
+            } else if (btn_jur_C_penampang_150i_out.isSelected()) {
+                penampang_jurusan_c = "150";
+            } else if (btn_jur_C_penampang_240i_out.isSelected()) {
+                penampang_jurusan_c = "240";
+            }
+            //=====
+            //spinner
+           sambung_kabel_jtr_jurusan_c = spinner4.getSelectedItem().toString();
+            //=====
+        } else if (data_kabel_jurusan_D.isSelected()) {
+            data_kabel_jurusan = "jurusan D";
+
+            //button jnyy lvtc nyfgby
+
+            if (btn_jur_D_outlet_NYY.isSelected()) {
+                jenis_kabel_jurusan_d = "NYY";
+            } else if (btn_jur_D_outlet_LUTC.isSelected()) {
+                jenis_kabel_jurusan_d = "LVTC";
+            } else if (btn_jur_D_outlet_NYFUBY.isSelected()) {
+                jenis_kabel_jurusan_d = "NYFGBY";
+            }
+            //=====
+            //button 25 35 70 95 150
+
+            if (btn_jur_D_penampang_25.isSelected()) {
+                penampang_jurusan_d = "25";
+            } else if (btn_jur_D_penampang_35.isSelected()) {
+                penampang_jurusan_d = "35";
+            } else if (btn_jur_D_penampang_70_out.isSelected()) {
+                penampang_jurusan_d = "70";
+            } else if (btn_jur_D_penampang_95_out.isSelected()) {
+                penampang_jurusan_d = "95";
+            } else if (btn_jur_D_penampang_150_out.isSelected()) {
+                penampang_jurusan_d = "150";
+            } else if (btn_jur_D_penampang_240_out.isSelected()) {
+                penampang_jurusan_d = "240";
+            }
+            //=====
+            //spinner
+           sambung_kabel_jtr_jurusan_d = spinner5.getSelectedItem().toString();
+            //=====
         }
 
-        //=====
-        //button 25 35 70 95 150
-        String penampang_jurusan_a= "";
-        if(btn_penampang_25.isSelected()){
-            penampang_jurusan_a ="25";
-        }else if(btn_penampang_35.isSelected()){
-            penampang_jurusan_a ="35";
-        }else if(btn_penampang_70_out.isSelected()){
-            penampang_jurusan_a ="70";
-        }else if(btn_penampang_95_out.isSelected()){
-            penampang_jurusan_a ="95";
-        }else if(btn_penampang_150_out.isSelected()){
-            penampang_jurusan_a ="150";
-        }else if(btn_penampang_240_out.isSelected()){
-            penampang_jurusan_a ="240";
-        }
-        //=====
-        //spinner
-        String sambung_kabel_jtr_jurusan_a=spinner2.getSelectedItem().toString();
-//        //=====
-//        //button jnyy lvtc nyfgby
-//        String jenis_kabel_jurusan_b= "";
-//        if(btn_jur_B_outlet_NYY.isSelected()){
-//            jenis_kabel_jurusan_b ="NYY";
-//        }else if(btn_jur_B_outlet_LUTC.isSelected()){
-//            jenis_kabel_jurusan_b ="LVTC";
-//        }else if(btn_jur_B_outlet_NYFUBY.isSelected()){
-//            jenis_kabel_jurusan_b ="NYFGBY";
-//        }
-//        //=====
-//        //button 25 35 70 95 150
-//        String penampang_jurusan_b= "";
-//        if(btn_jur_B_penampang_25.isSelected()){
-//            penampang_jurusan_b ="25";
-//        }else if(btn_jur_B_penampang_35.isSelected()){
-//            penampang_jurusan_b ="35";
-//        }else if(btn_jur_B_penampang_70_out.isSelected()){
-//            penampang_jurusan_b ="70";
-//        }else if(btn_jur_B_penampang_95_out.isSelected()){
-//            penampang_jurusan_b ="95";
-//        }else if(btn_jur_B_penampang_150_out.isSelected()){
-//            penampang_jurusan_b ="150";
-//        }else if(btn_jur_B_penampang_240_out.isSelected()){
-//            penampang_jurusan_b ="240";
-//        }
-//        //=====
-//        //spinner
-//        String sambung_kabel_jtr_jurusan_b=spinner3.getSelectedItem().toString();
-//        //=====
-//        //button jnyy lvtc nyfgby
-//        String jenis_kabel_jurusan_c= "";
-//        if(btn_jur_C_outlet_NYY.isSelected()){
-//            jenis_kabel_jurusan_c ="NYY";
-//        }else if(btn_jur_C_outlet_LUTC.isSelected()){
-//            jenis_kabel_jurusan_c ="LVTC";
-//        }else if(btn_jur_C_outlet_NYFUBY.isSelected()){
-//            jenis_kabel_jurusan_c ="NYFGBY";
-//        }
-//        //=====
-//        //button 25 35 70 95 150
-//        String penampang_jurusan_c= "";
-//        if(btn_jur_C_penampang_25i.isSelected()){
-//            penampang_jurusan_c ="25";
-//        }else if(btn_jur_C_penampang_35i.isSelected()){
-//            penampang_jurusan_c ="35";
-//        }else if(btn_jur_C_penampang_70i_out.isSelected()){
-//            penampang_jurusan_c ="70";
-//        }else if(btn_jur_C_penampang_95i_out.isSelected()){
-//            penampang_jurusan_c ="95";
-//        }else if(btn_jur_C_penampang_150i_out.isSelected()){
-//            penampang_jurusan_c ="150";
-//        }else if(btn_jur_C_penampang_240i_out.isSelected()){
-//            penampang_jurusan_c ="240";
-//        }
-//        //=====
-//        //spinner
-//        String sambung_kabel_jtr_jurusan_c=spinner4.getSelectedItem().toString();
-//        //=====
-//        //button jnyy lvtc nyfgby
-//        String jenis_kabel_jurusan_d= "";
-//        if(btn_jur_D_outlet_NYY.isSelected()){
-//            jenis_kabel_jurusan_d ="NYY";
-//        }else if(btn_jur_D_outlet_LUTC.isSelected()){
-//            jenis_kabel_jurusan_d ="LVTC";
-//        }else if(btn_jur_D_outlet_NYFUBY.isSelected()){
-//            jenis_kabel_jurusan_d ="NYFGBY";
-//        }
-//        //=====
-//        //button 25 35 70 95 150
-//        String penampang_jurusan_d= "";
-//        if(btn_jur_D_penampang_25.isSelected()){
-//            penampang_jurusan_d ="25";
-//        }else if(btn_jur_D_penampang_35.isSelected()){
-//            penampang_jurusan_d ="35";
-//        }else if(btn_jur_D_penampang_70_out.isSelected()){
-//            penampang_jurusan_d ="70";
-//        }else if(btn_jur_D_penampang_95_out.isSelected()){
-//            penampang_jurusan_d ="95";
-//        }else if(btn_jur_D_penampang_150_out.isSelected()){
-//            penampang_jurusan_d ="150";
-//        }else if(btn_jur_D_penampang_240_out.isSelected()){
-//            penampang_jurusan_d ="240";
-//        }
-//        //=====
-//        //spinner
-//        String sambung_kabel_jtr_jurusan_d=spinner5.getSelectedItem().toString();
-//        //=====
         //=======================
-        SupportManager supportManager=new SupportManager();
-        String tanggal= supportManager.get_date_now();
-        GPSTracker gpsTracker=new GPSTracker(getApplicationContext(),this);
-        String alamat=supportManager.getCompleteAddressString(gpsTracker.getLatitude(),gpsTracker.getLongitude(),getApplicationContext());
+        SupportManager supportManager = new SupportManager();
+        String tanggal = supportManager.get_date_now();
+        GPSTracker gpsTracker = new GPSTracker(getApplicationContext(), this);
+        String alamat = supportManager.getCompleteAddressString(gpsTracker.getLatitude(), gpsTracker.getLongitude(), getApplicationContext());
         modelForm.setAlamat(alamat);
         modelForm.setTanggal(tanggal);
         modelForm.setPetugas(petugas);
@@ -1560,6 +1629,8 @@ public class MainActivity extends AppCompatActivity {
         modelForm.setPrimer_phasa_t(primer_phasa_t);
         modelForm.setSaklar_merk(saklar_merk);
         modelForm.setSaklar_arus(saklar_arus);
+        modelForm.setSaklar_utama_phb(saklar_utama_phb);
+        modelForm.setFuse_jurusan(fuse_jurusan);
         modelForm.setFuse_R_Jur_A(fuse_R_Jur_A);
         modelForm.setFuse_S_Jur_A(fuse_S_Jur_A);
         modelForm.setFuse_T_Jur_A(fuse_T_Jur_A);
@@ -1569,6 +1640,7 @@ public class MainActivity extends AppCompatActivity {
         modelForm.setFuse_R_Jur_C(fuse_R_Jur_C);
         modelForm.setFuse_S_Jur_C(fuse_S_Jur_C);
         modelForm.setFuse_T_Jur_C(fuse_T_Jur_C);
+        modelForm.setNh_jurusan(nh_jurusan);
         modelForm.setNH_R_Jur_A(NH_R_Jur_A);
         modelForm.setNH_S_Jur_A(NH_S_Jur_A);
         modelForm.setNH_T_Jur_A(NH_T_Jur_A);
@@ -1583,27 +1655,28 @@ public class MainActivity extends AppCompatActivity {
         modelForm.setNH_T_Jur_D(NH_T_Jur_D);
         modelForm.setArrester(arrester);
         modelForm.setSaklar_tahanan_arrester(saklar_tahanan_arrester);
-        modelForm.setSaklar_tahanan_netral( saklar_tahanan_netral);
-        modelForm.setBody_trafo( body_trafo);
-        modelForm.setKabel_inlet( kabel_inlet);
-        modelForm.setPenampang_inlet( penampang_inlet);
-        modelForm.setJenis_kabel_jurusan_a( jenis_kabel_jurusan_a);
-        modelForm.setPenampang_jurusan_a( penampang_jurusan_a);
-        modelForm.setSambung_kabel_jtr_jurusan_a( sambung_kabel_jtr_jurusan_a);
-//        modelForm.setJenis_kabel_jurusan_b( jenis_kabel_jurusan_b);
-//        modelForm.setPenampang_jurusan_b( penampang_jurusan_b);
-//        modelForm.setSambung_kabel_jtr_jurusan_b(sambung_kabel_jtr_jurusan_b);
-//        modelForm.setJenis_kabel_jurusan_c( jenis_kabel_jurusan_c);
-//        modelForm.setPenampang_jurusan_c( penampang_jurusan_c);
-//        modelForm.setSambung_kabel_jtr_jurusan_c( sambung_kabel_jtr_jurusan_c);
-//        modelForm.setJenis_kabel_jurusan_d( jenis_kabel_jurusan_d);
-//        modelForm.setPenampang_jurusan_d( penampang_jurusan_d);
-//        modelForm.setSambung_kabel_jtr_jurusan_d( sambung_kabel_jtr_jurusan_d);
+        modelForm.setSaklar_tahanan_netral(saklar_tahanan_netral);
+        modelForm.setBody_trafo(body_trafo);
+        modelForm.setKabel_inlet(kabel_inlet);
+        modelForm.setPenampang_inlet(penampang_inlet);
+        modelForm.setData_kabel_jurusan(data_kabel_jurusan);
+        modelForm.setJenis_kabel_jurusan_a(jenis_kabel_jurusan_a);
+        modelForm.setPenampang_jurusan_a(penampang_jurusan_a);
+        modelForm.setSambung_kabel_jtr_jurusan_a(sambung_kabel_jtr_jurusan_a);
+        modelForm.setJenis_kabel_jurusan_b( jenis_kabel_jurusan_b);
+        modelForm.setPenampang_jurusan_b( penampang_jurusan_b);
+        modelForm.setSambung_kabel_jtr_jurusan_b(sambung_kabel_jtr_jurusan_b);
+        modelForm.setJenis_kabel_jurusan_c( jenis_kabel_jurusan_c);
+        modelForm.setPenampang_jurusan_c( penampang_jurusan_c);
+        modelForm.setSambung_kabel_jtr_jurusan_c( sambung_kabel_jtr_jurusan_c);
+        modelForm.setJenis_kabel_jurusan_d( jenis_kabel_jurusan_d);
+        modelForm.setPenampang_jurusan_d( penampang_jurusan_d);
+        modelForm.setSambung_kabel_jtr_jurusan_d( sambung_kabel_jtr_jurusan_d);
         return modelForm;
     }
 
-    private boolean check_error(){
-        boolean check=false;
+    private boolean check_error() {
+        final boolean[] check = {false};
         final EditText f_petugas = (EditText) findViewById(R.id.f_petugas);
         final EditText f_kapel = (EditText) findViewById(R.id.f_kapel);
         final EditText f_kode_gardu = (EditText) findViewById(R.id.f_kode_gardu);
@@ -1641,263 +1714,288 @@ public class MainActivity extends AppCompatActivity {
         final EditText f_NH_R_Jur_D = (EditText) findViewById(R.id.f_NH_R_Jur_D);
         final EditText f_NH_S_Jur_D = (EditText) findViewById(R.id.f_NH_S_Jur_D);
         final EditText f_NH_T_Jur_D = (EditText) findViewById(R.id.f_NH_T_Jur_D);
-        final EditText f_arrester = (EditText) findViewById(R.id.f_saklar_merk);
+        final EditText f_arrester = (EditText) findViewById(R.id.f_arrester);
         final EditText f_saklar_tahanan_arrester = (EditText) findViewById(R.id.f_saklar_tahanan_arrester);
         final EditText f_saklar_tahanan_netral = (EditText) findViewById(R.id.f_saklar_tahanan_netral);
         final EditText f_body_trafo = (EditText) findViewById(R.id.f_body_trafo);
 
 
-
-
-        if(TextUtils.isEmpty(f_petugas.getText()) ){
+        if (TextUtils.isEmpty(f_petugas.getText())) {
 
             f_petugas.setError(getResources().getString(R.string.pesan_eror));
-            check=true;
+            check[0] = true;
         }
 
-        if(TextUtils.isEmpty(f_kapel.getText()) ){
+        if (TextUtils.isEmpty(f_kapel.getText())) {
 
             f_kapel.setError(getResources().getString(R.string.pesan_eror));
-            check=true;
+            check[0] = true;
         }
 
-        if(TextUtils.isEmpty(f_kode_gardu.getText()) ){
+        if (TextUtils.isEmpty(f_kode_gardu.getText())) {
 
             f_kode_gardu.setError(getResources().getString(R.string.pesan_eror));
-            check=true;
+            check[0] = true;
         }
 
-        if(TextUtils.isEmpty(f_daya.getText()) ){
+        if (TextUtils.isEmpty(f_daya.getText())) {
 
             f_daya.setError(getResources().getString(R.string.pesan_eror));
-            check=true;
+            check[0] = true;
         }
 
-        if(TextUtils.isEmpty(f_merk.getText()) ){
+        if (TextUtils.isEmpty(f_merk.getText())) {
 
             f_merk.setError(getResources().getString(R.string.pesan_eror));
-            check=true;
+            check[0] = true;
         }
 
-        if(TextUtils.isEmpty(f_noserie.getText()) ){
+        if (TextUtils.isEmpty(f_noserie.getText())) {
 
             f_noserie.setError(getResources().getString(R.string.pesan_eror));
-            check=true;
+            check[0] = true;
         }
 
-        if(TextUtils.isEmpty(f_jlh_fasa.getText()) ){
+        if (TextUtils.isEmpty(f_jlh_fasa.getText())) {
 
             f_jlh_fasa.setError(getResources().getString(R.string.pesan_eror));
-            check=true;
+            check[0] = true;
         }
 
-        if(TextUtils.isEmpty(f_tap_operasi.getText()) ){
+        if (TextUtils.isEmpty(f_tap_operasi.getText())) {
 
             f_tap_operasi.setError(getResources().getString(R.string.pesan_eror));
-            check=true;
+            check[0] = true;
         }
 
-        if(TextUtils.isEmpty(f_kons_trafo.getText()) ){
+        if (TextUtils.isEmpty(f_kons_trafo.getText())) {
 
             f_kons_trafo.setError(getResources().getString(R.string.pesan_eror));
-            check=true;
+            check[0] = true;
         }
 
-        if(TextUtils.isEmpty(f_tahun_pembuatan.getText()) ){
+        if (TextUtils.isEmpty(f_tahun_pembuatan.getText())) {
 
             f_tahun_pembuatan.setError(getResources().getString(R.string.pesan_eror));
-            check=true;
+            check[0] = true;
         }
 
-        if(TextUtils.isEmpty(f_kebutuhan_schoon_PHB.getText()) ){
+        if (TextUtils.isEmpty(f_kebutuhan_schoon_PHB.getText())) {
 
             f_kebutuhan_schoon_PHB.setError(getResources().getString(R.string.pesan_eror));
-            check=true;
+            check[0] = true;
         }
 
-        if(TextUtils.isEmpty(f_primer_phasa_r.getText()) ){
+        if (TextUtils.isEmpty(f_primer_phasa_r.getText())) {
 
             f_primer_phasa_r.setError(getResources().getString(R.string.pesan_eror));
-            check=true;
+            check[0] = true;
         }
 
-        if(TextUtils.isEmpty(f_primer_phasa_s.getText()) ){
+        if (TextUtils.isEmpty(f_primer_phasa_s.getText())) {
 
             f_primer_phasa_s.setError(getResources().getString(R.string.pesan_eror));
-            check=true;
+            check[0] = true;
         }
 
-        if(TextUtils.isEmpty(f_primer_phasa_t.getText()) ){
+        if (TextUtils.isEmpty(f_primer_phasa_t.getText())) {
 
             f_primer_phasa_t.setError(getResources().getString(R.string.pesan_eror));
-            check=true;
+            check[0] = true;
         }
 
-        if(TextUtils.isEmpty(f_saklar_merk.getText()) ){
+        final Button button_ya_phb = (Button) findViewById(R.id.saklar_utama_phb_ya);
+        if (button_ya_phb.isSelected()) {
+            if (TextUtils.isEmpty(f_saklar_merk.getText())) {
 
-            f_saklar_merk.setError(getResources().getString(R.string.pesan_eror));
-            check=true;
+                f_saklar_merk.setError(getResources().getString(R.string.pesan_eror));
+                check[0] = true;
+            }
+
+            if (TextUtils.isEmpty(f_saklar_arus.getText())) {
+
+                f_saklar_arus.setError(getResources().getString(R.string.pesan_eror));
+                check[0] = true;
+            }
         }
 
-        if(TextUtils.isEmpty(f_saklar_arus.getText()) ){
 
-            f_saklar_arus.setError(getResources().getString(R.string.pesan_eror));
-            check=true;
+        final Button button_jur_A = (Button) findViewById(R.id.fuse_jurusan_A);
+        final Button button_jur_B = (Button) findViewById(R.id.fuse_jurusan_B);
+        final Button button_jur_C = (Button) findViewById(R.id.fuse_jurusan_C);
+        if (button_jur_A.isSelected()) {
+            if (TextUtils.isEmpty(f_fuse_R_Jur_A.getText())) {
+
+                f_fuse_R_Jur_A.setError(getResources().getString(R.string.pesan_eror));
+                check[0] = true;
+            }
+
+            if (TextUtils.isEmpty(f_fuse_S_Jur_A.getText())) {
+
+                f_fuse_S_Jur_A.setError(getResources().getString(R.string.pesan_eror));
+                check[0] = true;
+            }
+
+            if (TextUtils.isEmpty(f_fuse_T_Jur_A.getText())) {
+
+                f_fuse_T_Jur_A.setError(getResources().getString(R.string.pesan_eror));
+                check[0] = true;
+            }
+
+        } else if (button_jur_B.isSelected()) {
+            if (TextUtils.isEmpty(f_fuse_R_Jur_B.getText())) {
+
+                f_fuse_R_Jur_B.setError(getResources().getString(R.string.pesan_eror));
+                check[0] = true;
+            }
+
+            if (TextUtils.isEmpty(f_fuse_S_Jur_B.getText())) {
+
+                f_fuse_S_Jur_B.setError(getResources().getString(R.string.pesan_eror));
+                check[0] = true;
+            }
+
+            if (TextUtils.isEmpty(f_fuse_T_Jur_B.getText())) {
+
+                f_fuse_T_Jur_B.setError(getResources().getString(R.string.pesan_eror));
+                check[0] = true;
+            }
+        } else if (button_jur_C.isSelected()) {
+            if (TextUtils.isEmpty(f_fuse_R_Jur_C.getText())) {
+
+                f_fuse_R_Jur_C.setError(getResources().getString(R.string.pesan_eror));
+                check[0] = true;
+            }
+
+            if (TextUtils.isEmpty(f_fuse_S_Jur_C.getText())) {
+
+                f_fuse_S_Jur_C.setError(getResources().getString(R.string.pesan_eror));
+                check[0] = true;
+            }
+
+            if (TextUtils.isEmpty(f_fuse_T_Jur_C.getText())) {
+
+                f_fuse_T_Jur_C.setError(getResources().getString(R.string.pesan_eror));
+                check[0] = true;
+            }
         }
 
 
-        if(TextUtils.isEmpty(f_fuse_R_Jur_A.getText()) ){
+        //NH Jurusan
+        final Button button_jur_NH_A = (Button) findViewById(R.id.NH_jurusan_A);
+        final Button button_jur_NH_B = (Button) findViewById(R.id.NH_jurusan_B);
+        final Button button_jur_NH_C = (Button) findViewById(R.id.NH_jurusan_C);
+        final Button button_jur_NH_D = (Button) findViewById(R.id.NH_jurusan_D);
+        if (button_jur_NH_A.isSelected()) {
 
-            f_fuse_R_Jur_A.setError(getResources().getString(R.string.pesan_eror));
-            check=true;
+            if (TextUtils.isEmpty(f_NH_R_Jur_A.getText())) {
+
+                f_NH_R_Jur_A.setError(getResources().getString(R.string.pesan_eror));
+                check[0] = true;
+            }
+
+            if (TextUtils.isEmpty(f_NH_S_Jur_A.getText())) {
+
+                f_NH_S_Jur_A.setError(getResources().getString(R.string.pesan_eror));
+                check[0] = true;
+            }
+
+            if (TextUtils.isEmpty(f_NH_T_Jur_A.getText())) {
+
+                f_NH_T_Jur_A.setError(getResources().getString(R.string.pesan_eror));
+                check[0] = true;
+            }
+
+
+        } else if (button_jur_NH_B.isSelected()) {
+
+            if (TextUtils.isEmpty(f_NH_R_Jur_B.getText())) {
+
+                f_NH_R_Jur_B.setError(getResources().getString(R.string.pesan_eror));
+                check[0] = true;
+            }
+
+            if (TextUtils.isEmpty(f_NH_S_Jur_B.getText())) {
+
+                f_NH_S_Jur_B.setError(getResources().getString(R.string.pesan_eror));
+                check[0] = true;
+            }
+
+            if (TextUtils.isEmpty(f_NH_T_Jur_B.getText())) {
+
+                f_NH_T_Jur_B.setError(getResources().getString(R.string.pesan_eror));
+                check[0] = true;
+            }
+
+
+        } else if (button_jur_NH_C.isSelected()) {
+
+            if (TextUtils.isEmpty(f_NH_R_Jur_C.getText())) {
+
+                f_NH_R_Jur_C.setError(getResources().getString(R.string.pesan_eror));
+                check[0] = true;
+            }
+
+            if (TextUtils.isEmpty(f_NH_S_Jur_C.getText())) {
+
+                f_NH_S_Jur_C.setError(getResources().getString(R.string.pesan_eror));
+                check[0] = true;
+            }
+
+            if (TextUtils.isEmpty(f_NH_T_Jur_C.getText())) {
+
+                f_NH_T_Jur_C.setError(getResources().getString(R.string.pesan_eror));
+                check[0] = true;
+            }
+
+
+        } else if (button_jur_NH_D.isSelected()) {
+            if (TextUtils.isEmpty(f_NH_R_Jur_D.getText())) {
+
+                f_NH_R_Jur_D.setError(getResources().getString(R.string.pesan_eror));
+                check[0] = true;
+            }
+
+            if (TextUtils.isEmpty(f_NH_S_Jur_D.getText())) {
+
+                f_NH_S_Jur_D.setError(getResources().getString(R.string.pesan_eror));
+                check[0] = true;
+            }
+
+            if (TextUtils.isEmpty(f_NH_T_Jur_D.getText())) {
+
+                f_NH_T_Jur_D.setError(getResources().getString(R.string.pesan_eror));
+                check[0] = true;
+            }
         }
 
-        if(TextUtils.isEmpty(f_fuse_S_Jur_A.getText()) ){
 
-            f_fuse_S_Jur_A.setError(getResources().getString(R.string.pesan_eror));
-            check=true;
-        }
-
-        if(TextUtils.isEmpty(f_fuse_T_Jur_A.getText()) ){
-
-            f_fuse_T_Jur_A.setError(getResources().getString(R.string.pesan_eror));
-            check=true;
-        }
-
-        if(TextUtils.isEmpty(f_fuse_R_Jur_B.getText()) ){
-
-            f_fuse_R_Jur_B.setError(getResources().getString(R.string.pesan_eror));
-            check=true;
-        }
-
-        if(TextUtils.isEmpty(f_fuse_S_Jur_B.getText()) ){
-
-            f_fuse_S_Jur_B.setError(getResources().getString(R.string.pesan_eror));
-            check=true;
-        }
-
-        if(TextUtils.isEmpty(f_fuse_T_Jur_B.getText()) ){
-
-            f_fuse_T_Jur_B.setError(getResources().getString(R.string.pesan_eror));
-            check=true;
-        }
-
-        if(TextUtils.isEmpty(f_fuse_R_Jur_C.getText()) ){
-
-            f_fuse_R_Jur_C.setError(getResources().getString(R.string.pesan_eror));
-            check=true;
-        }
-
-        if(TextUtils.isEmpty(f_fuse_S_Jur_C.getText()) ){
-
-            f_fuse_S_Jur_C.setError(getResources().getString(R.string.pesan_eror));
-            check=true;
-        }
-
-        if(TextUtils.isEmpty(f_fuse_T_Jur_C.getText()) ){
-
-            f_fuse_T_Jur_C.setError(getResources().getString(R.string.pesan_eror));
-            check=true;
-        }
-
-        if(TextUtils.isEmpty(f_NH_R_Jur_A.getText()) ){
-
-            f_NH_R_Jur_A.setError(getResources().getString(R.string.pesan_eror));
-            check=true;
-        }
-
-        if(TextUtils.isEmpty(f_NH_S_Jur_A.getText()) ){
-
-            f_NH_S_Jur_A.setError(getResources().getString(R.string.pesan_eror));
-            check=true;
-        }
-
-        if(TextUtils.isEmpty(f_NH_T_Jur_A.getText()) ){
-
-            f_NH_T_Jur_A.setError(getResources().getString(R.string.pesan_eror));
-            check=true;
-        }
-
-        if(TextUtils.isEmpty(f_NH_R_Jur_B.getText()) ){
-
-            f_NH_R_Jur_B.setError(getResources().getString(R.string.pesan_eror));
-            check=true;
-        }
-
-        if(TextUtils.isEmpty(f_NH_S_Jur_B.getText()) ){
-
-            f_NH_S_Jur_B.setError(getResources().getString(R.string.pesan_eror));
-            check=true;
-        }
-
-        if(TextUtils.isEmpty(f_NH_T_Jur_B.getText()) ){
-
-            f_NH_T_Jur_B.setError(getResources().getString(R.string.pesan_eror));
-            check=true;
-        }
-
-        if(TextUtils.isEmpty(f_NH_R_Jur_C.getText()) ){
-
-            f_NH_R_Jur_C.setError(getResources().getString(R.string.pesan_eror));
-            check=true;
-        }
-
-        if(TextUtils.isEmpty(f_NH_S_Jur_C.getText()) ){
-
-            f_NH_S_Jur_C.setError(getResources().getString(R.string.pesan_eror));
-            check=true;
-        }
-
-        if(TextUtils.isEmpty(f_NH_T_Jur_C.getText()) ){
-
-            f_NH_T_Jur_C.setError(getResources().getString(R.string.pesan_eror));
-            check=true;
-        }
-
-        if(TextUtils.isEmpty(f_NH_R_Jur_D.getText()) ){
-
-            f_NH_R_Jur_D.setError(getResources().getString(R.string.pesan_eror));
-            check=true;
-        }
-
-        if(TextUtils.isEmpty(f_NH_S_Jur_D.getText()) ){
-
-            f_NH_S_Jur_D.setError(getResources().getString(R.string.pesan_eror));
-            check=true;
-        }
-
-        if(TextUtils.isEmpty(f_NH_T_Jur_D.getText()) ){
-
-            f_NH_T_Jur_D.setError(getResources().getString(R.string.pesan_eror));
-            check=true;
-        }
-
-        if(TextUtils.isEmpty(f_arrester.getText()) ){
+        if (TextUtils.isEmpty(f_arrester.getText())) {
 
             f_arrester.setError(getResources().getString(R.string.pesan_eror));
-            check=true;
+            check[0] = true;
         }
 
-        if(TextUtils.isEmpty(f_saklar_tahanan_arrester.getText()) ){
+        if (TextUtils.isEmpty(f_saklar_tahanan_arrester.getText())) {
 
             f_saklar_tahanan_arrester.setError(getResources().getString(R.string.pesan_eror));
-            check=true;
+            check[0] = true;
         }
 
-        if(TextUtils.isEmpty(f_saklar_tahanan_netral.getText()) ){
+        if (TextUtils.isEmpty(f_saklar_tahanan_netral.getText())) {
 
             f_saklar_tahanan_netral.setError(getResources().getString(R.string.pesan_eror));
-            check=true;
+            check[0] = true;
         }
 
-        if(TextUtils.isEmpty(f_body_trafo.getText()) ){
+        if (TextUtils.isEmpty(f_body_trafo.getText())) {
 
             f_body_trafo.setError(getResources().getString(R.string.pesan_eror));
-            check=true;
+            check[0] = true;
         }
 
 
-        return check;
+        return check[0];
     }
 
 }
