@@ -46,6 +46,26 @@ public class ModelForm {
     private String primer_phasa_t ;
     private String saklar_merk ;
     private String saklar_arus ;
+
+    public String getSaklar_utama_phb() {
+        return saklar_utama_phb;
+    }
+
+    public void setSaklar_utama_phb(String saklar_utama_phb) {
+        this.saklar_utama_phb = saklar_utama_phb;
+    }
+
+    private String saklar_utama_phb;
+    private String fuse_jurusan;
+
+    public String getFuse_jurusan() {
+        return fuse_jurusan;
+    }
+
+    public void setFuse_jurusan(String fuse_jurusan) {
+        this.fuse_jurusan = fuse_jurusan;
+    }
+
     private String fuse_R_Jur_A ;
     private String fuse_S_Jur_A ;
     private String fuse_T_Jur_A ;
@@ -55,6 +75,17 @@ public class ModelForm {
     private String fuse_R_Jur_C ;
     private String fuse_S_Jur_C ;
     private String fuse_T_Jur_C ;
+
+    public String getNh_jurusan() {
+        return nh_jurusan;
+    }
+
+    public void setNh_jurusan(String nh_jurusan) {
+        this.nh_jurusan = nh_jurusan;
+    }
+
+    private String nh_jurusan;
+
     private String NH_R_Jur_A ;
     private String NH_S_Jur_A ;
     private String NH_T_Jur_A ;
@@ -87,6 +118,16 @@ public class ModelForm {
 
 
     //Jenis Kabel Outlet
+    private String data_kabel_jurusan;
+
+    public String getData_kabel_jurusan() {
+        return data_kabel_jurusan;
+    }
+
+    public void setData_kabel_jurusan(String data_kabel_jurusan) {
+        this.data_kabel_jurusan = data_kabel_jurusan;
+    }
+
     //button jnyy lvtc nyfgby
     private String jenis_kabel_jurusan_a;
 
