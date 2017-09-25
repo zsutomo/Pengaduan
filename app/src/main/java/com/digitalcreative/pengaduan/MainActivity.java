@@ -1216,12 +1216,12 @@ public class MainActivity extends AppCompatActivity {
         final EditText f_fuse_S_Jur_A = (EditText) findViewById(R.id.f_fuse_S_Jur_A);
         final EditText f_fuse_T_Jur_A = (EditText) findViewById(R.id.f_fuse_T_Jur_A);
 
-        final Button fuse_jurusan_B = (Button) findViewById(R.id.fuse_jurusan_A);
+        final Button fuse_jurusan_B = (Button) findViewById(R.id.fuse_jurusan_B);
         final EditText f_fuse_R_Jur_B = (EditText) findViewById(R.id.f_fuse_R_Jur_B);
         final EditText f_fuse_S_Jur_B = (EditText) findViewById(R.id.f_fuse_S_Jur_B);
         final EditText f_fuse_T_Jur_B = (EditText) findViewById(R.id.f_fuse_T_Jur_B);
 
-        final Button fuse_jurusan_C = (Button) findViewById(R.id.fuse_jurusan_A);
+        final Button fuse_jurusan_C = (Button) findViewById(R.id.fuse_jurusan_C);
         final EditText f_fuse_R_Jur_C = (EditText) findViewById(R.id.f_fuse_R_Jur_C);
         final EditText f_fuse_S_Jur_C = (EditText) findViewById(R.id.f_fuse_S_Jur_C);
         final EditText f_fuse_T_Jur_C = (EditText) findViewById(R.id.f_fuse_T_Jur_C);
@@ -1246,7 +1246,7 @@ public class MainActivity extends AppCompatActivity {
         final EditText f_NH_S_Jur_D = (EditText) findViewById(R.id.f_NH_S_Jur_D);
         final EditText f_NH_T_Jur_D = (EditText) findViewById(R.id.f_NH_T_Jur_D);
 
-        final EditText f_arrester = (EditText) findViewById(R.id.f_saklar_merk);
+        final EditText f_arrester = (EditText) findViewById(R.id.f_arrester);
         final EditText f_saklar_tahanan_arrester = (EditText) findViewById(R.id.f_saklar_tahanan_arrester);
         final EditText f_saklar_tahanan_netral = (EditText) findViewById(R.id.f_saklar_tahanan_netral);
         final EditText f_body_trafo = (EditText) findViewById(R.id.f_body_trafo);
@@ -1389,7 +1389,7 @@ public class MainActivity extends AppCompatActivity {
         if (button_ya_phb.isSelected()) {
             saklar_utama_phb="Ya";
         }else if (button_tidak_phb.isSelected()) {
-            saklar_utama_phb="Ya";
+            saklar_utama_phb="tidak";
         }
         String fuse_jurusan = "";
         if (fuse_jurusan_A.isSelected()) {
