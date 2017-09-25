@@ -1,14 +1,13 @@
 package com.digitalcreative.pengaduan;
 
 import android.app.AlertDialog;
-import android.app.Fragment;
-import android.app.FragmentManager;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
-import android.location.Address;
-import android.location.Geocoder;
-import android.support.design.widget.TextInputLayout;
+import android.os.Build;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -20,19 +19,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.digitalcreative.pengaduan.Model.ModelForm;
 import com.digitalcreative.pengaduan.controller.GPSTracker;
 import com.digitalcreative.pengaduan.controller.SupportManager;
-import com.google.firebase.database.ServerValue;
 
-import java.io.IOException;
-import java.util.List;
-import java.util.Locale;
 
-import static com.digitalcreative.pengaduan.R.color.background;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -44,69 +37,84 @@ public class MainActivity extends AppCompatActivity {
     String[] KabelJTR = {
             "Join Bimetal", "Tap JTR", "Paralel"
     };
+    GPSTracker gpsTracker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+         gpsTracker = new GPSTracker(getApplicationContext(), this);
+        if (gpsTracker.canGetLocation()) {
 
 
-        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+            if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                checkLocationPermission();
+            }
+            getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
-        //set up Toolbar
-        toolbar = (Toolbar) findViewById(R.id.tool_bar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Pengaduan");
-        toolbar.setTitleTextColor(Color.WHITE);
+            //set up Toolbar
+            toolbar = (Toolbar) findViewById(R.id.tool_bar);
+            setSupportActionBar(toolbar);
+            getSupportActionBar().setTitle("Pengaduan");
+            toolbar.setTitleTextColor(Color.WHITE);
 
-        datapengaduan1();
-        datapengamantrafo();
-        datakabel();
+            datapengaduan1();
+            datapengamantrafo();
+            datakabel();
 //        check_error();
 
-        final Button btn_submit = (Button) findViewById(R.id.btn_submit);
-        btn_submit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                builder.setMessage("Apakah Anda Ingin Submit Form ini?");
-                builder.setPositiveButton(
-                        "Yes",
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
+            final Button btn_submit = (Button) findViewById(R.id.btn_submit);
+            btn_submit.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                    builder.setMessage("Apakah Anda Ingin Submit Form ini?");
+                    builder.setPositiveButton(
+                            "Yes",
+                            new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
 //                                ModelForm modelform=model_form_manager();
 //                                FirebaseManager firebaseManager=new FirebaseManager();
 //                                firebaseManager.insert_form(modelform.getPenyulang(),modelform);
 //                                Toast.makeText(MainActivity.this, "Berhasil di Submit", Toast.LENGTH_SHORT).show();
 //                                Intent intent =  new Intent(getApplicationContext(),EndActivity.class);
 //                                startActivity(intent);
-                                if (check_error() == false) {
-                                    ModelForm modelform = model_form_manager();
-                                    FirebaseManager firebaseManager = new FirebaseManager();
-                                    firebaseManager.insert_form(modelform.getPenyulang(), modelform);
-                                    Toast.makeText(MainActivity.this, "Berhasil di Submit", Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(getApplicationContext(), EndActivity.class);
-                                    startActivity(intent);
-                                } else {
-                                    Toast.makeText(MainActivity.this, "Silahkan isi data selengkapnya", Toast.LENGTH_SHORT).show();
+                                    if (check_error() == false) {
+                                        ModelForm modelform = model_form_manager();
+                                        FirebaseManager firebaseManager = new FirebaseManager();
+                                        firebaseManager.insert_form(modelform.getPenyulang(), modelform);
+                                        Toast.makeText(MainActivity.this, "Berhasil di Submit", Toast.LENGTH_SHORT).show();
+                                        Intent intent = new Intent(getApplicationContext(), EndActivity.class);
+                                        startActivity(intent);
+                                    } else {
+                                        Toast.makeText(MainActivity.this, "Silahkan isi data selengkapnya", Toast.LENGTH_SHORT).show();
+                                    }
+
                                 }
+                            });
+                    builder.setNegativeButton(
+                            "No",
+                            new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    dialogInterface.cancel();
 
-                            }
-                        });
-                builder.setNegativeButton(
-                        "No",
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                dialogInterface.cancel();
+                                }
+                            });
+                    AlertDialog alert = builder.create();
+                    alert.show();
+                }
+            });
 
-                            }
-                        });
-                AlertDialog alert = builder.create();
-                alert.show();
-            }
-        });
+        } else {
+            // Can't get location.
+            // GPS or network is not enabled.
+            // Ask user to enable GPS/network in settings.
+            gpsTracker.showSettingsAlert();
+        }
+
+
     }
 
     public void datapengaduan1() {
@@ -1604,7 +1612,7 @@ public class MainActivity extends AppCompatActivity {
         //=======================
         SupportManager supportManager = new SupportManager();
         String tanggal = supportManager.get_date_now();
-        GPSTracker gpsTracker = new GPSTracker(getApplicationContext(), this);
+
         String alamat = supportManager.getCompleteAddressString(gpsTracker.getLatitude(), gpsTracker.getLongitude(), getApplicationContext());
         modelForm.setAlamat(alamat);
         modelForm.setTanggal(tanggal);
@@ -1996,6 +2004,41 @@ public class MainActivity extends AppCompatActivity {
 
 
         return check[0];
+    }
+
+
+
+    public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
+    public boolean checkLocationPermission(){
+        if (ContextCompat.checkSelfPermission(this,
+                android.Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED) {
+
+            // Asking user if explanation is needed
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+                    android.Manifest.permission.ACCESS_FINE_LOCATION)) {
+
+                // Show an explanation to the user *asynchronously* -- don't block
+                // this thread waiting for the user's response! After the user
+                // sees the explanation, try again to request the permission.
+
+                //Prompt the user once explanation has been shown
+                ActivityCompat.requestPermissions(this,
+                        new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION},
+                        MY_PERMISSIONS_REQUEST_LOCATION);
+
+
+            } else {
+                // No explanation needed, we can request the permission.
+                ActivityCompat.requestPermissions(this,
+                        new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION},
+                        MY_PERMISSIONS_REQUEST_LOCATION);
+            }
+            return false;
+        } else {
+            return true;
+        }
+
     }
 
 }
