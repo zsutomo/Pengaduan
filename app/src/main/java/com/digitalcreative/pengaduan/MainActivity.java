@@ -1345,6 +1345,8 @@ public class MainActivity extends AppCompatActivity {
         //Spinner Jur D
         final Spinner spinner5 = (Spinner) findViewById(R.id.jur_D_spin_sambungan_kabel_ke_jtr);
 
+        final EditText editText_Lain = (EditText) findViewById(R.id.edit_text_dan_lain2);
+
         //first
         String petugas = f_petugas.getText().toString();
         String kapel = f_kapel.getText().toString();
