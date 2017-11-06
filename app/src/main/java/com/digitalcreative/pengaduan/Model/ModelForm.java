@@ -75,6 +75,33 @@ public class ModelForm {
     private String fuse_R_Jur_C ;
     private String fuse_S_Jur_C ;
     private String fuse_T_Jur_C ;
+    private String fuse_R_Jur_D ;
+    private String fuse_S_Jur_D ;
+    private String fuse_T_Jur_D ;
+
+    public String getFuse_R_Jur_D() {
+        return fuse_R_Jur_D;
+    }
+
+    public void setFuse_R_Jur_D(String fuse_R_Jur_D) {
+        this.fuse_R_Jur_D = fuse_R_Jur_D;
+    }
+
+    public String getFuse_S_Jur_D() {
+        return fuse_S_Jur_D;
+    }
+
+    public void setFuse_S_Jur_D(String fuse_S_Jur_D) {
+        this.fuse_S_Jur_D = fuse_S_Jur_D;
+    }
+
+    public String getFuse_T_Jur_D() {
+        return fuse_T_Jur_D;
+    }
+
+    public void setFuse_T_Jur_D(String fuse_T_Jur_D) {
+        this.fuse_T_Jur_D = fuse_T_Jur_D;
+    }
 
     public String getNh_jurusan() {
         return nh_jurusan;

@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
             //set up Toolbar
             toolbar = (Toolbar) findViewById(R.id.tool_bar);
             setSupportActionBar(toolbar);
-            getSupportActionBar().setTitle("Pengaduan");
+            getSupportActionBar().setTitle("Laporan Gardu Distribusi");
             toolbar.setTitleTextColor(Color.WHITE);
 
             datapengaduan1();
@@ -256,9 +256,11 @@ public class MainActivity extends AppCompatActivity {
         final Button button_jur_A = (Button) findViewById(R.id.fuse_jurusan_A);
         final Button button_jur_B = (Button) findViewById(R.id.fuse_jurusan_B);
         final Button button_jur_C = (Button) findViewById(R.id.fuse_jurusan_C);
+        final Button button_jur_D = (Button) findViewById(R.id.fuse_jurusan_D);
         final LinearLayout Jur_A_fuse = (LinearLayout) findViewById(R.id.text_gone_fuse_jurusan_A);
         final LinearLayout Jur_B_fuse = (LinearLayout) findViewById(R.id.text_gone_fuse_jurusan_B);
         final LinearLayout Jur_C_fuse = (LinearLayout) findViewById(R.id.text_gone_fuse_jurusan_C);
+        final LinearLayout Jur_D_fuse = (LinearLayout) findViewById(R.id.text_gone_fuse_jurusan_D);
         final EditText txt_R_fuse_Jur_A = (EditText) findViewById(R.id.f_fuse_R_Jur_A);
         final EditText txt_S_fuse_Jur_A = (EditText) findViewById(R.id.f_fuse_S_Jur_A);
         final EditText txt_T_fuse_Jur_A = (EditText) findViewById(R.id.f_fuse_T_Jur_A);
@@ -268,6 +270,9 @@ public class MainActivity extends AppCompatActivity {
         final EditText txt_S_fuse_Jur_C = (EditText) findViewById(R.id.f_fuse_S_Jur_C);
         final EditText txt_R_fuse_Jur_C = (EditText) findViewById(R.id.f_fuse_R_Jur_C);
         final EditText txt_T_fuse_Jur_C = (EditText) findViewById(R.id.f_fuse_T_Jur_C);
+        final EditText txt_S_fuse_Jur_D = (EditText) findViewById(R.id.f_fuse_S_Jur_D);
+        final EditText txt_R_fuse_Jur_D = (EditText) findViewById(R.id.f_fuse_R_Jur_D);
+        final EditText txt_T_fuse_Jur_D = (EditText) findViewById(R.id.f_fuse_T_Jur_D);
 
 
         button_jur_A.setOnClickListener(new View.OnClickListener() {
@@ -276,15 +281,17 @@ public class MainActivity extends AppCompatActivity {
                 Jur_A_fuse.setVisibility(View.VISIBLE);
                 Jur_C_fuse.setVisibility(View.INVISIBLE);
                 Jur_B_fuse.setVisibility(View.INVISIBLE);
+                Jur_D_fuse.setVisibility(View.INVISIBLE);
                 view.setSelected(true);
                 button_jur_B.setSelected(false);
                 button_jur_C.setSelected(false);
-                txt_R_fuse_Jur_B.setText("");
-                txt_S_fuse_Jur_B.setText("");
-                txt_T_fuse_Jur_B.setText("");
-                txt_R_fuse_Jur_C.setText("");
-                txt_S_fuse_Jur_C.setText("");
-                txt_T_fuse_Jur_C.setText("");
+                button_jur_D.setSelected(false);
+//                txt_R_fuse_Jur_B.setText("");
+//                txt_S_fuse_Jur_B.setText("");
+//                txt_T_fuse_Jur_B.setText("");
+//                txt_R_fuse_Jur_C.setText("");
+//                txt_S_fuse_Jur_C.setText("");
+//                txt_T_fuse_Jur_C.setText("");
 
 
             }
@@ -295,15 +302,17 @@ public class MainActivity extends AppCompatActivity {
                 Jur_B_fuse.setVisibility(View.VISIBLE);
                 Jur_A_fuse.setVisibility(View.INVISIBLE);
                 Jur_C_fuse.setVisibility(View.INVISIBLE);
+                Jur_D_fuse.setVisibility(View.INVISIBLE);
                 view.setSelected(true);
                 button_jur_A.setSelected(false);
                 button_jur_C.setSelected(false);
-                txt_R_fuse_Jur_A.setText("");
-                txt_S_fuse_Jur_A.setText("");
-                txt_T_fuse_Jur_A.setText("");
-                txt_R_fuse_Jur_C.setText("");
-                txt_S_fuse_Jur_C.setText("");
-                txt_T_fuse_Jur_C.setText("");
+                button_jur_D.setSelected(false);
+//                txt_R_fuse_Jur_A.setText("");
+//                txt_S_fuse_Jur_A.setText("");
+//                txt_T_fuse_Jur_A.setText("");
+//                txt_R_fuse_Jur_C.setText("");
+//                txt_S_fuse_Jur_C.setText("");
+//                txt_T_fuse_Jur_C.setText("");
 
             }
         });
@@ -313,15 +322,31 @@ public class MainActivity extends AppCompatActivity {
                 Jur_C_fuse.setVisibility(View.VISIBLE);
                 Jur_A_fuse.setVisibility(View.INVISIBLE);
                 Jur_B_fuse.setVisibility(View.INVISIBLE);
+                Jur_D_fuse.setVisibility(View.INVISIBLE);
                 view.setSelected(true);
                 button_jur_B.setSelected(false);
                 button_jur_A.setSelected(false);
-                txt_R_fuse_Jur_A.setText("");
-                txt_S_fuse_Jur_A.setText("");
-                txt_T_fuse_Jur_A.setText("");
-                txt_R_fuse_Jur_C.setText("");
-                txt_S_fuse_Jur_C.setText("");
-                txt_T_fuse_Jur_C.setText("");
+                button_jur_D.setSelected(false);
+//                txt_R_fuse_Jur_A.setText("");
+//                txt_S_fuse_Jur_A.setText("");
+//                txt_T_fuse_Jur_A.setText("");
+//                txt_R_fuse_Jur_C.setText("");
+//                txt_S_fuse_Jur_C.setText("");
+//                txt_T_fuse_Jur_C.setText("");
+            }
+        });
+        button_jur_D.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Jur_D_fuse.setVisibility(View.VISIBLE);
+                Jur_A_fuse.setVisibility(View.INVISIBLE);
+                Jur_B_fuse.setVisibility(View.INVISIBLE);
+                Jur_C_fuse.setVisibility(View.INVISIBLE);
+                view.setSelected(true);
+                button_jur_B.setSelected(false);
+                button_jur_A.setSelected(false);
+                button_jur_C.setSelected(false);
+
             }
         });
 
@@ -357,15 +382,15 @@ public class MainActivity extends AppCompatActivity {
                 button_jur_NH_D.setSelected(false);
                 button_jur_NH_B.setSelected(false);
                 button_jur_NH_C.setSelected(false);
-                txt_R_NH_Jur_B.setText("");
-                txt_S_NH_Jur_B.setText("");
-                txt_T_NH_Jur_B.setText("");
-                txt_R_NH_Jur_C.setText("");
-                txt_S_NH_Jur_C.setText("");
-                txt_T_NH_Jur_C.setText("");
-                txt_R_NH_Jur_D.setText("");
-                txt_S_NH_Jur_D.setText("");
-                txt_T_NH_Jur_D.setText("");
+//                txt_R_NH_Jur_B.setText("");
+//                txt_S_NH_Jur_B.setText("");
+//                txt_T_NH_Jur_B.setText("");
+//                txt_R_NH_Jur_C.setText("");
+//                txt_S_NH_Jur_C.setText("");
+//                txt_T_NH_Jur_C.setText("");
+//                txt_R_NH_Jur_D.setText("");
+//                txt_S_NH_Jur_D.setText("");
+//                txt_T_NH_Jur_D.setText("");
 
             }
         });
@@ -380,15 +405,15 @@ public class MainActivity extends AppCompatActivity {
                 button_jur_NH_D.setSelected(false);
                 button_jur_NH_A.setSelected(false);
                 button_jur_NH_C.setSelected(false);
-                txt_R_NH_Jur_A.setText("");
-                txt_S_NH_Jur_A.setText("");
-                txt_T_NH_Jur_A.setText("");
-                txt_R_NH_Jur_C.setText("");
-                txt_S_NH_Jur_C.setText("");
-                txt_T_NH_Jur_C.setText("");
-                txt_R_NH_Jur_D.setText("");
-                txt_S_NH_Jur_D.setText("");
-                txt_T_NH_Jur_D.setText("");
+//                txt_R_NH_Jur_A.setText("");
+//                txt_S_NH_Jur_A.setText("");
+//                txt_T_NH_Jur_A.setText("");
+//                txt_R_NH_Jur_C.setText("");
+//                txt_S_NH_Jur_C.setText("");
+//                txt_T_NH_Jur_C.setText("");
+//                txt_R_NH_Jur_D.setText("");
+//                txt_S_NH_Jur_D.setText("");
+//                txt_T_NH_Jur_D.setText("");
 
             }
         });
@@ -403,15 +428,15 @@ public class MainActivity extends AppCompatActivity {
                 button_jur_NH_D.setSelected(false);
                 button_jur_NH_B.setSelected(false);
                 button_jur_NH_A.setSelected(false);
-                txt_R_NH_Jur_B.setText("");
-                txt_S_NH_Jur_B.setText("");
-                txt_T_NH_Jur_B.setText("");
-                txt_R_NH_Jur_A.setText("");
-                txt_S_NH_Jur_A.setText("");
-                txt_T_NH_Jur_A.setText("");
-                txt_R_NH_Jur_D.setText("");
-                txt_S_NH_Jur_D.setText("");
-                txt_T_NH_Jur_D.setText("");
+//                txt_R_NH_Jur_B.setText("");
+//                txt_S_NH_Jur_B.setText("");
+//                txt_T_NH_Jur_B.setText("");
+//                txt_R_NH_Jur_A.setText("");
+//                txt_S_NH_Jur_A.setText("");
+//                txt_T_NH_Jur_A.setText("");
+//                txt_R_NH_Jur_D.setText("");
+//                txt_S_NH_Jur_D.setText("");
+//                txt_T_NH_Jur_D.setText("");
             }
         });
 
@@ -426,15 +451,15 @@ public class MainActivity extends AppCompatActivity {
                 button_jur_NH_C.setSelected(false);
                 button_jur_NH_B.setSelected(false);
                 button_jur_NH_A.setSelected(false);
-                txt_R_NH_Jur_B.setText("");
-                txt_S_NH_Jur_B.setText("");
-                txt_T_NH_Jur_B.setText("");
-                txt_R_NH_Jur_C.setText("");
-                txt_S_NH_Jur_C.setText("");
-                txt_T_NH_Jur_C.setText("");
-                txt_R_NH_Jur_A.setText("");
-                txt_S_NH_Jur_A.setText("");
-                txt_T_NH_Jur_A.setText("");
+//                txt_R_NH_Jur_B.setText("");
+//                txt_S_NH_Jur_B.setText("");
+//                txt_T_NH_Jur_B.setText("");
+//                txt_R_NH_Jur_C.setText("");
+//                txt_S_NH_Jur_C.setText("");
+//                txt_T_NH_Jur_C.setText("");
+//                txt_R_NH_Jur_A.setText("");
+//                txt_S_NH_Jur_A.setText("");
+//                txt_T_NH_Jur_A.setText("");
             }
         });
 
@@ -1319,6 +1344,8 @@ public class MainActivity extends AppCompatActivity {
         final Spinner spinner4 = (Spinner) findViewById(R.id.jur_C_spin_sambungan_kabel_ke_jtr);
         //Spinner Jur D
         final Spinner spinner5 = (Spinner) findViewById(R.id.jur_D_spin_sambungan_kabel_ke_jtr);
+
+        final EditText editText_Lain = (EditText) findViewById(R.id.edit_text_dan_lain2);
 
         //first
         String petugas = f_petugas.getText().toString();
