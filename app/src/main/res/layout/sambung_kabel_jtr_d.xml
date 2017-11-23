@@ -3,13 +3,7 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent">
-    <!--<TextView-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:padding="3dp"-->
-        <!--android:text="Jenis Kabel OUTLET"-->
-        <!--android:textColor="@color/font_color"-->
-        <!--android:textSize="@dimen/titlesize" />-->
+
     <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,8 +17,9 @@
             android:layout_height="wrap_content">
             <Button
                 android:id="@+id/join_bimetal_jurusan_D"
-                android:layout_width="110dp"
-                android:layout_height="50dp"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:padding="10dp"
                 android:layout_marginRight="@dimen/right_margin_custom_A"
                 android:background="@drawable/button_main"
                 android:text="Join Bimetal"
@@ -32,8 +27,9 @@
 
             <Button
                 android:id="@+id/tap_jtr_jurusan_D"
-                android:layout_width="110dp"
-                android:layout_height="50dp"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:padding="10dp"
                 android:layout_marginRight="@dimen/right_margin_custom_A"
                 android:background="@drawable/button_main"
                 android:text="Tap JTR"
@@ -41,8 +37,9 @@
 
             <Button
                 android:id="@+id/paralel_jurusan_D"
-                android:layout_width="110dp"
-                android:layout_height="50dp"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:padding="10dp"
                 android:layout_marginRight="@dimen/right_margin_custom_A"
                 android:background="@drawable/button_main"
                 android:text="Paralel"
