@@ -2005,23 +2005,6 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content">
 
-                                    <!--<Spinner-->
-                                        <!--android:id="@+id/spin_sambungan_kabel_ke_jtr"-->
-                                        <!--android:layout_width="fill_parent"-->
-                                        <!--android:layout_height="wrap_content"-->
-                                        <!--android:layout_marginBottom="@dimen/margin_bot"-->
-                                        <!--android:background="@drawable/button_main"-->
-                                        <!--android:spinnerMode="dropdown"-->
-                                        <!--android:transitionGroup="true" />-->
-
-                                    <!--<ImageView-->
-                                        <!--android:layout_width="20dp"-->
-                                        <!--android:layout_height="20dp"-->
-                                        <!--android:layout_alignParentRight="true"-->
-                                        <!--android:layout_margin="12dp"-->
-                                        <!--android:foregroundGravity="center"-->
-                                        <!--android:src="@drawable/triangle" />-->
-
                                     <include
                                         android:id="@+id/kabel_jtr_a"
                                         layout="@layout/sambung_kabel_jtr_a"
@@ -2120,23 +2103,6 @@
                                 <RelativeLayout
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content">
-
-                                    <!--<Spinner-->
-                                        <!--android:id="@+id/jur_B_spin_sambungan_kabel_ke_jtr"-->
-                                        <!--android:layout_width="fill_parent"-->
-                                        <!--android:layout_height="wrap_content"-->
-                                        <!--android:layout_marginBottom="@dimen/margin_bot"-->
-                                        <!--android:background="@drawable/button_main"-->
-                                        <!--android:spinnerMode="dropdown"-->
-                                        <!--android:transitionGroup="true" />-->
-
-                                    <!--<ImageView-->
-                                        <!--android:layout_width="20dp"-->
-                                        <!--android:layout_height="20dp"-->
-                                        <!--android:layout_alignParentRight="true"-->
-                                        <!--android:layout_margin="12dp"-->
-                                        <!--android:foregroundGravity="center"-->
-                                        <!--android:src="@drawable/triangle" />-->
 
                                     <include
                                         android:id="@+id/kabel_jtr_b"
@@ -2240,23 +2206,6 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content">
 
-                                    <!--<Spinner-->
-                                        <!--android:id="@+id/jur_C_spin_sambungan_kabel_ke_jtr"-->
-                                        <!--android:layout_width="fill_parent"-->
-                                        <!--android:layout_height="wrap_content"-->
-                                        <!--android:layout_marginBottom="@dimen/margin_bot"-->
-                                        <!--android:background="@drawable/button_main"-->
-                                        <!--android:spinnerMode="dropdown"-->
-                                        <!--android:transitionGroup="true" />-->
-
-                                    <!--<ImageView-->
-                                        <!--android:layout_width="20dp"-->
-                                        <!--android:layout_height="20dp"-->
-                                        <!--android:layout_alignParentRight="true"-->
-                                        <!--android:layout_margin="12dp"-->
-                                        <!--android:foregroundGravity="center"-->
-                                        <!--android:src="@drawable/triangle" />-->
-
                                     <include
                                         android:id="@+id/kabel_jtr_c"
                                         layout="@layout/sambung_kabel_jtr_c"
@@ -2355,23 +2304,6 @@
                                 <RelativeLayout
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content">
-
-                                    <!--<Spinner-->
-                                        <!--android:id="@+id/jur_D_spin_sambungan_kabel_ke_jtr"-->
-                                        <!--android:layout_width="fill_parent"-->
-                                        <!--android:layout_height="wrap_content"-->
-                                        <!--android:layout_marginBottom="@dimen/margin_bot"-->
-                                        <!--android:background="@drawable/button_main"-->
-                                        <!--android:spinnerMode="dropdown"-->
-                                        <!--android:transitionGroup="true" />-->
-
-                                    <!--<ImageView-->
-                                        <!--android:layout_width="20dp"-->
-                                        <!--android:layout_height="20dp"-->
-                                        <!--android:layout_alignParentRight="true"-->
-                                        <!--android:layout_margin="12dp"-->
-                                        <!--android:foregroundGravity="center"-->
-                                        <!--android:src="@drawable/triangle" />-->
 
                                     <include
                                         android:id="@+id/kabel_jtr_d"

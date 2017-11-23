@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="com.google.android.gms:play-services-gass-10.0.1">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/play-services-gass-10.0.1.aar/877dd99b077f43ccce5213d4f962bc49/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/play-services-gass-10.0.1.aar/877dd99b077f43ccce5213d4f962bc49/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/play-services-gass-10.0.1.aar/9d86121d1793e34770c63f98735d8dd4/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/play-services-gass-10.0.1.aar/9d86121d1793e34770c63f98735d8dd4/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
