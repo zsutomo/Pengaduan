@@ -1918,7 +1918,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="22dp"
                                 android:layout_marginTop="9dp"
-                                android:orientation="vertical">
+                                android:orientation="vertical"
+                                android:visibility="gone">
 
                                 <LinearLayout
                                     android:layout_width="match_parent"
@@ -1987,64 +1988,7 @@
                                         android:layout_height="wrap_content">
 
                                         <include layout="@layout/row" />
-                                        <!--<android.support.v7.widget.RecyclerView-->
-                                        <!--android:id="@+id/recycle_view"-->
-                                        <!--android:layout_width="match_parent"-->
-                                        <!--android:layout_height="wrap_content">-->
-                                        <!--</android.support.v7.widget.RecyclerView>-->
-                                        <!--<Button-->
-                                        <!--android:id="@+id/penampang_outlet_25"-->
-                                        <!--android:layout_width="@dimen/circle_width"-->
-                                        <!--android:layout_height="@dimen/circle_heigth"-->
-                                        <!--android:layout_marginRight="@dimen/right_margin_custom_A"-->
-                                        <!--android:background="@drawable/button_main"-->
-                                        <!--android:text="25"-->
-                                        <!--android:textColor="@drawable/text_color" />-->
 
-                                        <!--<Button-->
-                                        <!--android:id="@+id/penampang_outlet_35"-->
-                                        <!--android:layout_width="@dimen/circle_width"-->
-                                        <!--android:layout_height="@dimen/circle_heigth"-->
-                                        <!--android:layout_marginRight="@dimen/right_margin_custom_A"-->
-                                        <!--android:background="@drawable/button_main"-->
-                                        <!--android:text="35"-->
-                                        <!--android:textColor="@drawable/text_color" />-->
-
-                                        <!--<Button-->
-                                        <!--android:id="@+id/penampang_outlet_70"-->
-                                        <!--android:layout_width="@dimen/circle_width"-->
-                                        <!--android:layout_height="@dimen/circle_heigth"-->
-                                        <!--android:layout_marginRight="@dimen/right_margin_custom_A"-->
-                                        <!--android:background="@drawable/button_main"-->
-                                        <!--android:text="70"-->
-                                        <!--android:textColor="@drawable/text_color" />-->
-
-                                        <!--<Button-->
-                                        <!--android:id="@+id/penampang_outlet_95"-->
-                                        <!--android:layout_width="@dimen/circle_width"-->
-                                        <!--android:layout_height="@dimen/circle_heigth"-->
-                                        <!--android:layout_marginRight="@dimen/right_margin_custom_A"-->
-                                        <!--android:background="@drawable/button_main"-->
-                                        <!--android:text="95"-->
-                                        <!--android:textColor="@drawable/text_color" />-->
-
-                                        <!--<Button-->
-                                        <!--android:id="@+id/penampang_outlet_150"-->
-                                        <!--android:layout_width="@dimen/circle_width"-->
-                                        <!--android:layout_height="@dimen/circle_heigth"-->
-                                        <!--android:layout_marginRight="@dimen/right_margin_custom_A"-->
-                                        <!--android:background="@drawable/button_main"-->
-                                        <!--android:text="150"-->
-                                        <!--android:textColor="@drawable/text_color" />-->
-
-                                        <!--<Button-->
-                                        <!--android:id="@+id/penampang_outlet_240"-->
-                                        <!--android:layout_width="@dimen/circle_width"-->
-                                        <!--android:layout_height="@dimen/circle_heigth"-->
-                                        <!--android:layout_marginRight="7dp"-->
-                                        <!--android:background="@drawable/button_main"-->
-                                        <!--android:text="240"-->
-                                        <!--android:textColor="@drawable/text_color" />-->
 
                                     </LinearLayout>
                                 </LinearLayout>
@@ -2061,22 +2005,27 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content">
 
-                                    <Spinner
-                                        android:id="@+id/spin_sambungan_kabel_ke_jtr"
-                                        android:layout_width="fill_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginBottom="@dimen/margin_bot"
-                                        android:background="@drawable/button_main"
-                                        android:spinnerMode="dropdown"
-                                        android:transitionGroup="true" />
+                                    <!--<Spinner-->
+                                        <!--android:id="@+id/spin_sambungan_kabel_ke_jtr"-->
+                                        <!--android:layout_width="fill_parent"-->
+                                        <!--android:layout_height="wrap_content"-->
+                                        <!--android:layout_marginBottom="@dimen/margin_bot"-->
+                                        <!--android:background="@drawable/button_main"-->
+                                        <!--android:spinnerMode="dropdown"-->
+                                        <!--android:transitionGroup="true" />-->
 
-                                    <ImageView
-                                        android:layout_width="20dp"
-                                        android:layout_height="20dp"
-                                        android:layout_alignParentRight="true"
-                                        android:layout_margin="12dp"
-                                        android:foregroundGravity="center"
-                                        android:src="@drawable/triangle" />
+                                    <!--<ImageView-->
+                                        <!--android:layout_width="20dp"-->
+                                        <!--android:layout_height="20dp"-->
+                                        <!--android:layout_alignParentRight="true"-->
+                                        <!--android:layout_margin="12dp"-->
+                                        <!--android:foregroundGravity="center"-->
+                                        <!--android:src="@drawable/triangle" />-->
+
+                                    <include
+                                        android:id="@+id/kabel_jtr_a"
+                                        layout="@layout/sambung_kabel_jtr_a"
+                                        />
                                 </RelativeLayout>
 
                             </LinearLayout>
@@ -2152,70 +2101,11 @@
                                         android:textSize="@dimen/titlesize" />
 
                                     <LinearLayout
-                                        android:id="@+id/layout_mainactivity"
+
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content">
 
                                         <include layout="@layout/row_jur_b" />
-                                        <!--<android.support.v7.widget.RecyclerView-->
-                                        <!--android:id="@+id/recycle_view"-->
-                                        <!--android:layout_width="match_parent"-->
-                                        <!--android:layout_height="wrap_content">-->
-                                        <!--</android.support.v7.widget.RecyclerView>-->
-                                        <!--<Button-->
-                                        <!--android:id="@+id/penampang_outlet_25"-->
-                                        <!--android:layout_width="@dimen/circle_width"-->
-                                        <!--android:layout_height="@dimen/circle_heigth"-->
-                                        <!--android:layout_marginRight="@dimen/right_margin_custom_A"-->
-                                        <!--android:background="@drawable/button_main"-->
-                                        <!--android:text="25"-->
-                                        <!--android:textColor="@drawable/text_color" />-->
-
-                                        <!--<Button-->
-                                        <!--android:id="@+id/penampang_outlet_35"-->
-                                        <!--android:layout_width="@dimen/circle_width"-->
-                                        <!--android:layout_height="@dimen/circle_heigth"-->
-                                        <!--android:layout_marginRight="@dimen/right_margin_custom_A"-->
-                                        <!--android:background="@drawable/button_main"-->
-                                        <!--android:text="35"-->
-                                        <!--android:textColor="@drawable/text_color" />-->
-
-                                        <!--<Button-->
-                                        <!--android:id="@+id/penampang_outlet_70"-->
-                                        <!--android:layout_width="@dimen/circle_width"-->
-                                        <!--android:layout_height="@dimen/circle_heigth"-->
-                                        <!--android:layout_marginRight="@dimen/right_margin_custom_A"-->
-                                        <!--android:background="@drawable/button_main"-->
-                                        <!--android:text="70"-->
-                                        <!--android:textColor="@drawable/text_color" />-->
-
-                                        <!--<Button-->
-                                        <!--android:id="@+id/penampang_outlet_95"-->
-                                        <!--android:layout_width="@dimen/circle_width"-->
-                                        <!--android:layout_height="@dimen/circle_heigth"-->
-                                        <!--android:layout_marginRight="@dimen/right_margin_custom_A"-->
-                                        <!--android:background="@drawable/button_main"-->
-                                        <!--android:text="95"-->
-                                        <!--android:textColor="@drawable/text_color" />-->
-
-                                        <!--<Button-->
-                                        <!--android:id="@+id/penampang_outlet_150"-->
-                                        <!--android:layout_width="@dimen/circle_width"-->
-                                        <!--android:layout_height="@dimen/circle_heigth"-->
-                                        <!--android:layout_marginRight="@dimen/right_margin_custom_A"-->
-                                        <!--android:background="@drawable/button_main"-->
-                                        <!--android:text="150"-->
-                                        <!--android:textColor="@drawable/text_color" />-->
-
-                                        <!--<Button-->
-                                        <!--android:id="@+id/penampang_outlet_240"-->
-                                        <!--android:layout_width="@dimen/circle_width"-->
-                                        <!--android:layout_height="@dimen/circle_heigth"-->
-                                        <!--android:layout_marginRight="7dp"-->
-                                        <!--android:background="@drawable/button_main"-->
-                                        <!--android:text="240"-->
-                                        <!--android:textColor="@drawable/text_color" />-->
-
                                     </LinearLayout>
                                 </LinearLayout>
 
@@ -2231,22 +2121,29 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content">
 
-                                    <Spinner
-                                        android:id="@+id/jur_B_spin_sambungan_kabel_ke_jtr"
-                                        android:layout_width="fill_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginBottom="@dimen/margin_bot"
-                                        android:background="@drawable/button_main"
-                                        android:spinnerMode="dropdown"
-                                        android:transitionGroup="true" />
+                                    <!--<Spinner-->
+                                        <!--android:id="@+id/jur_B_spin_sambungan_kabel_ke_jtr"-->
+                                        <!--android:layout_width="fill_parent"-->
+                                        <!--android:layout_height="wrap_content"-->
+                                        <!--android:layout_marginBottom="@dimen/margin_bot"-->
+                                        <!--android:background="@drawable/button_main"-->
+                                        <!--android:spinnerMode="dropdown"-->
+                                        <!--android:transitionGroup="true" />-->
 
-                                    <ImageView
-                                        android:layout_width="20dp"
-                                        android:layout_height="20dp"
-                                        android:layout_alignParentRight="true"
-                                        android:layout_margin="12dp"
-                                        android:foregroundGravity="center"
-                                        android:src="@drawable/triangle" />
+                                    <!--<ImageView-->
+                                        <!--android:layout_width="20dp"-->
+                                        <!--android:layout_height="20dp"-->
+                                        <!--android:layout_alignParentRight="true"-->
+                                        <!--android:layout_margin="12dp"-->
+                                        <!--android:foregroundGravity="center"-->
+                                        <!--android:src="@drawable/triangle" />-->
+
+                                    <include
+                                        android:id="@+id/kabel_jtr_b"
+                                        layout="@layout/sambung_kabel_jtr_b"
+                                        />
+
+
                                 </RelativeLayout>
                             </LinearLayout>
                             <!--Jur_C-->
@@ -2326,64 +2223,7 @@
                                         android:layout_height="wrap_content">
 
                                         <include layout="@layout/row_jur_c" />
-                                        <!--<android.support.v7.widget.RecyclerView-->
-                                        <!--android:id="@+id/recycle_view"-->
-                                        <!--android:layout_width="match_parent"-->
-                                        <!--android:layout_height="wrap_content">-->
-                                        <!--</android.support.v7.widget.RecyclerView>-->
-                                        <!--<Button-->
-                                        <!--android:id="@+id/penampang_outlet_25"-->
-                                        <!--android:layout_width="@dimen/circle_width"-->
-                                        <!--android:layout_height="@dimen/circle_heigth"-->
-                                        <!--android:layout_marginRight="@dimen/right_margin_custom_A"-->
-                                        <!--android:background="@drawable/button_main"-->
-                                        <!--android:text="25"-->
-                                        <!--android:textColor="@drawable/text_color" />-->
 
-                                        <!--<Button-->
-                                        <!--android:id="@+id/penampang_outlet_35"-->
-                                        <!--android:layout_width="@dimen/circle_width"-->
-                                        <!--android:layout_height="@dimen/circle_heigth"-->
-                                        <!--android:layout_marginRight="@dimen/right_margin_custom_A"-->
-                                        <!--android:background="@drawable/button_main"-->
-                                        <!--android:text="35"-->
-                                        <!--android:textColor="@drawable/text_color" />-->
-
-                                        <!--<Button-->
-                                        <!--android:id="@+id/penampang_outlet_70"-->
-                                        <!--android:layout_width="@dimen/circle_width"-->
-                                        <!--android:layout_height="@dimen/circle_heigth"-->
-                                        <!--android:layout_marginRight="@dimen/right_margin_custom_A"-->
-                                        <!--android:background="@drawable/button_main"-->
-                                        <!--android:text="70"-->
-                                        <!--android:textColor="@drawable/text_color" />-->
-
-                                        <!--<Button-->
-                                        <!--android:id="@+id/penampang_outlet_95"-->
-                                        <!--android:layout_width="@dimen/circle_width"-->
-                                        <!--android:layout_height="@dimen/circle_heigth"-->
-                                        <!--android:layout_marginRight="@dimen/right_margin_custom_A"-->
-                                        <!--android:background="@drawable/button_main"-->
-                                        <!--android:text="95"-->
-                                        <!--android:textColor="@drawable/text_color" />-->
-
-                                        <!--<Button-->
-                                        <!--android:id="@+id/penampang_outlet_150"-->
-                                        <!--android:layout_width="@dimen/circle_width"-->
-                                        <!--android:layout_height="@dimen/circle_heigth"-->
-                                        <!--android:layout_marginRight="@dimen/right_margin_custom_A"-->
-                                        <!--android:background="@drawable/button_main"-->
-                                        <!--android:text="150"-->
-                                        <!--android:textColor="@drawable/text_color" />-->
-
-                                        <!--<Button-->
-                                        <!--android:id="@+id/penampang_outlet_240"-->
-                                        <!--android:layout_width="@dimen/circle_width"-->
-                                        <!--android:layout_height="@dimen/circle_heigth"-->
-                                        <!--android:layout_marginRight="7dp"-->
-                                        <!--android:background="@drawable/button_main"-->
-                                        <!--android:text="240"-->
-                                        <!--android:textColor="@drawable/text_color" />-->
 
                                     </LinearLayout>
                                 </LinearLayout>
@@ -2400,22 +2240,27 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content">
 
-                                    <Spinner
-                                        android:id="@+id/jur_C_spin_sambungan_kabel_ke_jtr"
-                                        android:layout_width="fill_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginBottom="@dimen/margin_bot"
-                                        android:background="@drawable/button_main"
-                                        android:spinnerMode="dropdown"
-                                        android:transitionGroup="true" />
+                                    <!--<Spinner-->
+                                        <!--android:id="@+id/jur_C_spin_sambungan_kabel_ke_jtr"-->
+                                        <!--android:layout_width="fill_parent"-->
+                                        <!--android:layout_height="wrap_content"-->
+                                        <!--android:layout_marginBottom="@dimen/margin_bot"-->
+                                        <!--android:background="@drawable/button_main"-->
+                                        <!--android:spinnerMode="dropdown"-->
+                                        <!--android:transitionGroup="true" />-->
 
-                                    <ImageView
-                                        android:layout_width="20dp"
-                                        android:layout_height="20dp"
-                                        android:layout_alignParentRight="true"
-                                        android:layout_margin="12dp"
-                                        android:foregroundGravity="center"
-                                        android:src="@drawable/triangle" />
+                                    <!--<ImageView-->
+                                        <!--android:layout_width="20dp"-->
+                                        <!--android:layout_height="20dp"-->
+                                        <!--android:layout_alignParentRight="true"-->
+                                        <!--android:layout_margin="12dp"-->
+                                        <!--android:foregroundGravity="center"-->
+                                        <!--android:src="@drawable/triangle" />-->
+
+                                    <include
+                                        android:id="@+id/kabel_jtr_c"
+                                        layout="@layout/sambung_kabel_jtr_c"
+                                        />
                                 </RelativeLayout>
                             </LinearLayout>
                             <!--Jur_D-->
@@ -2495,64 +2340,6 @@
                                         android:layout_height="wrap_content">
 
                                         <include layout="@layout/row_jur_d" />
-                                        <!--<android.support.v7.widget.RecyclerView-->
-                                        <!--android:id="@+id/recycle_view"-->
-                                        <!--android:layout_width="match_parent"-->
-                                        <!--android:layout_height="wrap_content">-->
-                                        <!--</android.support.v7.widget.RecyclerView>-->
-                                        <!--<Button-->
-                                        <!--android:id="@+id/penampang_outlet_25"-->
-                                        <!--android:layout_width="@dimen/circle_width"-->
-                                        <!--android:layout_height="@dimen/circle_heigth"-->
-                                        <!--android:layout_marginRight="@dimen/right_margin_custom_A"-->
-                                        <!--android:background="@drawable/button_main"-->
-                                        <!--android:text="25"-->
-                                        <!--android:textColor="@drawable/text_color" />-->
-
-                                        <!--<Button-->
-                                        <!--android:id="@+id/penampang_outlet_35"-->
-                                        <!--android:layout_width="@dimen/circle_width"-->
-                                        <!--android:layout_height="@dimen/circle_heigth"-->
-                                        <!--android:layout_marginRight="@dimen/right_margin_custom_A"-->
-                                        <!--android:background="@drawable/button_main"-->
-                                        <!--android:text="35"-->
-                                        <!--android:textColor="@drawable/text_color" />-->
-
-                                        <!--<Button-->
-                                        <!--android:id="@+id/penampang_outlet_70"-->
-                                        <!--android:layout_width="@dimen/circle_width"-->
-                                        <!--android:layout_height="@dimen/circle_heigth"-->
-                                        <!--android:layout_marginRight="@dimen/right_margin_custom_A"-->
-                                        <!--android:background="@drawable/button_main"-->
-                                        <!--android:text="70"-->
-                                        <!--android:textColor="@drawable/text_color" />-->
-
-                                        <!--<Button-->
-                                        <!--android:id="@+id/penampang_outlet_95"-->
-                                        <!--android:layout_width="@dimen/circle_width"-->
-                                        <!--android:layout_height="@dimen/circle_heigth"-->
-                                        <!--android:layout_marginRight="@dimen/right_margin_custom_A"-->
-                                        <!--android:background="@drawable/button_main"-->
-                                        <!--android:text="95"-->
-                                        <!--android:textColor="@drawable/text_color" />-->
-
-                                        <!--<Button-->
-                                        <!--android:id="@+id/penampang_outlet_150"-->
-                                        <!--android:layout_width="@dimen/circle_width"-->
-                                        <!--android:layout_height="@dimen/circle_heigth"-->
-                                        <!--android:layout_marginRight="@dimen/right_margin_custom_A"-->
-                                        <!--android:background="@drawable/button_main"-->
-                                        <!--android:text="150"-->
-                                        <!--android:textColor="@drawable/text_color" />-->
-
-                                        <!--<Button-->
-                                        <!--android:id="@+id/penampang_outlet_240"-->
-                                        <!--android:layout_width="@dimen/circle_width"-->
-                                        <!--android:layout_height="@dimen/circle_heigth"-->
-                                        <!--android:layout_marginRight="7dp"-->
-                                        <!--android:background="@drawable/button_main"-->
-                                        <!--android:text="240"-->
-                                        <!--android:textColor="@drawable/text_color" />-->
 
                                     </LinearLayout>
                                 </LinearLayout>
@@ -2569,22 +2356,27 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content">
 
-                                    <Spinner
-                                        android:id="@+id/jur_D_spin_sambungan_kabel_ke_jtr"
-                                        android:layout_width="fill_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginBottom="@dimen/margin_bot"
-                                        android:background="@drawable/button_main"
-                                        android:spinnerMode="dropdown"
-                                        android:transitionGroup="true" />
+                                    <!--<Spinner-->
+                                        <!--android:id="@+id/jur_D_spin_sambungan_kabel_ke_jtr"-->
+                                        <!--android:layout_width="fill_parent"-->
+                                        <!--android:layout_height="wrap_content"-->
+                                        <!--android:layout_marginBottom="@dimen/margin_bot"-->
+                                        <!--android:background="@drawable/button_main"-->
+                                        <!--android:spinnerMode="dropdown"-->
+                                        <!--android:transitionGroup="true" />-->
 
-                                    <ImageView
-                                        android:layout_width="20dp"
-                                        android:layout_height="20dp"
-                                        android:layout_alignParentRight="true"
-                                        android:layout_margin="12dp"
-                                        android:foregroundGravity="center"
-                                        android:src="@drawable/triangle" />
+                                    <!--<ImageView-->
+                                        <!--android:layout_width="20dp"-->
+                                        <!--android:layout_height="20dp"-->
+                                        <!--android:layout_alignParentRight="true"-->
+                                        <!--android:layout_margin="12dp"-->
+                                        <!--android:foregroundGravity="center"-->
+                                        <!--android:src="@drawable/triangle" />-->
+
+                                    <include
+                                        android:id="@+id/kabel_jtr_d"
+                                        layout="@layout/sambung_kabel_jtr_d"
+                                        />
                                 </RelativeLayout>
 
 
@@ -2598,12 +2390,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="3dp"
-                        android:text="Dan lain-lain"
+                        android:text="Keterangan"
                         android:textColor="@color/font_color"
                         android:textSize="@dimen/titlesize" />
 
                     <EditText
-                        android:id="@+id/edit_text_dan_lain2"
+                        android:id="@+id/edit_text_keterangan"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="@dimen/margin_bot"

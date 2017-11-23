@@ -598,27 +598,43 @@ public class MainActivity extends AppCompatActivity {
         final LinearLayout Jur_B_data_bael = (LinearLayout) findViewById(R.id.jur_B_data_kabel);
         final LinearLayout Jur_C_data_bael = (LinearLayout) findViewById(R.id.jur_C_data_kabel);
         final LinearLayout Jur_D_data_bael = (LinearLayout) findViewById(R.id.jur_D_data_kabel);
-        kabel_jur_A.setSelected(true);
+        kabel_jur_A.setSelected(false);
         kabel_jur_B.setSelected(false);
         kabel_jur_C.setSelected(false);
+        kabel_jur_D.setSelected(false);
 
-
-        //Spinner Jur A
-        final Spinner spinner2 = (Spinner) findViewById(R.id.spin_sambungan_kabel_ke_jtr);
-        final ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, R.layout.spinner, KabelJTR);
-        spinner2.setAdapter(adapter2);
+//        //Spinner Jur A
+//        final Spinner spinner2 = (Spinner) findViewById(R.id.spin_sambungan_kabel_ke_jtr);
+//        final ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, R.layout.spinner, KabelJTR);
+//        spinner2.setAdapter(adapter2);
 
         //Spinner Jur B
-        final Spinner spinner3 = (Spinner) findViewById(R.id.jur_B_spin_sambungan_kabel_ke_jtr);
-        final ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this, R.layout.spinner, KabelJTR);
+//        final Spinner spinner3 = (Spinner) findViewById(R.id.jur_B_spin_sambungan_kabel_ke_jtr);
+//        final ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this, R.layout.spinner, KabelJTR);
 
         //Spinner Jur C
-        final Spinner spinner4 = (Spinner) findViewById(R.id.jur_C_spin_sambungan_kabel_ke_jtr);
-        final ArrayAdapter<String> adapter4 = new ArrayAdapter<String>(this, R.layout.spinner, KabelJTR);
+//        final Spinner spinner4 = (Spinner) findViewById(R.id.jur_C_spin_sambungan_kabel_ke_jtr);
+//        final ArrayAdapter<String> adapter4 = new ArrayAdapter<String>(this, R.layout.spinner, KabelJTR);
+//
+//        //Spinner Jur D
+//        final Spinner spinner5 = (Spinner) findViewById(R.id.jur_D_spin_sambungan_kabel_ke_jtr);
+//        final ArrayAdapter<String> adapter5 = new ArrayAdapter<String>(this, R.layout.spinner, KabelJTR);
 
-        //Spinner Jur D
-        final Spinner spinner5 = (Spinner) findViewById(R.id.jur_D_spin_sambungan_kabel_ke_jtr);
-        final ArrayAdapter<String> adapter5 = new ArrayAdapter<String>(this, R.layout.spinner, KabelJTR);
+        final Button btn_join_bimetal_jtr_A = (Button) findViewById(R.id.join_bimetal_jurusan_A);
+        final Button btn_join_bimetal_jtr_B = (Button) findViewById(R.id.join_bimetal_jurusan_B);
+        final Button btn_join_bimetal_jtr_C = (Button) findViewById(R.id.join_bimetal_jurusan_C);
+        final Button btn_join_bimetal_jtr_D = (Button) findViewById(R.id.join_bimetal_jurusan_D);
+
+        final Button btn_tap_jtr_A = (Button) findViewById(R.id.tap_jtr_jurusan_A);
+        final Button btn_tap_jtr_B = (Button) findViewById(R.id.tap_jtr_jurusan_B);
+        final Button btn_tap_jtr_C = (Button) findViewById(R.id.tap_jtr_jurusan_C);
+        final Button btn_tap_jtr_D = (Button) findViewById(R.id.tap_jtr_jurusan_D);
+
+        final Button btn_paralel_jtr_A = (Button) findViewById(R.id.paralel_jurusan_A);
+        final Button btn_paralel_jtr_B = (Button) findViewById(R.id.paralel_jurusan_B);
+        final Button btn_paralel_jtr_C = (Button) findViewById(R.id.paralel_jurusan_C);
+        final Button btn_paralel_jtr_D = (Button) findViewById(R.id.paralel_jurusan_D);
+
 
         kabel_jur_A.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -631,38 +647,37 @@ public class MainActivity extends AppCompatActivity {
                 kabel_jur_B.setSelected(false);
                 kabel_jur_C.setSelected(false);
                 kabel_jur_D.setSelected(false);
-                btn_outlet_LUTC.setSelected(false);
-                btn_outlet_NYFUBY.setSelected(false);
-                btn_jur_B_outlet_NYY.setSelected(false);
-                btn_jur_B_outlet_LUTC.setSelected(false);
-                btn_jur_B_outlet_NYFUBY.setSelected(false);
-                btn_jur_C_outlet_NYY.setSelected(false);
-                btn_jur_C_outlet_LUTC.setSelected(false);
-                btn_jur_C_outlet_NYFUBY.setSelected(false);
-                btn_jur_D_outlet_NYY.setSelected(false);
-                btn_jur_D_outlet_LUTC.setSelected(false);
-                btn_jur_D_outlet_NYFUBY.setSelected(false);
-                btn_jur_B_penampang_25.setSelected(false);
-                btn_jur_B_penampang_35.setSelected(false);
-                btn_jur_B_penampang_70_out.setSelected(false);
-                btn_jur_B_penampang_95_out.setSelected(false);
-                btn_jur_B_penampang_150_out.setSelected(false);
-                btn_jur_B_penampang_240_out.setSelected(false);
-                btn_jur_C_penampang_25i.setSelected(false);
-                btn_jur_C_penampang_35i.setSelected(false);
-                btn_jur_C_penampang_70i_out.setSelected(false);
-                btn_jur_C_penampang_95i_out.setSelected(false);
-                btn_jur_C_penampang_150i_out.setSelected(false);
-                btn_jur_C_penampang_240i_out.setSelected(false);
-                btn_jur_D_penampang_25.setSelected(false);
-                btn_jur_D_penampang_35.setSelected(false);
-                btn_jur_D_penampang_70_out.setSelected(false);
-                btn_jur_D_penampang_95_out.setSelected(false);
-                btn_jur_D_penampang_150_out.setSelected(false);
-                btn_jur_D_penampang_240_out.setSelected(false);
-                spinner3.setSelection(0);
-                spinner4.setSelection(0);
-                spinner5.setSelection(0);
+//                btn_jur_B_outlet_NYY.setSelected(false);
+//                btn_jur_B_outlet_LUTC.setSelected(false);
+//                btn_jur_B_outlet_NYFUBY.setSelected(false);
+//                btn_jur_C_outlet_NYY.setSelected(false);
+//                btn_jur_C_outlet_LUTC.setSelected(false);
+//                btn_jur_C_outlet_NYFUBY.setSelected(false);
+//                btn_jur_D_outlet_NYY.setSelected(false);
+//                btn_jur_D_outlet_LUTC.setSelected(false);
+//                btn_jur_D_outlet_NYFUBY.setSelected(false);
+//                btn_jur_B_penampang_25.setSelected(false);
+//                btn_jur_B_penampang_35.setSelected(false);
+//                btn_jur_B_penampang_70_out.setSelected(false);
+//                btn_jur_B_penampang_95_out.setSelected(false);
+//                btn_jur_B_penampang_150_out.setSelected(false);
+//                btn_jur_B_penampang_240_out.setSelected(false);
+//                btn_jur_C_penampang_25i.setSelected(false);
+//                btn_jur_C_penampang_35i.setSelected(false);
+//                btn_jur_C_penampang_70i_out.setSelected(false);
+//                btn_jur_C_penampang_95i_out.setSelected(false);
+//                btn_jur_C_penampang_150i_out.setSelected(false);
+//                btn_jur_C_penampang_240i_out.setSelected(false);
+//                btn_jur_D_penampang_25.setSelected(false);
+//                btn_jur_D_penampang_35.setSelected(false);
+//                btn_jur_D_penampang_70_out.setSelected(false);
+//                btn_jur_D_penampang_95_out.setSelected(false);
+//                btn_jur_D_penampang_150_out.setSelected(false);
+//                btn_jur_D_penampang_240_out.setSelected(false);
+//                spinner2.setAdapter(adapter2);
+//                spinner3.setSelection(0);
+//                spinner4.setSelection(0);
+//                spinner5.setSelection(0);
 
             }
         });
@@ -677,37 +692,37 @@ public class MainActivity extends AppCompatActivity {
                 kabel_jur_A.setSelected(false);
                 kabel_jur_C.setSelected(false);
                 kabel_jur_D.setSelected(false);
-                btn_outlet_NYY.setSelected(false);
-                btn_outlet_LUTC.setSelected(false);
-                btn_outlet_NYFUBY.setSelected(false);
-                btn_jur_C_outlet_NYY.setSelected(false);
-                btn_jur_C_outlet_LUTC.setSelected(false);
-                btn_jur_C_outlet_NYFUBY.setSelected(false);
-                btn_jur_D_outlet_NYY.setSelected(false);
-                btn_jur_D_outlet_LUTC.setSelected(false);
-                btn_jur_D_outlet_NYFUBY.setSelected(false);
-                btn_penampang_25.setSelected(false);
-                btn_penampang_35.setSelected(false);
-                btn_penampang_70_out.setSelected(false);
-                btn_penampang_95_out.setSelected(false);
-                btn_penampang_150_out.setSelected(false);
-                btn_penampang_240_out.setSelected(false);
-                btn_jur_C_penampang_25i.setSelected(false);
-                btn_jur_C_penampang_35i.setSelected(false);
-                btn_jur_C_penampang_70i_out.setSelected(false);
-                btn_jur_C_penampang_95i_out.setSelected(false);
-                btn_jur_C_penampang_150i_out.setSelected(false);
-                btn_jur_C_penampang_240i_out.setSelected(false);
-                btn_jur_D_penampang_25.setSelected(false);
-                btn_jur_D_penampang_35.setSelected(false);
-                btn_jur_D_penampang_70_out.setSelected(false);
-                btn_jur_D_penampang_95_out.setSelected(false);
-                btn_jur_D_penampang_150_out.setSelected(false);
-                btn_jur_D_penampang_240_out.setSelected(false);
-                spinner2.setSelection(0);
-                spinner3.setAdapter(adapter3);
-                spinner4.setSelection(0);
-                spinner5.setSelection(0);
+//                btn_outlet_NYY.setSelected(false);
+//                btn_outlet_LUTC.setSelected(false);
+//                btn_outlet_NYFUBY.setSelected(false);
+//                btn_jur_C_outlet_NYY.setSelected(false);
+//                btn_jur_C_outlet_LUTC.setSelected(false);
+//                btn_jur_C_outlet_NYFUBY.setSelected(false);
+//                btn_jur_D_outlet_NYY.setSelected(false);
+//                btn_jur_D_outlet_LUTC.setSelected(false);
+//                btn_jur_D_outlet_NYFUBY.setSelected(false);
+//                btn_penampang_25.setSelected(false);
+//                btn_penampang_35.setSelected(false);
+//                btn_penampang_70_out.setSelected(false);
+//                btn_penampang_95_out.setSelected(false);
+//                btn_penampang_150_out.setSelected(false);
+//                btn_penampang_240_out.setSelected(false);
+//                btn_jur_C_penampang_25i.setSelected(false);
+//                btn_jur_C_penampang_35i.setSelected(false);
+//                btn_jur_C_penampang_70i_out.setSelected(false);
+//                btn_jur_C_penampang_95i_out.setSelected(false);
+//                btn_jur_C_penampang_150i_out.setSelected(false);
+//                btn_jur_C_penampang_240i_out.setSelected(false);
+//                btn_jur_D_penampang_25.setSelected(false);
+//                btn_jur_D_penampang_35.setSelected(false);
+//                btn_jur_D_penampang_70_out.setSelected(false);
+//                btn_jur_D_penampang_95_out.setSelected(false);
+//                btn_jur_D_penampang_150_out.setSelected(false);
+//                btn_jur_D_penampang_240_out.setSelected(false);
+//                spinner2.setSelection(0);
+//                spinner3.setAdapter(adapter3);
+//                spinner4.setSelection(0);
+//                spinner5.setSelection(0);
             }
         });
         kabel_jur_C.setOnClickListener(new View.OnClickListener() {
@@ -721,37 +736,37 @@ public class MainActivity extends AppCompatActivity {
                 kabel_jur_B.setSelected(false);
                 kabel_jur_A.setSelected(false);
                 kabel_jur_D.setSelected(false);
-                btn_outlet_NYY.setSelected(false);
-                btn_outlet_LUTC.setSelected(false);
-                btn_outlet_NYFUBY.setSelected(false);
-                btn_jur_B_outlet_NYY.setSelected(false);
-                btn_jur_B_outlet_LUTC.setSelected(false);
-                btn_jur_B_outlet_NYFUBY.setSelected(false);
-                btn_jur_D_outlet_NYY.setSelected(false);
-                btn_jur_D_outlet_LUTC.setSelected(false);
-                btn_jur_D_outlet_NYFUBY.setSelected(false);
-                btn_penampang_25.setSelected(false);
-                btn_penampang_35.setSelected(false);
-                btn_penampang_70_out.setSelected(false);
-                btn_penampang_95_out.setSelected(false);
-                btn_penampang_150_out.setSelected(false);
-                btn_penampang_240_out.setSelected(false);
-                btn_jur_B_penampang_25.setSelected(false);
-                btn_jur_B_penampang_35.setSelected(false);
-                btn_jur_B_penampang_70_out.setSelected(false);
-                btn_jur_B_penampang_95_out.setSelected(false);
-                btn_jur_B_penampang_150_out.setSelected(false);
-                btn_jur_B_penampang_240_out.setSelected(false);
-                btn_jur_D_penampang_25.setSelected(false);
-                btn_jur_D_penampang_35.setSelected(false);
-                btn_jur_D_penampang_70_out.setSelected(false);
-                btn_jur_D_penampang_95_out.setSelected(false);
-                btn_jur_D_penampang_150_out.setSelected(false);
-                btn_jur_D_penampang_240_out.setSelected(false);
-                spinner2.setSelection(0);
-                spinner4.setAdapter(adapter4);
-                spinner3.setSelection(0);
-                spinner5.setSelection(0);
+//                btn_outlet_NYY.setSelected(false);
+//                btn_outlet_LUTC.setSelected(false);
+//                btn_outlet_NYFUBY.setSelected(false);
+//                btn_jur_B_outlet_NYY.setSelected(false);
+//                btn_jur_B_outlet_LUTC.setSelected(false);
+//                btn_jur_B_outlet_NYFUBY.setSelected(false);
+//                btn_jur_D_outlet_NYY.setSelected(false);
+//                btn_jur_D_outlet_LUTC.setSelected(false);
+//                btn_jur_D_outlet_NYFUBY.setSelected(false);
+//                btn_penampang_25.setSelected(false);
+//                btn_penampang_35.setSelected(false);
+//                btn_penampang_70_out.setSelected(false);
+//                btn_penampang_95_out.setSelected(false);
+//                btn_penampang_150_out.setSelected(false);
+//                btn_penampang_240_out.setSelected(false);
+//                btn_jur_B_penampang_25.setSelected(false);
+//                btn_jur_B_penampang_35.setSelected(false);
+//                btn_jur_B_penampang_70_out.setSelected(false);
+//                btn_jur_B_penampang_95_out.setSelected(false);
+//                btn_jur_B_penampang_150_out.setSelected(false);
+//                btn_jur_B_penampang_240_out.setSelected(false);
+//                btn_jur_D_penampang_25.setSelected(false);
+//                btn_jur_D_penampang_35.setSelected(false);
+//                btn_jur_D_penampang_70_out.setSelected(false);
+//                btn_jur_D_penampang_95_out.setSelected(false);
+//                btn_jur_D_penampang_150_out.setSelected(false);
+//                btn_jur_D_penampang_240_out.setSelected(false);
+//                spinner2.setSelection(0);
+//                spinner4.setAdapter(adapter4);
+//                spinner3.setSelection(0);
+//                spinner5.setSelection(0);
             }
         });
         kabel_jur_D.setOnClickListener(new View.OnClickListener() {
@@ -765,37 +780,37 @@ public class MainActivity extends AppCompatActivity {
                 kabel_jur_B.setSelected(false);
                 kabel_jur_A.setSelected(false);
                 kabel_jur_C.setSelected(false);
-                btn_outlet_NYY.setSelected(false);
-                btn_outlet_LUTC.setSelected(false);
-                btn_outlet_NYFUBY.setSelected(false);
-                btn_jur_B_outlet_NYY.setSelected(false);
-                btn_jur_B_outlet_LUTC.setSelected(false);
-                btn_jur_B_outlet_NYFUBY.setSelected(false);
-                btn_jur_C_outlet_NYY.setSelected(false);
-                btn_jur_C_outlet_LUTC.setSelected(false);
-                btn_jur_C_outlet_NYFUBY.setSelected(false);
-                btn_penampang_25.setSelected(false);
-                btn_penampang_35.setSelected(false);
-                btn_penampang_70_out.setSelected(false);
-                btn_penampang_95_out.setSelected(false);
-                btn_penampang_150_out.setSelected(false);
-                btn_penampang_240_out.setSelected(false);
-                btn_jur_B_penampang_25.setSelected(false);
-                btn_jur_B_penampang_35.setSelected(false);
-                btn_jur_B_penampang_70_out.setSelected(false);
-                btn_jur_B_penampang_95_out.setSelected(false);
-                btn_jur_B_penampang_150_out.setSelected(false);
-                btn_jur_B_penampang_240_out.setSelected(false);
-                btn_jur_C_penampang_25i.setSelected(false);
-                btn_jur_C_penampang_35i.setSelected(false);
-                btn_jur_C_penampang_70i_out.setSelected(false);
-                btn_jur_C_penampang_95i_out.setSelected(false);
-                btn_jur_C_penampang_150i_out.setSelected(false);
-                btn_jur_C_penampang_240i_out.setSelected(false);
-                spinner2.setSelection(0);
-                spinner5.setAdapter(adapter5);
-                spinner3.setSelection(0);
-                spinner4.setSelection(0);
+//                btn_outlet_NYY.setSelected(false);
+//                btn_outlet_LUTC.setSelected(false);
+//                btn_outlet_NYFUBY.setSelected(false);
+//                btn_jur_B_outlet_NYY.setSelected(false);
+//                btn_jur_B_outlet_LUTC.setSelected(false);
+//                btn_jur_B_outlet_NYFUBY.setSelected(false);
+//                btn_jur_C_outlet_NYY.setSelected(false);
+//                btn_jur_C_outlet_LUTC.setSelected(false);
+//                btn_jur_C_outlet_NYFUBY.setSelected(false);
+//                btn_penampang_25.setSelected(false);
+//                btn_penampang_35.setSelected(false);
+//                btn_penampang_70_out.setSelected(false);
+//                btn_penampang_95_out.setSelected(false);
+//                btn_penampang_150_out.setSelected(false);
+//                btn_penampang_240_out.setSelected(false);
+//                btn_jur_B_penampang_25.setSelected(false);
+//                btn_jur_B_penampang_35.setSelected(false);
+//                btn_jur_B_penampang_70_out.setSelected(false);
+//                btn_jur_B_penampang_95_out.setSelected(false);
+//                btn_jur_B_penampang_150_out.setSelected(false);
+//                btn_jur_B_penampang_240_out.setSelected(false);
+//                btn_jur_C_penampang_25i.setSelected(false);
+//                btn_jur_C_penampang_35i.setSelected(false);
+//                btn_jur_C_penampang_70i_out.setSelected(false);
+//                btn_jur_C_penampang_95i_out.setSelected(false);
+//                btn_jur_C_penampang_150i_out.setSelected(false);
+//                btn_jur_C_penampang_240i_out.setSelected(false);
+//                spinner2.setSelection(0);
+//                spinner5.setAdapter(adapter5);
+//                spinner3.setSelection(0);
+//                spinner4.setSelection(0);
             }
         });
 
@@ -1194,6 +1209,123 @@ public class MainActivity extends AppCompatActivity {
                 btn_jur_D_penampang_150_out.setSelected(false);
             }
         });
+
+        //jurusan_A
+        btn_join_bimetal_jtr_A.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                view.setSelected(true);
+                btn_tap_jtr_A.setSelected(false);
+                btn_paralel_jtr_A.setSelected(false);
+            }
+        });
+
+
+        btn_tap_jtr_A.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                view.setSelected(true);
+                btn_join_bimetal_jtr_A.setSelected(false);
+                btn_paralel_jtr_A.setSelected(false);
+            }
+        });
+
+        btn_paralel_jtr_A.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                view.setSelected(true);
+                btn_join_bimetal_jtr_A.setSelected(false);
+                btn_tap_jtr_A.setSelected(false);
+            }
+        });
+
+        //jurusan_B
+        btn_join_bimetal_jtr_B.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                view.setSelected(true);
+                btn_tap_jtr_B.setSelected(false);
+                btn_paralel_jtr_B.setSelected(false);
+            }
+        });
+
+
+        btn_tap_jtr_B.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                view.setSelected(true);
+                btn_join_bimetal_jtr_B.setSelected(false);
+                btn_paralel_jtr_B.setSelected(false);
+            }
+        });
+
+        btn_paralel_jtr_B.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                view.setSelected(true);
+                btn_join_bimetal_jtr_B.setSelected(false);
+                btn_tap_jtr_B.setSelected(false);
+            }
+        });
+
+        //jurusan_C
+        btn_join_bimetal_jtr_C.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                view.setSelected(true);
+                btn_tap_jtr_C.setSelected(false);
+                btn_paralel_jtr_C.setSelected(false);
+            }
+        });
+
+
+        btn_tap_jtr_C.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                view.setSelected(true);
+                btn_join_bimetal_jtr_C.setSelected(false);
+                btn_paralel_jtr_C.setSelected(false);
+            }
+        });
+
+        btn_paralel_jtr_C.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                view.setSelected(true);
+                btn_join_bimetal_jtr_C.setSelected(false);
+                btn_tap_jtr_C.setSelected(false);
+            }
+        });
+
+        //jurusan_D
+        btn_join_bimetal_jtr_D.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                view.setSelected(true);
+                btn_tap_jtr_D.setSelected(false);
+                btn_paralel_jtr_D.setSelected(false);
+            }
+        });
+
+
+        btn_tap_jtr_D.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                view.setSelected(true);
+                btn_join_bimetal_jtr_D.setSelected(false);
+                btn_paralel_jtr_D.setSelected(false);
+            }
+        });
+
+        btn_paralel_jtr_D.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                view.setSelected(true);
+                btn_join_bimetal_jtr_D.setSelected(false);
+                btn_tap_jtr_D.setSelected(false);
+            }
+        });
+
     }
 
     private ModelForm model_form_manager() {
@@ -1345,7 +1477,7 @@ public class MainActivity extends AppCompatActivity {
         //Spinner Jur D
         final Spinner spinner5 = (Spinner) findViewById(R.id.jur_D_spin_sambungan_kabel_ke_jtr);
 
-        final EditText editText_Lain = (EditText) findViewById(R.id.edit_text_dan_lain2);
+        final EditText editText_Lain = (EditText) findViewById(R.id.edit_text_keterangan);
 
         //first
         String petugas = f_petugas.getText().toString();
