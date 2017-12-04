@@ -8,6 +8,15 @@ public class ModelForm {
     private String tanggal;
     private String alamat;
 
+    public String getKeterangan_lain_lain() {
+        return keterangan_lain_lain;
+    }
+
+    public void setKeterangan_lain_lain(String keterangan_lain_lain) {
+        this.keterangan_lain_lain = keterangan_lain_lain;
+    }
+
+    private String keterangan_lain_lain;
 
    //first
     private String petugas ;

@@ -1245,6 +1245,11 @@ public class MainActivity extends AppCompatActivity {
         final EditText f_fuse_S_Jur_C = (EditText) findViewById(R.id.f_fuse_S_Jur_C);
         final EditText f_fuse_T_Jur_C = (EditText) findViewById(R.id.f_fuse_T_Jur_C);
 
+        final Button fuse_jurusan_D = (Button) findViewById(R.id.fuse_jurusan_D);
+        final EditText f_fuse_R_Jur_D = (EditText) findViewById(R.id.f_fuse_R_Jur_D);
+        final EditText f_fuse_S_Jur_D = (EditText) findViewById(R.id.f_fuse_S_Jur_D);
+        final EditText f_fuse_T_Jur_D = (EditText) findViewById(R.id.f_fuse_T_Jur_D);
+
         final Button NH_jurusan_A = (Button) findViewById(R.id.NH_jurusan_A);
         final EditText f_NH_R_Jur_A = (EditText) findViewById(R.id.f_NH_R_Jur_A);
         final EditText f_NH_S_Jur_A = (EditText) findViewById(R.id.f_NH_S_Jur_A);
@@ -1330,6 +1335,25 @@ public class MainActivity extends AppCompatActivity {
         final Button btn_jur_D_penampang_95_out = (Button) findViewById(R.id.jur_D_penampang_outlet_95);
         final Button btn_jur_D_penampang_150_out = (Button) findViewById(R.id.jur_D_penampang_outlet_150);
         final Button btn_jur_D_penampang_240_out = (Button) findViewById(R.id.jur_D_penampang_outlet_240);
+
+        //Sambung Kabel ke JTR
+        //Jur A
+        final Button btn_join_bimetal_a = (Button) findViewById(R.id.join_bimetal_jurusan_A);
+        final Button btn_tap_jtr_a = (Button) findViewById(R.id.tap_jtr_jurusan_A);
+        final Button btn_paralel_a = (Button) findViewById(R.id.paralel_jurusan_A);
+        //Jur B
+        final Button btn_join_bimetal_b = (Button) findViewById(R.id.join_bimetal_jurusan_B);
+        final Button btn_tap_jtr_b = (Button) findViewById(R.id.tap_jtr_jurusan_B);
+        final Button btn_paralel_b = (Button) findViewById(R.id.paralel_jurusan_B);
+        //Jur C
+        final Button btn_join_bimetal_c = (Button) findViewById(R.id.join_bimetal_jurusan_C);
+        final Button btn_tap_jtr_c = (Button) findViewById(R.id.tap_jtr_jurusan_C);
+        final Button btn_paralel_c = (Button) findViewById(R.id.paralel_jurusan_C);
+        //Jur D
+        final Button btn_join_bimetal_d = (Button) findViewById(R.id.join_bimetal_jurusan_D);
+        final Button btn_tap_jtr_d = (Button) findViewById(R.id.tap_jtr_jurusan_D);
+        final Button btn_paralel_d = (Button) findViewById(R.id.paralel_jurusan_D);
+
         //Spinner Jur A
 //        final Spinner spinner2 = (Spinner) findViewById(R.id.spin_sambungan_kabel_ke_jtr);
 //        //Spinner Jur B
@@ -1419,6 +1443,8 @@ public class MainActivity extends AppCompatActivity {
             fuse_jurusan = "jurusan B";
         } else if (fuse_jurusan_C.isSelected()) {
             fuse_jurusan = "jurusan C";
+        }else if (fuse_jurusan_D.isSelected()) {
+            fuse_jurusan = "jurusan D";
         }
         String fuse_R_Jur_A = f_fuse_R_Jur_A.getText().toString();
         String fuse_S_Jur_A = f_fuse_S_Jur_A.getText().toString();
@@ -1429,6 +1455,9 @@ public class MainActivity extends AppCompatActivity {
         String fuse_R_Jur_C = f_fuse_R_Jur_C.getText().toString();
         String fuse_S_Jur_C = f_fuse_S_Jur_C.getText().toString();
         String fuse_T_Jur_C = f_fuse_T_Jur_C.getText().toString();
+        String fuse_R_Jur_D = f_fuse_R_Jur_D.getText().toString();
+        String fuse_S_Jur_D = f_fuse_S_Jur_D.getText().toString();
+        String fuse_T_Jur_D = f_fuse_T_Jur_D.getText().toString();
         String nh_jurusan = "";
         if (NH_jurusan_A.isSelected()) {
             nh_jurusan = "jurusan A";
@@ -1500,7 +1529,7 @@ public class MainActivity extends AppCompatActivity {
         String jenis_kabel_jurusan_d = "";
         String penampang_jurusan_d = "";
         String sambung_kabel_jtr_jurusan_d="";
-        if (data_kabel_jurusan_A.isSelected()) {
+
             data_kabel_jurusan = "jurusan A";
             //button jnyy lvtc nyfgby
 
@@ -1529,10 +1558,16 @@ public class MainActivity extends AppCompatActivity {
                 penampang_jurusan_a = "240";
             }
             //=====
-            //spinner
-//            sambung_kabel_jtr_jurusan_a = spinner2.getSelectedItem().toString();
+            //Sambung Kabel Ke JTR
+            if (btn_join_bimetal_a.isSelected()) {
+                sambung_kabel_jtr_jurusan_a = "JOIN BIMETAL";
+            } else if (btn_tap_jtr_a.isSelected()) {
+                sambung_kabel_jtr_jurusan_a = "TAP JTR";
+            } else if (btn_paralel_a.isSelected()) {
+                sambung_kabel_jtr_jurusan_a = "PARALEL";
+            }
             //=====
-        } else if (data_kabel_jurusan_B.isSelected()) {
+
             data_kabel_jurusan = "jurusan B";
 
             //button jnyy lvtc nyfgby
@@ -1561,10 +1596,16 @@ public class MainActivity extends AppCompatActivity {
                 penampang_jurusan_b = "240";
             }
             //=====
-            //spinner
-//            sambung_kabel_jtr_jurusan_b = spinner3.getSelectedItem().toString();
+            //Sambung Kabel Ke JTR
+            if (btn_join_bimetal_b.isSelected()) {
+                sambung_kabel_jtr_jurusan_b = "JOIN BIMETAL";
+            } else if (btn_tap_jtr_b.isSelected()) {
+                sambung_kabel_jtr_jurusan_b = "TAP JTR";
+            } else if (btn_paralel_b.isSelected()) {
+                sambung_kabel_jtr_jurusan_b = "PARALEL";
+            }
             //=====
-        } else if (data_kabel_jurusan_C.isSelected()) {
+
             data_kabel_jurusan = "jurusan C";
 
             //button jnyy lvtc nyfgby
@@ -1593,10 +1634,16 @@ public class MainActivity extends AppCompatActivity {
                 penampang_jurusan_c = "240";
             }
             //=====
-            //spinner
-//           sambung_kabel_jtr_jurusan_c = spinner4.getSelectedItem().toString();
+            //Sambung Kabel Ke JTR
+            if (btn_join_bimetal_c.isSelected()) {
+                sambung_kabel_jtr_jurusan_c = "JOIN BIMETAL";
+            } else if (btn_tap_jtr_c.isSelected()) {
+                sambung_kabel_jtr_jurusan_c = "TAP JTR";
+            } else if (btn_paralel_c.isSelected()) {
+                sambung_kabel_jtr_jurusan_c = "PARALEL";
+            }
             //=====
-        } else if (data_kabel_jurusan_D.isSelected()) {
+
             data_kabel_jurusan = "jurusan D";
 
             //button jnyy lvtc nyfgby
@@ -1625,10 +1672,17 @@ public class MainActivity extends AppCompatActivity {
                 penampang_jurusan_d = "240";
             }
             //=====
-            //spinner
-//           sambung_kabel_jtr_jurusan_d = spinner5.getSelectedItem().toString();
+            //Sambung Kabel Ke JTR
+            if (btn_join_bimetal_d.isSelected()) {
+                sambung_kabel_jtr_jurusan_d = "JOIN BIMETAL";
+            } else if (btn_tap_jtr_d.isSelected()) {
+                sambung_kabel_jtr_jurusan_d = "TAP JTR";
+            } else if (btn_paralel_d.isSelected()) {
+                sambung_kabel_jtr_jurusan_d = "PARALEL";
+            }
+
             //=====
-        }
+
 
         //=======================
         SupportManager supportManager = new SupportManager();
@@ -1669,6 +1723,9 @@ public class MainActivity extends AppCompatActivity {
         modelForm.setFuse_R_Jur_C(fuse_R_Jur_C);
         modelForm.setFuse_S_Jur_C(fuse_S_Jur_C);
         modelForm.setFuse_T_Jur_C(fuse_T_Jur_C);
+        modelForm.setFuse_R_Jur_D(fuse_R_Jur_D);
+        modelForm.setFuse_S_Jur_D(fuse_S_Jur_D);
+        modelForm.setFuse_T_Jur_D(fuse_T_Jur_D);
         modelForm.setNh_jurusan(nh_jurusan);
         modelForm.setNH_R_Jur_A(NH_R_Jur_A);
         modelForm.setNH_S_Jur_A(NH_S_Jur_A);
@@ -1701,6 +1758,8 @@ public class MainActivity extends AppCompatActivity {
         modelForm.setJenis_kabel_jurusan_d( jenis_kabel_jurusan_d);
         modelForm.setPenampang_jurusan_d( penampang_jurusan_d);
         modelForm.setSambung_kabel_jtr_jurusan_d( sambung_kabel_jtr_jurusan_d);
+
+        modelForm.setKeterangan_lain_lain(editText_Lain.getText().toString());
         return modelForm;
     }
 
